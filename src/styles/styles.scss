@@ -1,0 +1,152 @@
+@import "variables";
+@import "word_component";
+@import "dw-button";
+
+$app__min-width: 230px;
+$app-menu__height: 35px;
+$app-menu__bg-color: $text-color;
+
+$caps-button__width: 55px;
+
+$app-content__passphrase--input__width1: $wc__width + ($padding + $border) * 2;
+$app-content__passphrase--input__width2: ($app-content__passphrase--input__width1 + $margin) * 2 - 4;
+$app-content__passphrase--input__width3: ($app-content__passphrase--input__width1) * 3 + $margin * 4 - 4;
+
+$app-content__passphrase--input__width1: $app-content__passphrase--input__width1 - $caps-button__width;
+$app-content__passphrase--input__width2: $app-content__passphrase--input__width2 - $caps-button__width;
+$app-content__passphrase--input__width3: $app-content__passphrase--input__width3 - $caps-button__width;
+
+html {
+    min-width: $app__min-width;
+}
+
+body {
+    background-color: $bg-color;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid $text-color;
+}
+
+.white {
+    color: white;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.app {
+    color: $text-color;
+    text-align: center;
+
+    &-menu {
+        background-color: $app-menu__bg-color;
+        padding: 0;
+        &__item {
+            color: $bg-color;
+            display: inline-block;
+            &:hover {
+                background: $bg-color;
+                color: $text-color;
+            }
+            a {
+                color: inherit;
+                line-height: $app-menu__height;
+                padding: $padding;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &-content {
+        border: solid 1px $text-color;
+        padding: $padding/2;
+        &__passphrase {
+            margin: $margin auto;
+            text-align: center;
+            &--title {
+                //content: "\F103";
+                //float: left;
+                //position: relative;
+                //left: -2px;
+                //text-align: center;
+                //font-family: icons;
+                //color: #3192e0;
+            }
+            &--text {
+                color: #fff;
+                font-size: x-large;
+                font-weight: bold;
+            }
+            @keyframes text_color {
+                0% {
+                    color: $bg-color;
+                }
+                25% {
+                    color: $text-color;
+                }
+                50% {
+                    color: #fff;
+                }
+                75% {
+                    color: $text-color;
+                }
+                100% {
+                    color: $bg-color;
+                }
+            }
+            &--delimiters {
+                animation: text_color 5s linear infinite;
+                cursor: pointer;
+                text-decoration-line: underline;
+            }
+            &--delimiters:before {
+                //content: "+ ";
+
+                //font-family: FontIcons;
+                //content: "\F00F"
+            }
+            &--button {
+                display: inline-block;
+                width: $caps-button__width;
+            }
+            &--input {
+                border: 0;
+                display: inline-block;
+                font-weight: bold;
+                margin: 5px;
+                text-align: center;
+                transition-duration: 1s;
+                transition-property: width;
+                width: $app-content__passphrase--input__width3;
+            }
+        }
+        &__button {
+            margin: $margin;
+            opacity: 1;
+            &--active {
+                opacity: 0.3;
+            }
+        }
+    }
+
+    &-footer {
+        padding: $padding/2;
+    }
+}
+
+// Два блока
+@media screen and (max-width: 534px) {
+    .app-content__passphrase--input {
+        width: $app-content__passphrase--input__width2;
+    }
+}
+
+// Один блок
+@media screen and (max-width: 370px) {
+    .app-content__passphrase--input {
+        width: $app-content__passphrase--input__width1;
+    }
+}

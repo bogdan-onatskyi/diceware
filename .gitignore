@@ -1,0 +1,6 @@
+/.git
+/.idea
+/dist
+/info_files
+/node_modules
+package-lock.json
