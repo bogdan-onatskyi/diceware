@@ -1,0 +1,163 @@
+// @import "variables";
+// @import "word_component";
+// @import "dw-button";
+@import "./../vars";
+
+html {
+    min-width: $app__min-width;
+}
+
+body {
+    background-color: $bg-color;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid $text-color;
+}
+
+.white {
+    color: white;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.fa-phone {
+    @include fa($fa-phone-square, $text-color, 13pt);
+    vertical-align: text-top;
+}
+.fa-envelope {
+    @include fa($fa-envelope, $text-color, 16px);
+    vertical-align: text-top;
+}
+
+.app {
+    color: $text-color;
+    text-align: center;
+    &-menu {
+        background-color: $app-menu__bg-color;
+        padding: 0;
+        &__item {
+            color: $bg-color;
+            display: inline-block;
+            &:hover {
+                background: $bg-color;
+                color: $text-color;
+            }
+            a {
+                color: inherit;
+                line-height: $app-menu__height;
+                padding: $padding;
+                text-decoration: none;
+            }
+        }
+    }
+    &-content {
+        border: solid 1px $text-color;
+        padding: $padding/2;
+        text-align: center;
+        &__passphrase {
+            margin: $margin auto;
+            text-align: center;
+            &--title {
+                //content: "\F103";
+                //float: left;
+                //position: relative;
+                //left: -2px;
+                //text-align: center;
+                //font-family: icons;
+                //color: #3192e0;
+            }
+            &--text {
+                color: #fff;
+                font-size: x-large;
+                font-weight: bold;
+            }
+            @keyframes text_color {
+                0% {
+                    color: $bg-color;
+                }
+                25% {
+                    color: $text-color;
+                }
+                50% {
+                    color: #fff;
+                }
+                75% {
+                    color: $text-color;
+                }
+                100% {
+                    color: $bg-color;
+                }
+            }
+            &--delimiters {
+                animation: text_color 5s linear infinite;
+                cursor: pointer;
+                text-decoration-line: underline;
+            }
+            &--delimiters:before {
+                //content: "+ ";
+                //font-family: FontIcons;
+                //content: "\F00F"
+            }
+            &--button {
+                display: inline-block;
+                width: $caps-button__width;
+            }
+            &--input {
+                border: 0;
+                display: inline-block;
+                font-weight: bold;
+                margin: 5px;
+                text-align: center;
+                transition-duration: 1s;
+                transition-property: width;
+                width: $app-content__passphrase--input__width3;
+            }
+        }
+        &__button {
+            margin: $margin;
+            opacity: 1;
+            &--active {
+                opacity: 0.3;
+            }
+        }
+    }
+    &-footer {
+        padding: $padding/2;
+        &__circle {
+            //content: "";
+            //display: inline-block;
+            ////position: absolute;
+            //left: calc(50% - 11px);
+            //left: -webkit-calc(50% - 11px);
+            //top: -11px;
+            //width: 20px;
+            //height: 20px;
+            //border-radius: 50%;
+            //border: 1px solid #AC170E;
+            //background: orangered;
+            //box-shadow: 0 2px 4px  #292825;
+        }
+        a {
+            color: $text-color;
+            text-decoration: none;
+        }
+    }
+}
+
+// Два блока
+@media screen and (max-width: 534px) {
+    .app-content__passphrase--input {
+        width: $app-content__passphrase--input__width2;
+    }
+}
+
+// Один блок
+@media screen and (max-width: 370px) {
+    .app-content__passphrase--input {
+        width: $app-content__passphrase--input__width1;
+    }
+}

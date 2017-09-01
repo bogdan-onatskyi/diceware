@@ -1,0 +1,33 @@
+@import "../node_modules/fontawesome-scss/fontAwesome";
+
+//
+// @include fa($имя-иконки, цвет, размер)
+//
+
+$bg-color: #2B3A42;
+$text-color: #62b1d8;
+$border: 2px;
+$margin: 5px;
+$padding: 10px;
+
+$app__min-width: 230px;
+
+$app-menu__height: 35px;
+$app-menu__bg-color: $text-color;
+
+$caps-button__width: 55px;
+
+$wc__width: 125px;
+$wc__min-width: 100px;
+$wc__margin: $margin;
+
+$box-width: $wc__width+$border * 2+$padding * 2;
+
+$sprite: 25px;
+
+$app-content__passphrase--input__width1: $wc__width + ($padding + $border) * 2;
+$app-content__passphrase--input__width2: ($app-content__passphrase--input__width1 + $margin) * 2 - 4;
+$app-content__passphrase--input__width3: ($app-content__passphrase--input__width1) * 3 + $margin * 4 - 4;
+$app-content__passphrase--input__width1: $app-content__passphrase--input__width1 - $caps-button__width;
+$app-content__passphrase--input__width2: $app-content__passphrase--input__width2 - $caps-button__width;
+$app-content__passphrase--input__width3: $app-content__passphrase--input__width3 - $caps-button__width;

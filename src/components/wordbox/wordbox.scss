@@ -1,0 +1,66 @@
+@import "../../vars";
+
+.word-box {
+    &__container {
+        border-radius: 5px;
+        border: solid $border $text-color;
+        box-shadow: 0 0 7px $text-color;
+        display: inline-block;
+        margin: $margin;
+        padding: $padding;
+        width: $wc__width;
+    }
+    &__element {
+        text-align: center;
+        &.h35 {
+            min-height: 35px;
+        }
+        .word {
+            //border: 1px solid red;
+            color: $text-color;
+            font: 13pt/13pt serif;
+            opacity: 0.1;
+            &:hover {
+                cursor: pointer;
+                opacity: 1;
+            }
+            &--prev,
+            &--next {
+                opacity: 0.2;
+            }
+            &--current {
+                color: white;
+                font-weight: bold;
+                opacity: 1;
+                &:hover {
+                    cursor: text;
+                }
+            }
+        }
+        .code {
+            background: url("./sprite25.png"), no-repeat;
+            float: left;
+            height: 25px;
+            margin: $margin 0;
+            width: 25px;
+            &--1 {
+                background-position: 0 0;
+            }
+            &--2 {
+                background-position: -$sprite 0;
+            }
+            &--3 {
+                background-position: -2*$sprite 0;
+            }
+            &--4 {
+                background-position: -3*$sprite 0;
+            }
+            &--5 {
+                background-position: -4*$sprite 0;
+            }
+            &--6 {
+                background-position: -5*$sprite 0;
+            }
+        }
+    }
+}
