@@ -77,7 +77,8 @@ hr {
                 //@include bordered_box;
                 padding: $padding;
                 //padding: $padding/2;
-                margin: $margin;
+                margin: $margin auto;
+                //@include width-col(8);
             }
             &--text {
                 color: #fff;
@@ -181,11 +182,11 @@ hr {
 }
 
 // Два блока
-@media screen and (max-width: 534px) {
+@media screen and (max-width: 521px) {
     .app-content__passphrase--input {
         width: $app-content__passphrase--input__width2;
     }
-    //.app-content__passphrase--box {
-    //    width: $width-2-col;
-    //}
+    .app-content__passphrase--box {
+        @include width-col(3);
+    }
 }
