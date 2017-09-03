@@ -2,9 +2,10 @@ import React from 'react';
 import {observer, inject} from 'mobx-react';
 
 import './wordbox.scss';
+import './../../views/btn.scss';
 
 const Component = inject('wordStore')(observer((wordStore => {
-    let key = 1;
+    let key = 0;
     const w = wordStore.word;
 
     const handleWheel = (e) => {

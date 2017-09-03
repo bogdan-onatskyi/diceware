@@ -2,9 +2,10 @@
 
 .word-box {
     &__container {
-        border-radius: 5px;
-        border: solid $border $text-color;
-        box-shadow: 0 0 7px $text-color;
+        //border-radius: 5px;
+        //border: solid $border $text-color;
+        //box-shadow: 0 0 7px $text-color;
+        @include bordered_box;
         display: inline-block;
         margin: $margin;
         padding: $padding;
