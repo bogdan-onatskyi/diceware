@@ -136,11 +136,17 @@ class Word {
 }
 
 class WordStore {
+    @observable maxWords;
+    @observable usedWords;
+
     @observable wordArray;
     @observable opened;
     @observable caps;
 
     constructor() {
+        this.maxWords = 8;
+        this.usedWords = 5;
+
         this.wordArray = [];
         this.opened = false;
         this.caps = [];
@@ -148,8 +154,28 @@ class WordStore {
         for (let i = 0; i < this.separators.length; i++) this.caps[i] = true;
     }
 
+    init(maxWords = 8, usedWords = 5) {
+        this.maxWords = maxWords;
+        this.usedWords = usedWords;
+
+        for (let i = 0; i < usedWords; i++) this.wordArray[i] = new Word(i);
+    }
+
     toggleOpened() {
         this.opened = !this.opened;
+    }
+
+    handleUsedWords(buttonId) {
+        const id = (buttonId > 0 && buttonId <= this.maxWords) ? buttonId : this.usedWords;
+
+        this.wordArray.splice(id);
+        for (let i = this.usedWords; i < id; i++) this.wordArray.push(new Word(i));
+
+        this.usedWords = id;
+    }
+
+    handleChangeAllWords() {
+        for (let i = 0; i < this.usedWords; i++) this.wordArray[i] = new Word(i);
     }
 
     @computed
@@ -162,10 +188,6 @@ class WordStore {
     separatePassphrase(separator, isUpperCase = true) {
         const s = this.passphrase.join(separator);
         return isUpperCase ? s.toUpperCase() : s.toLowerCase();
-    }
-
-    init(maxWords) {
-        for (let i = 0; i < maxWords; i++) this.wordArray[i] = new Word(i);
     }
 }
 

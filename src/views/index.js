@@ -1,32 +1,29 @@
 import React from 'react';
 import {Provider} from 'mobx-react';
+
 // import DevTools from 'mobx-react-devtools'
 
 /* components */
-import WordBox from '../components/wordbox/wordbox';
+import WordBoxController from '../components/wordbox/wordboxcontroller';
 import WordCountButtons from './_wordcount_buttons';
 import PassPhrase from './_passphrase';
 
 /* stores */
 import wordStore from '../stores/wordstore';
-wordStore.init(5);
+wordStore.init(8, 5);
 
 /* styles */
 import './index.scss';
 
 const stores = {wordStore};
 
-let key = 1;
-
-const App = props => (
+const Component = props => (
     <Provider {...stores}>
         <div className="app">
+            <h1>Генератор diceware паролей</h1>
             <div className="app-content">
-                {wordStore.wordArray.map((id, i) =>
-                    <WordBox word={id} key={"WordBox_" + key++}/>)
-                }
+                <WordBoxController/>
                 <WordCountButtons maxWords={wordStore.wordArray.length}/>
-                <hr/>
                 <PassPhrase/>
             </div>
             <div className="app-footer">
@@ -40,4 +37,4 @@ const App = props => (
     </Provider>
 );
 
-export default App;
+export default Component;
