@@ -5,8 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "node test.js",
-        "dev-server": "export NODE_ENV=development && babel-node server.js",
-        "prod": "export NODE_ENV=production && webpack --progress && babel-node server.js"
+        "dev-server": "export NODE_ENV=development&& babel-node server.js",
+        "prod": "export NODE_ENV=production&& webpack --progress && babel-node server.js"
     },
     "author": "Bogdan gentoo.user@ukr.net",
     "license": "ISC",

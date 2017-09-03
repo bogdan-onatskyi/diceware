@@ -38,6 +38,14 @@ $app-content__passphrase--input__width3: $app-content__passphrase--input__width3
     box-shadow: 0 0 7px $text-color;
 }
 
+@mixin width_col($column) {
+    $sum: $box-width;
+    @for $i from 1 to $column {
+        $sum: $sum + $margin;
+    }
+    width: $sum;
+}
+
 $width-1-col: $box-width;
 $width-2-col: $width-1-col + $margin;
 $width-3-col: $width-2-col + $margin;
