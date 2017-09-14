@@ -1,13 +1,18 @@
 import React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {HashRouter, Switch, Route} from 'react-router-dom';
 
-// import Home from './views/home/home';
 import Index from './views/index';
+import Info from './views/info';
+import Contacts from './views/contacts';
 
-export default () => (
-    <BrowserRouter>
-        <div>
-            <Route path='/' component={Index}/>
-        </div>
-    </BrowserRouter>
+const Component = () => (
+    <HashRouter>
+        <Switch>
+            <Route exact path='/' component={Index}/>
+            <Route path='/info' component={Info}/>
+            <Route path='/contacts' component={Contacts}/>
+        </Switch>
+    </HashRouter>
 );
+
+export default Component;

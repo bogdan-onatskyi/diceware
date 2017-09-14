@@ -4,7 +4,17 @@
 // @include fa($имя-иконки, цвет, размер)
 //
 
+@mixin flex {
+    display: -webkit-flex;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    min-height: 100%;
+}
+
 $bg-color: #2B3A42;
+$footer-bg-color: $bg-color - 10;
+$contacts-bg-color: $footer-bg-color;
 $text-color: #62b1d8;
 $border: 2px;
 $margin: 5px;
@@ -12,11 +22,26 @@ $padding: 10px;
 
 $app__min-width: 230px;
 
-$app-menu__height: 35px;
+$app-menu__height: 30px;
+$app-menu__color: $bg-color;
 $app-menu__bg-color: $text-color;
 
-$caps-button__width: 55px;
+// BUTTONS
+$button__radius: 2px;
+$button__size: 20px;
 
+$pass-text-button__width: 25px;
+$pass-text-button__height: 25px;
+
+$pass-box-button__width: 50px;
+$pass-box-button__height: 25px;
+
+$count-button__size: 25px;
+
+// INPUT
+$pass-input__height: $pass-box-button__height;
+
+// WORD-BOX
 $wc__width: 125px;
 $wc__min-width: 100px;
 $wc__margin: $margin;
@@ -28,9 +53,9 @@ $sprite: 25px;
 $app-content__passphrase--input__width1: $wc__width + ($padding + $border) * 2;
 $app-content__passphrase--input__width2: ($app-content__passphrase--input__width1 + $margin) * 2 - 4;
 $app-content__passphrase--input__width3: ($app-content__passphrase--input__width1) * 3 + $margin * 4 - 4;
-$app-content__passphrase--input__width1: $app-content__passphrase--input__width1 - $caps-button__width;
-$app-content__passphrase--input__width2: $app-content__passphrase--input__width2 - $caps-button__width;
-$app-content__passphrase--input__width3: $app-content__passphrase--input__width3 - $caps-button__width;
+$app-content__passphrase--input__width1: $app-content__passphrase--input__width1 - $pass-box-button__width;
+$app-content__passphrase--input__width2: $app-content__passphrase--input__width2 - $pass-box-button__width;
+$app-content__passphrase--input__width3: $app-content__passphrase--input__width3 - $pass-box-button__width;
 
 @mixin bordered_box {
     border-radius: 5px;

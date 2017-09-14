@@ -4,14 +4,14 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 export default new Config().merge({
     entry: './src/index.js',
     output: {
-        path: __dirname + '/dist',
+        path: __dirname + '/docs',
     },
 
     module: {
         rules: [
             {
                 test: /.jsx?$/,
-                exclude: [/node_modules/, /info/],
+                exclude: [/node_modules/, /src-tutor/],
                 loader: 'babel-loader'
             },
             {

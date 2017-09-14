@@ -1,0 +1,61 @@
+@import "../../vars";
+
+.words-container {
+    padding: 10px;
+}
+
+.wb-container {
+    @include bordered_box;
+    display: inline-block;
+    margin: $margin;
+    padding: $padding;
+    width: $wc__width;
+
+    &__word {
+        color: $text-color;
+        display: block;
+        font: 13pt/13pt serif;
+        margin: $margin auto;
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+        &--word-prev2, &--word-next2 {
+            opacity: 0.1;
+        }
+        &--word-prev1, &--word-next1 {
+            opacity: 0.2;
+        }
+        &--word-current {
+            color: white;
+            font-weight: bold;
+            opacity: 1;
+            &:hover {
+                cursor: text;
+            }
+        }
+    }
+
+    &__code {
+        background: url("./sprite25.png"), no-repeat;
+        display: block;
+        margin: auto;
+        vertical-align: middle;
+
+        &--common {
+            display: inline-block;
+            height: 25px;
+            width: 25px;
+        }
+
+        @for $i from 1 through 6 {
+            &--code-#{$i} {
+                background-position: (-1)*($i+(-1))*$sprite 0;
+            }
+        }
+    }
+
+    &__buttons {
+
+    }
+}
