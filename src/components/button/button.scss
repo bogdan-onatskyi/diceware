@@ -1,0 +1,55 @@
+@import "../../vars";
+
+.btn {
+    border: 0;
+    border-radius: $button__radius;
+    font: 10pt/10pt arial;
+    overflow: hidden;
+    height: $button__size;
+    width: $button__size;
+    &__selected {
+        opacity: 0.3;
+    }
+    &__minus {
+
+    }
+    &__reset-word {
+        margin: 0 1px;
+        width: 75px;
+    }
+    &__plus {
+
+    }
+    &__count {
+        height: $count-button__size;
+        width: $count-button__size;
+        margin: $margin 1px;
+    }
+    &__reset-all-words {
+        height: $count-button__size;
+        width: 100px;
+        margin: $margin 1px;
+    }
+    &__pass-text {
+        height: $pass-text-button__height;
+        width: $pass-text-button__width;
+        min-width: $pass-text-button__width;
+    }
+    &__pass-box {
+        height: $pass-box-button__height;
+        width: $pass-box-button__width;
+        min-width: $pass-box-button__width;
+        margin: 1px 0;
+        &--caps {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &--copy {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            &-icon {
+                @include fa($fa-clipboard, $bg-color);
+            }
+        }
+    }
+}

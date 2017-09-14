@@ -2,12 +2,14 @@ import express from 'express';
 import path from 'path';
 
 const PORT = 7700;
-const PUBLIC_PATH = __dirname + '/dist';
+const PUBLIC_PATH = __dirname + '/docs';
 const app = express();
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
 if (isDevelopment) {
+    console.log('isDevelopment = true');
+
     const webpack = require('webpack');
     const webpackConfig = require('./webpack.config.babel').default;
     const compiler = webpack(webpackConfig);

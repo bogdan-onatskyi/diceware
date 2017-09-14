@@ -1,6 +1,6 @@
 import React from 'react';
-import {AppContainer} from 'react-hot-loader';
 import ReactDOM from 'react-dom';
+import {AppContainer} from 'react-hot-loader';
 import AppRouter from './routes';
 
 const render = (Component) =>
@@ -14,8 +14,8 @@ const render = (Component) =>
 render(AppRouter);
 
 if (module.hot) {
-    module.hot.accept('./routes', () => {
-        require('./routes');
+    module.hot.accept('./index', () => {
+        require('./index');
         render(AppRouter);
     });
 }

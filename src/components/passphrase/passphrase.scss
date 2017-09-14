@@ -1,0 +1,62 @@
+@import "../../vars";
+
+$pass-color: #fff;
+$pass-font-size: 30px;
+
+.pass-container {
+    margin: $margin auto;
+}
+
+.pass {
+    &__before-text {
+        @include fa($fa-chevron-right, $text-color, $pass-font-size - 5px);
+        margin: 0 15px;
+        cursor: pointer;
+        &--opened {
+            @include fa($fa-chevron-down, $text-color, $pass-font-size - 5px);
+            margin: 0 15px;
+        }
+        &::before {
+            display: none;
+            content: attr(data-title);
+        }
+        &:hover {
+            display: inline-block;
+        }
+    }
+    &__text {
+        color: $pass-color;
+        font-size: $pass-font-size;
+        font-weight: bold;
+        margin: 10px;
+    }
+    &__after-text {
+        @include fa($fa-clipboard, $text-color, $pass-font-size - 5px);
+        margin: 0 15px;
+        cursor: pointer;
+    }
+
+    &__dropbox {
+        padding: $padding;
+        &--elem {
+            display: -webkit-flex;
+            display: flex;
+            flex: auto;
+            flex-direction: row;
+
+            margin: 1px auto;
+            align-items: center;
+            width: 70%;
+            & input {
+                border: 0;
+                height: $pass-input__height;
+                line-height: $pass-input__height;
+                min-width: 50px;
+                padding: 0 5px;
+                text-align: center;
+                flex-grow: 1;
+                font: 11pt/10pt Arial;
+            }
+        }
+    }
+}
