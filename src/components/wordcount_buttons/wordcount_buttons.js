@@ -2,17 +2,16 @@ import React from 'react';
 import {observer, inject} from 'mobx-react';
 import cn from 'classnames';
 
-import Button from '../button/button';
+import Button from '../general/button/button';
 
 import './wordcount_buttons.scss';
-import '../button/button';
 
-const Component = inject('wordStore')(observer(({wordStore}) => {
+const WordCountButtonsContainer = inject('wordStore')(observer(({wordStore}) => {
     const buttons = [];
     for (let i = 1; i <= wordStore.maxWords; i++) {
         buttons[i] =
-            <Button className={cn('btn btn__count', {'btn__selected': i === wordStore.usedWords})}
-                    key={'wcb_' + i} onClick={wordStore.handleUsedWords[i - 1]} text={i}/>;
+            <Button className={cn("btn btn__count", {"btn__selected": i === wordStore.usedWords})}
+                    key={"wcb_" + i} onClick={wordStore.handleUsedWords[i - 1]} text={i}/>;
     }
     return (
         <div className="buttons-container">
@@ -26,5 +25,4 @@ const Component = inject('wordStore')(observer(({wordStore}) => {
     );
 }));
 
-Component.displayName = 'WordCountButtonsContainer';
-export default Component;
+export default WordCountButtonsContainer;

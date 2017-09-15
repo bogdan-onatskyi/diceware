@@ -20,6 +20,7 @@ class Word {
             };
             for (let prop in handler) {
                 if (e.target.className.includes(prop)) {
+                    // e.preventDefault();
                     handler[prop]();
                     return;
                 }
@@ -190,7 +191,7 @@ class WordStore {
         });
 
         this.opened = false;
-        this.toggleOpened = (e) => {
+        this.toggleOpened = () => {
             this.opened = !this.opened;
         };
 

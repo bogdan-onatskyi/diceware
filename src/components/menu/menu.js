@@ -17,7 +17,7 @@ const menuData = {
 const Menu = (props) => (
     <ul className="app-menu">
         {menuData.all().map((item) =>
-            <li className={"app-menu__item"} key={'menu_' + item.id}>
+            <li className={"app-menu__item"} key={"menu_" + item.id}>
                 <Link to={item.ref} className={item.fa}>{item.title}</Link>
             </li>
         )}
