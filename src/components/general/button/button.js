@@ -1,5 +1,4 @@
 import React from 'react';
-import cn from 'classnames';
 import './button.scss';
 
 const Button = props => {
@@ -12,5 +11,4 @@ const Button = props => {
     )
 };
 
-Button.displayName = "Button";
 export default Button;

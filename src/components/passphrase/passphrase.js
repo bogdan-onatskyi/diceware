@@ -4,13 +4,14 @@ import cn from 'classnames';
 import Clipboard from 'clipboard';
 
 import wordStore from '../../stores/wordstore';
-import Button from './../button/button';
+import Button from '../general/button/button';
 
 import './passphrase.scss';
+
 new Clipboard('.pass__after-text');
 new Clipboard('.btn__pass-box--copy');
 
-const Component = inject('wordStore')(observer(({wordStore}) => {
+const PassPhraseContainer = inject('wordStore')(observer(({wordStore}) => {
     return (
         <div className="pass-container">
             <i className={cn("pass__before-text", {"pass__before-text--opened": wordStore.opened})}
@@ -35,5 +36,4 @@ const Component = inject('wordStore')(observer(({wordStore}) => {
     );
 }));
 
-Component.displayName = 'PassPhraseContainer';
-export default Component;
+export default PassPhraseContainer;

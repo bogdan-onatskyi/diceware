@@ -1,14 +1,12 @@
 import React from 'react';
 
-/* components */
 import Header from '../components/header/header';
 import Menu from '../components/menu/menu';
 import Footer from '../components/footer/footer';
 
-/* styles */
 import './index.scss';
 
-const Component = props => (
+const Info = props => (
     <div className="app">
         <Header text="Что это"/>
         <Menu/>
@@ -41,4 +39,4 @@ const Component = props => (
     </div>
 );
 
-export default Component;
+export default Info;
