@@ -7,7 +7,7 @@
         "test": "babel-node test.js",
         "start": "babel-node server.js",
         "dev-server": "cross-env NODE_ENV=development babel-node server.js",
-        "prod": "cross-env NODE_ENV=production webpack --progress && babel-node server.js"
+        "prod": "cross-env NODE_ENV=production webpack -p --progress && babel-node server.js"
     },
     "author": "Bogdan gentoo.user@ukr.net",
     "license": "ISC",
