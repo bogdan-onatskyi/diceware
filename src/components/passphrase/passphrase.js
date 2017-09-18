@@ -4,30 +4,28 @@ import cn from 'classnames';
 import Clipboard from 'clipboard';
 
 import wordStore from '../../stores/wordstore';
-import Button from '../general/button/button';
+import Button from '../_general/button/button';
 
 import './passphrase.scss';
 
-new Clipboard('.pass__after-text');
-new Clipboard('.btn__pass-box--copy');
+new Clipboard('.clipboard');
 
 const PassPhraseContainer = inject('wordStore')(observer(({wordStore}) => {
     return (
         <div className="pass-container">
             <i className={cn("pass__before-text", {"pass__before-text--opened": wordStore.opened})}
-               onClick={wordStore.toggleOpened} data-title="text text text"/>
+               onClick={wordStore.toggleOpened}/>
             <span id="pass" className={"pass__text"}>{wordStore.separatePassphrase(' ')}</span>
-            <i className="pass__after-text" data-clipboard-target={"#pass"}/>
+            <i className="clipboard pass__after-text" data-clipboard-target={"#pass"}/>
 
             <div className="pass__dropbox">
                 {wordStore.opened && wordStore.separators.map((separator, i) =>
                     <div className="pass__dropbox--elem" key={"pass_" + i}>
-                        <Button className="btn btn__pass-box btn__pass-box--caps"
-                                onClick={wordStore.toggleCAPS.bind(this, i)} text="CAPS"/>
+                        <Button type="caps" text="CAPS"
+                                onClick={wordStore.toggleCAPS.bind(this, i)}/>
                         <input id={"pass_input_" + i} type="text" readOnly={true}
                                value={wordStore.separatePassphrase(separator, i)}/>
-                        <Button className="btn btn__pass-box btn__pass-box--copy"
-                                icon="btn__pass-box--copy-icon"
+                        <Button className="clipboard" type="copy"
                                 data-clipboard-target={"#pass_input_" + i}/>
                     </div>)
                 }
