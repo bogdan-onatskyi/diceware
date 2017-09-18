@@ -11,22 +11,22 @@ const WordBox = inject('wordStore')(observer((props) => {
     const w = props.wordObject;
 
     return (
-        <div className="wb-container" onClick={w.handleClick}>
-            <div className="wb-container__word" onWheel={w.handleWheel}>
-                <div className="wb-container__word wb-container__word--word-prev2">{w.prev2word}</div>
-                <div className="wb-container__word wb-container__word--word-prev1">{w.prev1word}</div>
-                <div className="wb-container__word wb-container__word--word-current">{w.word}</div>
-                <div className="wb-container__word wb-container__word--word-next1">{w.next1word}</div>
-                <div className="wb-container__word wb-container__word--word-next2">{w.next2word}</div>
+        <div className="wb" onClick={w.handleClick}>
+            <div className="wb__word" onWheel={w.handleWheel}>
+                <div className="wb__word wb__word--prev2">{w.prev2word}</div>
+                <div className="wb__word wb__word--prev1">{w.prev1word}</div>
+                <div className="wb__word wb__word--current">{w.word}</div>
+                <div className="wb__word wb__word--next1">{w.next1word}</div>
+                <div className="wb__word wb__word--next2">{w.next2word}</div>
             </div>
-            <div className="wb-container__code">
+            <div className="wb__code">
                 {w.code.split('').map((i) =>
-                    <div className={"wb-container__code wb-container__code--common " +
-                    "wb-container__code--code-" + i} key={"code_" + w.id + key++}/>
+                    <div className={"wb__code wb__code--common wb__code--" + i}
+                         key={"code_" + w.id + key++}/>
                 )}
             </div>
-            <div className="wb-container__buttons">
-                <Button type="minus" text="-">-</Button>
+            <div>
+                <Button type="minus" text="-"/>
                 <Button type="reset-word" text="Изменить"/>
                 <Button type="plus" text="+"/>
             </div>

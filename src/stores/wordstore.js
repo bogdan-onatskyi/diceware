@@ -1,4 +1,4 @@
-import {observable, computed, action, asMap, autorun} from 'mobx';
+import {observable, computed, action} from 'mobx';
 
 import wordList from './word_list';
 
@@ -28,7 +28,7 @@ class Word {
         };
         this.handleWheel = (e) => {
             e.preventDefault();
-            if (!e.target.className.includes("wb-container__word")) return;
+            if (!e.target.className.includes("wb__word")) return;
             e.deltaY > 0 ? this.PlusWord() : this.MinusWord();
         };
     }
