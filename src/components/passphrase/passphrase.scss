@@ -1,7 +1,6 @@
 @import "../../vars";
 
 $pass-color: #fff;
-$pass-font-size: 30px;
 
 .pass-container {
     margin: $margin auto;
@@ -15,13 +14,6 @@ $pass-font-size: 30px;
         &--opened {
             @include fa($fa-chevron-down, $text-color, $pass-font-size - 5px);
             margin: 0 15px;
-        }
-        &::before {
-            display: none;
-            content: attr(data-title);
-        }
-        &:hover {
-            display: inline-block;
         }
     }
     &__text {

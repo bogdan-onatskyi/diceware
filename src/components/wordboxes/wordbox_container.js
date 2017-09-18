@@ -3,7 +3,7 @@ import {observer, inject} from 'mobx-react';
 import PropTypes from 'prop-types';
 
 import wordStore from './../../stores/wordstore';
-import Button from '../general/button/button';
+import Button from '../_general/button/button';
 import './wordbox.scss';
 
 const WordBox = inject('wordStore')(observer((props) => {
@@ -26,9 +26,9 @@ const WordBox = inject('wordStore')(observer((props) => {
                 )}
             </div>
             <div className="wb-container__buttons">
-                <Button className="btn btn__minus" text="-">-</Button>
-                <Button className="btn btn__reset-word" text="Изменить"/>
-                <Button className="btn btn__plus" text="+"/>
+                <Button type="minus" text="-">-</Button>
+                <Button type="reset-word" text="Изменить"/>
+                <Button type="plus" text="+"/>
             </div>
         </div>
     );
