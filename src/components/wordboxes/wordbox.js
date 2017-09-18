@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import wordStore from './../../stores/wordstore';
 import Button from '../_general/button/button';
+
 import './wordbox.scss';
 
 const WordBox = inject('wordStore')(observer((props) => {

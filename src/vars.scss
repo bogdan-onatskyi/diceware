@@ -4,14 +4,6 @@
 // @include fa($имя-иконки, цвет, размер)
 //
 
-@mixin flex {
-    display: -webkit-flex;
-    display: flex;
-    flex: auto;
-    flex-direction: column;
-    min-height: 100%;
-}
-
 $bg-color: #2B3A42;
 $footer-bg-color: $bg-color - 10;
 $contacts-bg-color: $footer-bg-color;
@@ -64,20 +56,3 @@ $app-content__passphrase--input__width3: $app-content__passphrase--input__width3
     border: solid $border $text-color;
     box-shadow: 0 0 7px $text-color;
 }
-
-@mixin width_col($column) {
-    $sum: $box-width;
-    @for $i from 1 to $column {
-        $sum: $sum + $margin;
-    }
-    width: $sum;
-}
-
-$width-1-col: $box-width;
-$width-2-col: $width-1-col + $margin;
-$width-3-col: $width-2-col + $margin;
-$width-4-col: $width-3-col + $margin;
-$width-5-col: $width-4-col + $margin;
-$width-6-col: $width-5-col + $margin;
-$width-7-col: $width-6-col + $margin;
-$width-8-col: $width-7-col + $margin;
