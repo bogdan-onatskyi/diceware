@@ -19,11 +19,11 @@
             color: $app-menu__bg-color;
         }
         a {
+            color: inherit;
             display: block;
             line-height: $app-menu__height;
             height: 100%;
             padding: 0 10px;
-            text-decoration: none;
         }
     }
 }

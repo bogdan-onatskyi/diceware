@@ -37,13 +37,18 @@ h1 {
 }
 
 h2 {
-    margin: 8px
+    color: whitesmoke;
+    margin: 10px;
 }
 
 p {
     margin: 5px;
     padding: 5px;
-    text-align: justify;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
 }
 
 .app {
@@ -63,45 +68,40 @@ p {
     &__header {
         flex: 0 0 auto;
         width: 100%;
-
         background: $bg-color;
     }
     &__content {
         flex: 1 0 auto;
         width: 100%;
-        max-width: 100%;
-
         background: $bg-color;
         &--info {
+            padding: 10px 0;
             font: 11pt/11pt Arial;
-            h2 {
-                color: white;
+            p {
+                text-align: justify;
             }
         }
-        &--contacts {
+        &--contacts, &--oops {
             font: 11pt/11pt Arial;
             display: flex;
             justify-content: center;
             &-box {
-                flex: 0 1 60%;
+                flex: 0 1 50%;
                 align-self: center;
-                border: 1px solid;
                 background: $contacts-bg-color;
                 padding: 10px;
+                text-align: left;
                 @include bordered_box;
-                justify-content: flex-start;
-                p {
+                .row {
                     display: flex;
                     flex-wrap: wrap;
-                }
-                .col1 {
-                    flex: 0 0 30%;
-                }
-                .col2 {
-                    flex: 1 1 70%;
-                    color: white;
-                    a {
-                        text-decoration: none;
+                    margin: 10px;
+                    .col1 {
+                        flex: 0 0 30%;
+                    }
+                    .col2 {
+                        flex: 1 1 70%;
+                        color: $link-color;
                     }
                 }
             }
@@ -113,12 +113,9 @@ p {
 
         background: $footer-bg-color;
         padding: $padding/2 0;
-        &--icon {
+        i {
             @include fa($fa-phone-square, $text-color, 17px);
             vertical-align: text-top;
         }
-    }
-    a {
-        color: inherit;
     }
 }

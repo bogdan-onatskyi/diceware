@@ -16,8 +16,8 @@ const Info = props => (
             <p>
                 Используется список слов <a
                 href="https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases">
-                EFF's New Wordlists for Random Passphrases</a> (
-                <a href="https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt">eff_large_wordlist.txt</a>).
+                EFF's New Wordlists for Random Passphrases</a>, а именно: <a
+                href="https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt" alt="yyyyy" >eff_large_wordlist.txt</a>.
             </p>
             <p>
                 Пароль генерируется в браузере пользователя, ничто никуда не отсылается - можно посмотреть исходный код,
