@@ -1,59 +1,53 @@
 @import "../node_modules/fontawesome-scss/fontAwesome";
-
-//
 // @include fa($имя-иконки, цвет, размер)
-//
 
-$bg-color: #2B3A42;
-$footer-bg-color: $bg-color - 10;
-$contacts-bg-color: $footer-bg-color;
-$text-color: #62b1d8;
-$link-color: lightgray;
 $border: 2px;
+
 $margin: 5px;
+$margin__word-container: $margin;
+
 $padding: 10px;
 
-$app__min-width: 230px;
+$color: #62b1d8;
+$bg-color: #2B3A42;
 
-$app-menu__height: 30px;
-$app-menu__color: $bg-color;
-$app-menu__bg-color: $text-color;
+$color__text: $color;
+$color__link: lightgray;
+$color__menu: $bg-color;
 
-$pass-font-size: 30px;
+$bg-color__menu: $color__text;
+$bg-color__footer: $bg-color - 10;
+$bg-color__contacts: $bg-color__footer;
+$bg-color__pass-editor: $bg-color__footer;
 
-// BUTTONS
-$button__radius: 2px;
-$button__size: 20px;
+$height__px: 25px;
+$height__menu: 30px;
+$height__pass-text-button: $height__px;
+$height__pass-box-button: $height__px;
+$height__pass-input: $height__px;
 
-$pass-text-button__width: 25px;
-$pass-text-button__height: 25px;
+$width__word-container: 125px;
+$width__box: $width__word-container + $border * 2 + $padding * 2;
+$width__reset-button: 75px;
+$width__reset-all-words-button: 100px;
+$width__pass-text-button: 25px;
+$width__pass-box-button: 50px;
+$width__popup-close-button: 75px;
 
-$pass-box-button__width: 50px;
-$pass-box-button__height: 25px;
+$min-width__app: 270px;
+$min-width__popup: $min-width__app * 0.8 + 15px;
+$min-width__word-container: 100px;
 
-$count-button__size: 25px;
+$size__sprite: 25px;
+$size__button: 20px;
+$size__count-button: 25px;
 
-// INPUT
-$pass-input__height: $pass-box-button__height;
+$font-size__pass: 30px;
 
-// WORD-BOX
-$wc__width: 125px;
-$wc__min-width: 100px;
-$wc__margin: $margin;
-
-$box-width: $wc__width + $border * 2 + $padding * 2;
-
-$sprite: 25px;
-
-$app-content__passphrase--input__width1: $wc__width + ($padding + $border) * 2;
-$app-content__passphrase--input__width2: ($app-content__passphrase--input__width1 + $margin) * 2 - 4;
-$app-content__passphrase--input__width3: ($app-content__passphrase--input__width1) * 3 + $margin * 4 - 4;
-$app-content__passphrase--input__width1: $app-content__passphrase--input__width1 - $pass-box-button__width;
-$app-content__passphrase--input__width2: $app-content__passphrase--input__width2 - $pass-box-button__width;
-$app-content__passphrase--input__width3: $app-content__passphrase--input__width3 - $pass-box-button__width;
+$radius__button: 2px;
 
 @mixin bordered_box {
     border-radius: 5px;
-    border: solid $border $text-color;
-    box-shadow: 0 0 7px $text-color;
+    border: solid $border $color__text;
+    box-shadow: 0 0 7px $color__text;
 }

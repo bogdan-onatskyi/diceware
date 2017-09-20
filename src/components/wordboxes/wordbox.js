@@ -7,23 +7,22 @@ import Button from '../_general/button/button';
 
 import './wordbox.scss';
 
-const WordBox = inject('wordStore')(observer((props) => {
+const WordBox = inject('wordStore')(observer(({wordObject}) => {
     let key = 1;
-    const w = props.wordObject;
 
     return (
-        <div className="wb" onClick={w.handleClick}>
-            <div className="wb__word" onWheel={w.handleWheel}>
-                <div className="wb__word wb__word--prev2">{w.prev2word}</div>
-                <div className="wb__word wb__word--prev1">{w.prev1word}</div>
-                <div className="wb__word wb__word--current">{w.word}</div>
-                <div className="wb__word wb__word--next1">{w.next1word}</div>
-                <div className="wb__word wb__word--next2">{w.next2word}</div>
+        <div className="wb" onClick={wordObject.handleClick}>
+            <div className="wb__word" onWheel={wordObject.handleWheel}>
+                <div className="wb__word wb__word--prev2">{wordObject.prev2word}</div>
+                <div className="wb__word wb__word--prev1">{wordObject.prev1word}</div>
+                <div className="wb__word wb__word--current">{wordObject.word}</div>
+                <div className="wb__word wb__word--next1">{wordObject.next1word}</div>
+                <div className="wb__word wb__word--next2">{wordObject.next2word}</div>
             </div>
             <div className="wb__code">
-                {w.code.split('').map((i) =>
+                {wordObject.code.split('').map((i) =>
                     <div className={"wb__code wb__code--common wb__code--" + i}
-                         key={"code_" + w.id + key++}/>
+                         key={"code_" + wordObject.id + key++}/>
                 )}
             </div>
             <div>
@@ -44,6 +43,10 @@ const WordBoxContainer = inject('wordStore')(observer(({wordStore}) =>
             <WordBox wordObject={wordObject} key={"WordBox_" + i}/>)}
     </div>
 ));
+WordBoxContainer.propTypes = {
+    wordStore: PropTypes.object
+};
+
 
 export {WordBox};
 export default WordBoxContainer;

@@ -7,7 +7,7 @@ class WordStore {
     @observable usedWords;
 
     @observable wordArray;
-    @observable opened;
+    @observable isPassboxOpened;
     @observable caps;
 
     constructor() {
@@ -26,9 +26,9 @@ class WordStore {
             this.caps += Math.pow(2, i);
         });
 
-        this.opened = false;
-        this.toggleOpened = () => {
-            this.opened = !this.opened;
+        this.isPassboxOpened = false;
+        this.toggleIsPassboxOpened = () => {
+            this.isPassboxOpened = !this.isPassboxOpened;
         };
 
         this.handleUsedWords = [];

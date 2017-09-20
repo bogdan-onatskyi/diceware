@@ -4,7 +4,7 @@ import {Provider} from 'mobx-react';
 import Header from '../components/header/header';
 import Menu from '../components/menu/menu';
 import WordBoxContainer from '../components/wordboxes/wordbox';
-import WordCountButtons from '../components/wordcount_buttons/wordcount_buttons';
+import WordCountButtons from '../components/wordcount-buttons/wordcount-buttons';
 import PassPhrase from '../components/passphrase/passphrase';
 import Footer from '../components/footer/footer';
 

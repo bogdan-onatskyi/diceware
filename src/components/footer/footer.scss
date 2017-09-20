@@ -1,0 +1,12 @@
+@import "../../vars";
+
+.footer {
+    flex: 0 0 auto;
+    width: 100%;
+    background: $bg-color__footer;
+    padding: $padding/2 0;
+    &--icon {
+        @include fa($fa-phone-square, $color, 17px);
+        vertical-align: text-top;
+    }
+}

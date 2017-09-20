@@ -1,6 +1,6 @@
 import {observable, computed, action} from 'mobx';
 
-import wordList from './word_list';
+import wordList from './word-list';
 
 class Word {
     @observable _index;
@@ -16,7 +16,8 @@ class Word {
                 "next2": () => this.ResetWord(this.next2index),
                 "minus": () => this.MinusWord(),
                 "reset-word": () => this.ResetWord(),
-                "plus": () => this.PlusWord()
+                "plus": () => this.PlusWord(),
+                "code": () => this.ResetWord()
             };
             for (let prop in handler) {
                 if (e.target.className.includes(prop)) {

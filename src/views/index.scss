@@ -29,7 +29,6 @@ body {
     display: flex;
     flex: auto;
     flex-direction: column;
-    min-height: 100%;
 }
 
 h1 {
@@ -47,7 +46,7 @@ p {
 }
 
 a {
-    color: $link-color;
+    color: $color__link;
     text-decoration: none;
 }
 
@@ -58,18 +57,13 @@ a {
     flex-direction: column;
     min-height: 100%;
     width: 100%;
-    min-width: 270px;
+    min-width: $min-width__app;
     justify-content: center;
     align-items: center;
 
-    color: $text-color;
+    color: $color__text;
     text-align: center;
     margin: 5px auto;
-    &__header {
-        flex: 0 0 auto;
-        width: 100%;
-        background: $bg-color;
-    }
     &__content {
         flex: 1 0 auto;
         width: 100%;
@@ -88,7 +82,7 @@ a {
             &-box {
                 flex: 0 1 50%;
                 align-self: center;
-                background: $contacts-bg-color;
+                background: $bg-color__contacts;
                 padding: 10px;
                 @include bordered_box;
                 .row {
@@ -101,21 +95,10 @@ a {
                     }
                     .col2 {
                         flex: 1 1 70%;
-                        color: $link-color;
+                        color: $color__link;
                     }
                 }
             }
-        }
-    }
-    &__footer {
-        flex: 0 0 auto;
-        width: 100%;
-
-        background: $footer-bg-color;
-        padding: $padding/2 0;
-        i {
-            @include fa($fa-phone-square, $text-color, 17px);
-            vertical-align: text-top;
         }
     }
 }

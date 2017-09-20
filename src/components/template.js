@@ -1,11 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import cn from 'classnames';
 
-import './__.scss';
+import './___.scss';
 
-const Component = (props) => (
-    <div>
+const Component = ({className, text}) => {
+    const classNames = cn(className, "___");
+    return (
+        <div className={classNames}>
+            {text}
+        </div>
+    );
+};
 
-    </div>
-);
+Component.propTypes = {
+    className: PropTypes.string,
+    text: PropTypes.string,
+};
 
 export default Component;

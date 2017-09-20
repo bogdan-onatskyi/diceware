@@ -8,22 +8,22 @@ $pass-color: #fff;
 
 .pass {
     &__before-text {
-        @include fa($fa-chevron-right, $text-color, $pass-font-size - 5px);
+        @include fa($fa-chevron-right, $color__text, $font-size__pass - 5px);
         margin: 0 15px;
         cursor: pointer;
         &--opened {
-            @include fa($fa-chevron-down, $text-color, $pass-font-size - 5px);
+            @include fa($fa-chevron-down, $color__text, $font-size__pass - 5px);
             margin: 0 15px;
         }
     }
     &__text {
         color: $pass-color;
-        font-size: $pass-font-size;
+        font-size: $font-size__pass;
         font-weight: bold;
         margin: 10px;
     }
     &__after-text {
-        @include fa($fa-clipboard, $text-color, $pass-font-size - 5px);
+        @include fa($fa-clipboard, $color__text, $font-size__pass - 5px);
         margin: 0 15px;
         cursor: pointer;
     }
@@ -41,8 +41,8 @@ $pass-color: #fff;
             width: 70%;
             & input {
                 border: 0;
-                height: $pass-input__height;
-                line-height: $pass-input__height;
+                height: $height__pass-input;
+                line-height: $height__pass-input;
                 min-width: 50px;
                 padding: 0 5px;
                 text-align: center;

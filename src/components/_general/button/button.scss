@@ -1,54 +1,62 @@
 @import "../../../vars";
 
-.btn {
+.button {
     border: 0;
-    border-radius: $button__radius;
+    border-radius: $radius__button;
     font: 10pt/10pt arial;
     overflow: hidden;
-    height: $button__size;
-    width: $button__size;
+    height: $size__button;
+    width: $size__button;
     &--selected {
         opacity: 0.3;
     }
-    //&--minus {
-    //
-    //}
+    &--disabled {
+        opacity: 0.1;
+    }
     &--reset-word {
         margin: 0 1px;
-        width: 75px;
+        width: $width__reset-button;
     }
-    //&--plus {
-    //
-    //}
     &--count {
-        height: $count-button__size;
-        width: $count-button__size;
         margin: $margin 1px;
+        height: $size__count-button;
+        width: $size__count-button;
     }
     &--reset-all-words {
-        height: $count-button__size;
-        width: 100px;
         margin: $margin 1px;
+        height: $size__count-button;
+        width: $width__reset-all-words-button;
     }
     &--caps {
-        height: $pass-box-button__height;
-        width: $pass-box-button__width;
-        min-width: $pass-box-button__width;
         margin: 1px 0;
+        height: $height__pass-box-button;
+        width: $width__pass-box-button;
+        min-width: $width__pass-box-button;
 
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
     &--copy {
-        height: $pass-box-button__height;
-        width: $pass-box-button__width;
-        min-width: $pass-box-button__width;
         margin: 1px 0;
+        height: $height__pass-box-button;
+        width: $width__pass-box-button;
+        min-width: $width__pass-box-button;
 
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         i {
-            @include fa($fa-clipboard, $bg-color, $pass-box-button__height - 10px);
+            @include fa($fa-clipboard, $bg-color, $height__pass-box-button - 10px);
         }
+    }
+    &--editor {
+        margin: 5px;
+        width: 75px;
+    }
+    &--letter {
+        margin: 1px;
+    }
+    &--popup-close {
+        margin: 5px;
+        width: $width__popup-close-button;
     }
 }

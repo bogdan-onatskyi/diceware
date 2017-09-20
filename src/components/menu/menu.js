@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import cn from 'classnames';
 
 import './menu.scss';
 
@@ -14,14 +16,21 @@ const menuData = {
     },
 };
 
-const Menu = (props) => (
-    <ul className="app-menu">
-        {menuData.all().map((item) =>
-            <li className={"app-menu__item"} key={"menu_" + item.id}>
-                <Link to={item.ref} className={item.fa}>{item.title}</Link>
-            </li>
-        )}
-    </ul>
-);
+const Menu = ({className}) => {
+    const classNames = cn(className, "menu");
+    return (
+        <ul className={classNames}>
+            {menuData.all().map((item) =>
+                <li className="menu__item" key={"menu_" + item.id}>
+                    <Link to={item.ref} className={item.fa}>{item.title}</Link>
+                </li>
+            )}
+        </ul>
+    );
+};
+
+Menu.propTypes = {
+    className: PropTypes.string
+};
 
 export default Menu;
