@@ -2,7 +2,6 @@ let str = 'abacus abdomen abdominal abide abiding ability ablaze able abnormal a
 
 const wordList = [] = str.split(' ');
 
-// Обнулим переменную, чтобы не хранить в памяти ДЛИННУЮ строку
-str = null;
+str = null; // Обнулим переменную, чтобы не хранить в памяти ДЛИННУЮ строку
 
 export default wordList;

@@ -29,7 +29,7 @@ class Word {
         };
         this.handleWheel = (e) => {
             e.preventDefault();
-            if (!e.target.className.includes("wb__word")) return;
+            if (!e.target.className.includes("wv__word")) return;
             e.deltaY > 0 ? this.PlusWord() : this.MinusWord();
         };
     }
@@ -38,7 +38,7 @@ class Word {
         return this._id;
     }
 
-    // @computed
+    @computed
     get index() {
         return this._index;
     }
@@ -47,52 +47,52 @@ class Word {
         this._index = (value >= 0 && value < wordList.length) ? value : 0;
     };
 
-    // @computed
+    @computed
     get code() {
         return Word.indexToCode(this._index);
     }
 
-    // @computed
+    @computed
     get prev2word() {
         return Word.getWord(Word.getPrevIndex(Word.getPrevIndex(this._index)));
     }
 
-    // @computed
+    @computed
     get prev1word() {
         return Word.getWord(Word.getPrevIndex(this._index));
     }
 
-    // @computed
+    @computed
     get prev2index() {
         return Word.getPrevIndex(Word.getPrevIndex(this._index));
     }
 
-    // @computed
+    @computed
     get prev1index() {
         return Word.getPrevIndex(this._index);
     }
 
-    // @computed
+    @computed
     get word() {
         return Word.getWord(this._index);
     }
 
-    // @computed
+    @computed
     get next1index() {
         return Word.getNextIndex(this._index);
     }
 
-    // @computed
+    @computed
     get next2index() {
         return Word.getNextIndex(Word.getNextIndex(this._index));
     }
 
-    // @computed
+    @computed
     get next1word() {
         return Word.getWord(Word.getNextIndex(this._index));
     }
 
-    // @computed
+    @computed
     get next2word() {
         return Word.getWord(Word.getNextIndex(Word.getNextIndex(this._index)));
     }

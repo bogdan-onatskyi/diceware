@@ -1,31 +1,25 @@
 import React from 'react';
 import {Provider} from 'mobx-react';
 
-import Header from '../components/header/header';
-import Menu from '../components/menu/menu';
-import WordBoxContainer from '../components/wordboxes/wordbox';
-import WordCountButtons from '../components/wordcount-buttons/wordcount-buttons';
-import PassPhrase from '../components/passphrase/passphrase';
-import Footer from '../components/footer/footer';
+import Header from './components/header/header';
+import Menu from './components/menu/menu';
+import IndexController from '../controllers/index-controller';
+import Footer from './components/footer/footer';
 
-import wordStore from '../stores/wordstore';
+import passwordObject from '../models/password-object';
 
 import './index.scss';
 
-wordStore.init(8, 5);
+passwordObject.init(2, 8);
 
-const stores = {wordStore};
+const stores = {passwordObject};
 
 const Index = props => (
     <Provider {...stores}>
         <div className="app">
             <Header text="Генератор diceware паролей"/>
             <Menu/>
-            <div className="app__content">
-                <WordBoxContainer/>
-                <WordCountButtons/>
-                <PassPhrase/>
-            </div>
+            <IndexController passwordObject={passwordObject}/>
             <Footer/>
         </div>
     </Provider>

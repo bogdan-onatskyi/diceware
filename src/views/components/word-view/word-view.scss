@@ -1,24 +1,20 @@
-@import "../../vars";
+@import "../../../vars";
 
-.words-container {
-    padding: 10px;
-}
-
-.wb {
+.wv {
     @include bordered_box;
     display: inline-block;
+    width: $width__word-view;
     margin: $margin;
     padding: $padding;
-    width: $width__word-container;
 
     &__word {
-        color: $color__text;
         display: block;
-        font: 13pt/13pt serif;
         margin: $margin auto;
+        font: 13pt/13pt serif;
+        color: $color__text;
         &:hover {
-            cursor: pointer;
             opacity: 1;
+            cursor: pointer;
         }
         &--prev2, &--next2 {
             opacity: 0.1;
@@ -27,9 +23,9 @@
             opacity: 0.2;
         }
         &--current {
+            opacity: 1;
             color: white;
             font-weight: bold;
-            opacity: 1;
             &:hover {
                 cursor: text;
             }
@@ -37,15 +33,15 @@
     }
 
     &__code {
-        background: url("./sprite25.png"), no-repeat;
         display: block;
-        margin: auto;
-        vertical-align: middle;
+        background: url("sprite25.png"), no-repeat;
+        //margin: auto;
 
         &--common {
             display: inline-block;
             height: 25px;
             width: 25px;
+            vertical-align: middle;
         }
 
         @for $i from 1 through 6 {
