@@ -5,9 +5,17 @@ import wordList from './word-list';
 class Word {
     @observable _index = 0;
 
-    constructor(wordBoxId) {
-        this._id = wordBoxId;
-        this._index = Word.getRandomIndex();
+    _wordListFiltered = [];
+    _indexFiltered = [];
+    // _filter = '';
+
+    constructor(wordViewId) {
+        this._wordViewId = wordViewId;
+        this._index = this.getRandomIndex();
+
+        this._filter = '';
+        this.filter = '';
+
         this.handleClick = (e) => {
             const handler = {
                 "prev2": () => this.ResetWord(this.prev2index),
@@ -33,8 +41,36 @@ class Word {
         };
     }
 
-    get id() {
-        return this._id;
+    get isFiltered() {
+        return this._filter !== (undefined || '');
+    }
+
+    get filter() {
+        return this._filter;
+    }
+
+    set filter(value) {
+        this._filter = value;
+        this.setWordListFiltered();
+    }
+
+    setWordListFiltered() {
+        if (this.isFiltered) {
+            this._wordListFiltered = wordList;
+            this._indexFiltered = null;
+        } else {
+            wordList.forEach((word, i) => {
+                    if (word.startsWith(this.filter)) {
+                        this._wordListFiltered.push(word);
+                        this._indexFiltered.push(i);
+                    }
+                }
+            );
+        }
+    }
+
+    get wordViewId() {
+        return this._wordViewId;
     }
 
     get index() {
@@ -42,62 +78,64 @@ class Word {
     }
 
     set index(value) {
-        this._index = (value >= 0 && value < wordList.length) ? value : 0;
+        this._index = (value >= this.minIndex && value <= this.maxIndex)
+            ? value
+            : 0;
     };
 
     get code() {
-        return Word.indexToCode(this._index);
+        return Word.indexToCode(this.index);
     }
 
     get prev2word() {
-        return Word.getWord(Word.getPrevIndex(Word.getPrevIndex(this._index)));
+        return this.getWord(this.getPrevIndex(this.getPrevIndex(this.index)));
     }
 
     get prev1word() {
-        return Word.getWord(Word.getPrevIndex(this._index));
+        return this.getWord(this.getPrevIndex(this.index));
     }
 
     get prev2index() {
-        return Word.getPrevIndex(Word.getPrevIndex(this._index));
+        return this.getPrevIndex(this.getPrevIndex(this.index));
     }
 
     get prev1index() {
-        return Word.getPrevIndex(this._index);
+        return this.getPrevIndex(this.index);
     }
 
     get word() {
-        return Word.getWord(this._index);
+        return this.getWord(this.index);
     }
 
     get next1index() {
-        return Word.getNextIndex(this._index);
+        return this.getNextIndex(this.index);
     }
 
     get next2index() {
-        return Word.getNextIndex(Word.getNextIndex(this._index));
+        return this.getNextIndex(this.getNextIndex(this.index));
     }
 
     get next1word() {
-        return Word.getWord(Word.getNextIndex(this._index));
+        return this.getWord(this.getNextIndex(this.index));
     }
 
     get next2word() {
-        return Word.getWord(Word.getNextIndex(Word.getNextIndex(this._index)));
+        return this.getWord(this.getNextIndex(this.getNextIndex(this.index)));
     }
 
     @action('Previous word was selected')
     MinusWord() {
-        this.index = Word.getPrevIndex(this.index);
+        this.index = this.getPrevIndex(this.index);
     }
 
     @action('New random word was generated')
     ResetWord(index = 0) {
-        this.index = index !== 0 ? index : Word.getRandomIndex();
+        this.index = (index !== 0) ? index : this.getRandomIndex();
     };
 
     @action('Next word was selected')
     PlusWord() {
-        this.index = Word.getNextIndex(this.index);
+        this.index = this.getNextIndex(this.index);
     }
 
     static indexToCode(index) {
@@ -132,26 +170,48 @@ class Word {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    static getRandomIndex() {
-        return Word.codeToIndex(Word.getRandomCode());
-    }
-
     static getRandomCode() {
         let code = '';
         for (let i = 5; i > 0; i--) code += Word.getRandomInt(1, 6);
         return code;
     }
 
-    static getPrevIndex(index) {
-        return index > 0 ? index - 1 : wordList.length - 1;
+    get minIndex() {
+        return this.isFiltered
+            ? this._indexFiltered[0]
+            : 0;
     }
 
-    static getNextIndex(index) {
-        return index < wordList.length - 1 ? index + 1 : 0;
+    get maxIndex() {
+        return this.isFiltered
+            ? this._indexFiltered[this._indexFiltered.length - 1]
+            : wordList.length - 1;
     }
 
-    static getWord(index) {
-        return wordList[(index >= 0 && index < wordList.length) ? index : 0].toUpperCase();
+    getPrevIndex(index) {
+        return index > this.minIndex
+            ? index - 1
+            : this.maxIndex;
+    }
+
+    getRandomIndex() {
+        return this.isFiltered
+            ? Word.getRandomInt(this.minIndex, this.maxIndex)
+            : Word.codeToIndex(Word.getRandomCode());
+    }
+
+    getNextIndex(index) {
+        return index < this.maxIndex
+            ? index + 1
+            : this.minIndex;
+    }
+
+    getWord(index) {
+        return this._wordListFiltered[
+            index >= this.minIndex && index <= this.maxIndex
+                ? index
+                : this.minIndex
+            ].toUpperCase();
     }
 }
 

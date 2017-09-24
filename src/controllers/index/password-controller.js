@@ -6,13 +6,13 @@ import PasswordView from '../../views/components/password-view/password-view';
 
 const PasswordController = observer(({passwordObject}) => {
     return (
-        <PasswordView isPassboxOpened={passwordObject.isPassboxOpened}
+        <PasswordView password={passwordObject.password}
+                      isPassboxOpened={passwordObject.isPassboxOpened}
                       toggleIsPassboxOpened={passwordObject.toggleIsPassboxOpened}
                       separatedPassword={passwordObject.separatedPassword}
                       separators={passwordObject.separators}
                       toggleCAPS={passwordObject.toggleCAPS}
                       isCAPS={passwordObject.isCAPS}
-                      password={passwordObject.password}
                       caps={passwordObject.caps}
         />
     );
