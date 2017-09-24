@@ -3,9 +3,7 @@
 html {
     background: $bg-color + 50;
 
-    display: -webkit-flex;
     display: flex;
-    flex: auto;
     flex-direction: column;
     min-height: 100%;
 
@@ -13,7 +11,6 @@ html {
 }
 
 body {
-    display: -webkit-flex;
     display: flex;
     flex: auto;
     flex-direction: column;
@@ -25,7 +22,6 @@ body {
 }
 
 #app, [data-reactroot] {
-    display: -webkit-flex;
     display: flex;
     flex: auto;
     flex-direction: column;
@@ -51,7 +47,6 @@ a {
 }
 
 .app {
-    display: -webkit-flex;
     display: flex;
     flex: auto;
     flex-direction: column;

@@ -3,7 +3,7 @@ import {observable, computed, action} from 'mobx';
 import wordList from './word-list';
 
 class Word {
-    @observable _index;
+    @observable _index = 0;
 
     constructor(wordBoxId) {
         this._id = wordBoxId;
@@ -21,7 +21,6 @@ class Word {
             };
             for (let prop in handler) {
                 if (e.target.className.includes(prop)) {
-                    // e.preventDefault();
                     handler[prop]();
                     return;
                 }
@@ -38,7 +37,6 @@ class Word {
         return this._id;
     }
 
-    @computed
     get index() {
         return this._index;
     }
@@ -47,52 +45,42 @@ class Word {
         this._index = (value >= 0 && value < wordList.length) ? value : 0;
     };
 
-    @computed
     get code() {
         return Word.indexToCode(this._index);
     }
 
-    @computed
     get prev2word() {
         return Word.getWord(Word.getPrevIndex(Word.getPrevIndex(this._index)));
     }
 
-    @computed
     get prev1word() {
         return Word.getWord(Word.getPrevIndex(this._index));
     }
 
-    @computed
     get prev2index() {
         return Word.getPrevIndex(Word.getPrevIndex(this._index));
     }
 
-    @computed
     get prev1index() {
         return Word.getPrevIndex(this._index);
     }
 
-    @computed
     get word() {
         return Word.getWord(this._index);
     }
 
-    @computed
     get next1index() {
         return Word.getNextIndex(this._index);
     }
 
-    @computed
     get next2index() {
         return Word.getNextIndex(Word.getNextIndex(this._index));
     }
 
-    @computed
     get next1word() {
         return Word.getWord(Word.getNextIndex(this._index));
     }
 
-    @computed
     get next2word() {
         return Word.getWord(Word.getNextIndex(Word.getNextIndex(this._index)));
     }

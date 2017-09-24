@@ -11,7 +11,7 @@ import './index-controller.scss';
 const IndexController = observer(({passwordObject}) => {
     return (
         <div className="app__content">
-            <div className="wv-container">
+            <div className="words-view">
                 {passwordObject.wordArray.map((wordObject, i) =>
                     <WordController wordObject={wordObject} key={"WordController_" + i + 1}/>)}
                 <CountButtonsController passwordObject={passwordObject}/>

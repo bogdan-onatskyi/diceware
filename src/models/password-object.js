@@ -1,21 +1,17 @@
-import {observable, computed, action} from 'mobx';
+import {observable, computed, action, reaction} from 'mobx';
 
 import Word from './word-object';
 
 class Password {
-    @observable usedWords;
-    @observable maxWords;
+    @observable usedWords = 5;
+    @observable maxWords = 8;
 
-    @observable wordArray;
-    @observable isPassboxOpened;
-    // @observable caps;
+    @observable wordArray = [];
+
+    @observable isPassboxOpened = false;
+    @observable caps = 0;
 
     constructor() {
-        this.usedWords = 5;
-        this.maxWords = 8;
-        this.wordArray = [];
-
-        this.caps = 0;
         this.separators = ['-', '_', ':', '.', '', ' '];
         this.separators.forEach((s, i) => {
             this.caps += Math.pow(2, i);
@@ -26,7 +22,6 @@ class Password {
             this.caps = this.caps ^ Math.pow(2, i);
         };
 
-        this.isPassboxOpened = true;
         this.toggleIsPassboxOpened = () => {
             this.isPassboxOpened = !this.isPassboxOpened;
         };
@@ -45,18 +40,15 @@ class Password {
                 this.wordArray[i] = new Word(i);
         };
 
-        this.separatePassword = (separator, i = -1) => {
+        this.separatedPassword = (separator, i = -1) => {
+            const passArray = [];
+            this.wordArray.forEach((wordObject) => passArray.push(wordObject.word));
+            const passStr = passArray.join(separator);
+
             const isUpperCase = (i === -1) ? true : this.isCAPS(i);
-            const s = this.password.join(separator);
-            return isUpperCase ? s.toUpperCase() : s.toLowerCase();
+            return isUpperCase ? passStr.toUpperCase() : passStr.toLowerCase();
         };
-
     }
-
-    // @action('isCAPS')
-    // isCAPS(i) {
-    //     return this.caps & Math.pow(2, i);
-    // };
 
     init(usedWords = 5, maxWords = 8) {
         this.usedWords = usedWords;
@@ -66,20 +58,8 @@ class Password {
 
     @computed
     get password() {
-        const pass = [];
-        this.wordArray.forEach((wordObject) => pass.push(wordObject.word));
-        return pass;
+        return this.separatedPassword(' ');
     }
-
-    // @computed
-    // get caps() {
-    //     return this.caps;
-    // }
-
-    // @action('Caps state changed')
-    // isCAPS(i) {
-    //     return this._isCAPS(i);
-    // }
 }
 
 export {Password};

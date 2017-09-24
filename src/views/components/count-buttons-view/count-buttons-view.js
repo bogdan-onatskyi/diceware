@@ -16,10 +16,10 @@ const CountButtonsView = ({usedWords, maxWords, handleUsedWords, handleResetAllW
     }
 
     return (
-        <div className="buttons-container">
+        <div className="buttons-view">
             {countButtons}
             <div>
-                <Button onClick={handleResetAllWords}
+                <Button onClick={handleResetAllWords} 
                         type="reset-all-words" text="Изменить все"/>
             </div>
         </div>
