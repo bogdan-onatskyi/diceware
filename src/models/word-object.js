@@ -3,25 +3,40 @@ import {observable, computed, action} from 'mobx';
 import wordList from './word-list';
 
 class Word {
-    @observable _index = 0;
+    @observable _index;
+    @observable editorOpened;
+    @observable _filter;
 
     constructor(wordViewId) {
         this._filter = '';
         this._indexFiltered = [];
-        this._wordViewId = wordViewId;
+        this._wordViewId = wordViewId + 1;
+
+        this.editorOpened = false;
+        this.toggleEditor = () => this.editorOpened = !this.editorOpened;
 
         this.filter = '';
         this._index = this.getRandomIndex();
-        this.handleClick = (e) => {
+        this.handlerClick = (e) => {
             const handler = {
-                "prev2": () => this.ResetWord(this.prev2index),
-                "prev1": () => this.ResetWord(this.prev1index),
-                "next1": () => this.ResetWord(this.next1index),
-                "next2": () => this.ResetWord(this.next2index),
-                "minus": () => this.MinusWord(),
-                "reset-word": () => this.ResetWord(),
-                "plus": () => this.PlusWord(),
-                "code": () => this.ResetWord()
+                "prev2": () => this.resetWord(this.prev2index),
+                "prev1": () => this.resetWord(this.prev1index),
+                "next1": () => this.resetWord(this.next1index),
+                "next2": () => this.resetWord(this.next2index),
+                // "minus": () => this.minusWord(),
+                "minus": () => {
+                    console.log(this.filter);
+                    this.filter = this.filter.slice(0, -1);
+                    console.log(this.filter);
+                },
+                "editor": () => this.toggleEditor(),
+                "plus": () => {
+                    console.log(this.filter);
+                    this.filter += 'a';
+                    console.log(this.filter);
+                },
+                // "plus": () => this.plusWord(),
+                "code": () => this.resetWord()
             };
             for (let prop in handler) {
                 if (e.target.className.includes(prop)) {
@@ -30,31 +45,39 @@ class Word {
                 }
             }
         };
-        this.handleWheel = (e) => {
+        this.handlerWheel = (e) => {
             e.preventDefault();
             if (!e.target.className.includes("wv__word")) return;
-            e.deltaY > 0 ? this.PlusWord() : this.MinusWord();
+            e.deltaY > 0 ? this.plusWord() : this.minusWord();
         };
+        this.handlerFilter = (letter) => this.filter += letter;
     }
 
     get isFiltered() {
         return this._filter !== (undefined || '');
     }
 
+    @computed
     get filter() {
+        console.log('filter get: ' + this._filter);
         return this._filter;
     }
 
     set filter(value) {
         this._filter = value;
+        console.log('filter set: ' + this._filter);
         this.setWordListFiltered();
     }
 
     setWordListFiltered() {
-        if (this.isFiltered) wordList.forEach((word, i) => {
-                if (word.startsWith(this.filter)) this._indexFiltered.push(i);
-            }
-        ); else this._indexFiltered = null;
+        if (this.isFiltered) {
+            this._indexFiltered.splice(0);
+            wordList.forEach((word, i) => {
+                    if (word.startsWith(this.filter)) this._indexFiltered.push(i);
+                }
+            );
+            if (this._indexFiltered.length === 0) this._indexFiltered[0] = 0;
+        } else this._indexFiltered.splice(0);
     }
 
     get wordViewId() {
@@ -112,17 +135,17 @@ class Word {
     }
 
     @action('Previous word was selected')
-    MinusWord() {
+    minusWord() {
         this.index = this.getPrevIndex(this.index);
     }
 
     @action('New random word was generated')
-    ResetWord(index = 0) {
+    resetWord(index = 0) {
         this.index = (index !== 0) ? index : this.getRandomIndex();
     };
 
     @action('Next word was selected')
-    PlusWord() {
+    plusWord() {
         this.index = this.getNextIndex(this.index);
     }
 

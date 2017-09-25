@@ -1,0 +1,93 @@
+@import "../../../../vars";
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    right: 20%;
+    bottom: 20%;
+
+    width: 265px;
+    min-width: 265px;
+    //min-height: 100px;
+
+    background: $bg-color__dialog;
+    opacity: 0.95;
+    border: 2px solid $color;
+    margin: -2px;
+    &__title {
+        flex: 0 0 25px;
+        width: 100%;
+        background: $color;
+
+        font: 10pt/10pt arial;
+        overflow: hidden;
+        line-height: 25px;
+        &--content {
+            padding-left: 10px;
+        }
+    }
+    &__content {
+        flex: 1 0 90%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        &--children {
+            padding: 15px;
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//.modal-dialog {
+//    position: absolute;
+//    &__overlay {
+//        top: 0;
+//        left: 0;
+//        width: 100%;
+//        height: 100%;
+//        //border: dotted 1px red;
+//    }
+//    &__content {
+//        width: $min-width__popup;
+//        min-width: $min-width__popup;
+//        top: 100px;
+//        //top: 10%;
+//        left: 10%;
+//        background: $bg-color__pass-editor;
+//        opacity: 0.95;
+//        border: 2px solid $color;
+//        margin: -2px;
+//        padding: 15px;
+//        text-align: center;
+//    }
+//}

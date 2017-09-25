@@ -12,6 +12,17 @@ class Password {
     @observable caps = 0;
 
     constructor() {
+        this.handleResetAllWords = () => {
+            for (let i = 0; i < this.usedWords; i++)
+                this.wordArray[i] = new Word(i);
+        };
+
+        this.init = (usedWords = 5, maxWords = 8) => {
+            this.usedWords = usedWords;
+            this.maxWords = maxWords;
+            this.handleResetAllWords();
+        };
+
         this.separators = ['-', '_', ':', '.', '', ' '];
         this.separators.forEach((s, i) => {
             this.caps += Math.pow(2, i);
@@ -35,11 +46,6 @@ class Password {
                 this.usedWords = id;
             };
 
-        this.handleResetAllWords = () => {
-            for (let i = 0; i < this.usedWords; i++)
-                this.wordArray[i] = new Word(i);
-        };
-
         this.separatedPassword = (separator, i = -1) => {
             const passArray = [];
             this.wordArray.forEach((wordObject) => passArray.push(wordObject.word));
@@ -48,12 +54,6 @@ class Password {
             const isUpperCase = (i === -1) ? true : this.isCAPS(i);
             return isUpperCase ? passStr.toUpperCase() : passStr.toLowerCase();
         };
-    }
-
-    init(usedWords = 5, maxWords = 8) {
-        this.usedWords = usedWords;
-        this.maxWords = maxWords;
-        this.handleResetAllWords();
     }
 
     @computed

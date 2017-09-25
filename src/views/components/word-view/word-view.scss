@@ -6,6 +6,7 @@
     width: $width__word-view;
     margin: $margin;
     padding: $padding;
+    text-align: center;
 
     &__word {
         display: block;
@@ -35,7 +36,6 @@
     &__code {
         display: block;
         background: url("sprite25.png"), no-repeat;
-        //margin: auto;
 
         &--common {
             display: inline-block;

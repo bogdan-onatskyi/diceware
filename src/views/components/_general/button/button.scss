@@ -13,9 +13,9 @@
     &--disabled {
         opacity: 0.1;
     }
-    &--reset-word {
+    &--editor {
         margin: 0 1px;
-        width: $width__reset-button;
+        width: $width__editor-button;
     }
     &--count {
         margin: $margin 1px;
@@ -55,8 +55,8 @@
     &--letter {
         margin: 1px;
     }
-    &--popup-close {
+    &--dialog-close {
         margin: 5px;
-        width: $width__popup-close-button;
+        width: $width__dialog-close-button;
     }
 }

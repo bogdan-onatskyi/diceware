@@ -18,7 +18,7 @@ $color__menu: $bg-color;
 $bg-color__menu: $color__text;
 $bg-color__footer: $bg-color - 10;
 $bg-color__contacts: $bg-color__footer;
-$bg-color__pass-editor: $bg-color__footer;
+$bg-color__dialog: $bg-color__footer;
 
 $height__px: 25px;
 $height__menu: 30px;
@@ -28,13 +28,13 @@ $height__pass-input: $height__px;
 
 $width__word-view: 125px;
 $width__box: $width__word-view + $border * 2 + $padding * 2;
-$width__reset-button: 75px;
+$width__editor-button: 75px;
 $width__reset-all-words-button: 100px;
 $width__pass-text-button: 25px;
 $width__pass-box-button: 50px;
-$width__popup-close-button: 75px;
+$width__dialog-close-button: 75px;
 
-$min-width__app: 270px;
+$min-width__app: 320px;
 $min-width__popup: $min-width__app * 0.8 + 15px;
 $min-width__word-container: 100px;
 
