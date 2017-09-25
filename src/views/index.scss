@@ -1,11 +1,9 @@
-@import "./../vars";
+@import "../vars";
 
 html {
     background: $bg-color + 50;
 
-    display: -webkit-flex;
     display: flex;
-    flex: auto;
     flex-direction: column;
     min-height: 100%;
 
@@ -13,7 +11,6 @@ html {
 }
 
 body {
-    display: -webkit-flex;
     display: flex;
     flex: auto;
     flex-direction: column;
@@ -25,11 +22,9 @@ body {
 }
 
 #app, [data-reactroot] {
-    display: -webkit-flex;
     display: flex;
     flex: auto;
     flex-direction: column;
-    min-height: 100%;
 }
 
 h1 {
@@ -37,89 +32,68 @@ h1 {
 }
 
 h2 {
-    margin: 8px
+    color: whitesmoke;
+    margin: 10px;
 }
 
 p {
     margin: 5px;
     padding: 5px;
-    text-align: justify;
+}
+
+a {
+    color: $color__link;
+    text-decoration: none;
 }
 
 .app {
-    display: -webkit-flex;
     display: flex;
     flex: auto;
     flex-direction: column;
     min-height: 100%;
     width: 100%;
-    min-width: 270px;
+    min-width: $min-width__app;
     justify-content: center;
     align-items: center;
 
-    color: $text-color;
+    color: $color__text;
     text-align: center;
     margin: 5px auto;
-    &__header {
-        flex: 0 0 auto;
-        width: 100%;
-
-        background: $bg-color;
-    }
     &__content {
         flex: 1 0 auto;
         width: 100%;
-        max-width: 100%;
-
         background: $bg-color;
-        //box-shadow: 0 0 7px $text-color;
         &--info {
+            padding: 10px 0;
             font: 11pt/11pt Arial;
-            h2 {
-                color: white;
+            p {
+                text-align: justify;
             }
         }
-        &--contacts {
+        &--contacts, &--oops {
             font: 11pt/11pt Arial;
             display: flex;
             justify-content: center;
             &-box {
-                flex: 0 1 60%;
+                flex: 0 1 50%;
                 align-self: center;
-                border: 1px solid;
-                background: $contacts-bg-color;
+                background: $bg-color__contacts;
                 padding: 10px;
                 @include bordered_box;
-                justify-content: flex-start;
-                p {
+                .row {
                     display: flex;
                     flex-wrap: wrap;
-                }
-                .col1 {
-                    flex: 0 0 30%;
-                }
-                .col2 {
-                    flex: 1 1 70%;
-                    color: white;
-                    a {
-                        text-decoration: none;
+                    margin: 10px;
+                    text-align: left;
+                    .col1 {
+                        flex: 0 0 30%;
+                    }
+                    .col2 {
+                        flex: 1 1 70%;
+                        color: $color__link;
                     }
                 }
             }
         }
-    }
-    &__footer {
-        flex: 0 0 auto;
-        width: 100%;
-
-        background: $footer-bg-color;
-        padding: $padding/2 0;
-        &--icon {
-            @include fa($fa-phone-square, $text-color, 17px);
-            vertical-align: text-top;
-        }
-    }
-    a {
-        color: inherit;
     }
 }

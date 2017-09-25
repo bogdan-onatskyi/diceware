@@ -1,0 +1,39 @@
+@import "../../../vars";
+
+.menu {
+    background-color: $bg-color__menu;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    line-height: 0;
+    &__item {
+        color: $color__menu;
+        display: inline-block;
+        overflow: hidden;
+        &:hover {
+            background: $color__menu;
+            color: $bg-color__menu;
+        }
+        a {
+            color: inherit;
+            display: block;
+            line-height: $height__menu;
+            height: 100%;
+            padding: 0 10px;
+        }
+    }
+}
+
+$height-decrement: 10px;
+.fa-home::before {
+    @include fa($fa-home, $color__menu - 15, $height__menu - $height-decrement);
+    margin-right: 5px;
+}
+.fa-info-circle::before {
+    @include fa($fa-info-circle, $color__menu - 15, $height__menu - $height-decrement);
+    margin-right: 5px;
+}
+.fa-phone-square::before {
+    @include fa($fa-phone-square, $color__menu - 15, $height__menu - $height-decrement);
+    margin-right: 5px;
+}
