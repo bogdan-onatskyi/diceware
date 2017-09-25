@@ -5,17 +5,13 @@ import wordList from './word-list';
 class Word {
     @observable _index = 0;
 
-    _wordListFiltered = [];
-    _indexFiltered = [];
-    // _filter = '';
-
     constructor(wordViewId) {
-        this._wordViewId = wordViewId;
-        this._index = this.getRandomIndex();
-
         this._filter = '';
-        this.filter = '';
+        this._indexFiltered = [];
+        this._wordViewId = wordViewId;
 
+        this.filter = '';
+        this._index = this.getRandomIndex();
         this.handleClick = (e) => {
             const handler = {
                 "prev2": () => this.ResetWord(this.prev2index),
@@ -55,18 +51,10 @@ class Word {
     }
 
     setWordListFiltered() {
-        if (this.isFiltered) {
-            this._wordListFiltered = wordList;
-            this._indexFiltered = null;
-        } else {
-            wordList.forEach((word, i) => {
-                    if (word.startsWith(this.filter)) {
-                        this._wordListFiltered.push(word);
-                        this._indexFiltered.push(i);
-                    }
-                }
-            );
-        }
+        if (this.isFiltered) wordList.forEach((word, i) => {
+                if (word.startsWith(this.filter)) this._indexFiltered.push(i);
+            }
+        ); else this._indexFiltered = null;
     }
 
     get wordViewId() {
@@ -207,7 +195,7 @@ class Word {
     }
 
     getWord(index) {
-        return this._wordListFiltered[
+        return wordList[
             index >= this.minIndex && index <= this.maxIndex
                 ? index
                 : this.minIndex
