@@ -4,35 +4,38 @@ import PropTypes from 'prop-types';
 import ModalDialog from '../_general/modal-dialog/modal-dialog';
 import Button from '../_general/button/button';
 
-const EditorDialog = ({wordViewId, toggleEditor, handlerFilter, wordView}) => {
-
+const EditorDialog = ({toggleEditor, handleFilter, handleCountWords, filter, handleBackspace, wordView}) => {
     let key = 1;
     const alfabet = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
 
-    const letterButtuns = [] = alfabet.map((row, i) =>
+    const charButtuns = [] = alfabet.map((row, i) =>
         <div key={'row_' + i}>
-            {row.split('').map((letter) =>
-                <Button type="letter" text={letter} key={'letter_' + key++}
-                        onClick={handlerFilter.bind(this, letter)}
-                />
+            {row.split('').map((char) =>
+                <Button type="char" text={char} key={'char_' + key++}
+                        disabled={handleCountWords(char) === 0}
+                        onClick={handleFilter.bind(this, char)}/>
             )}
         </div>
     );
 
     return (
-        <ModalDialog title={"Редактор " + wordViewId + " слова в пароле"}
-                     isOpen={true}
-                     handlerClose={toggleEditor}>
-
+        <ModalDialog title={"Редактор слова"} isOpen={true} handlerClose={toggleEditor}>
             {wordView}
-            {letterButtuns}
+            {charButtuns}
+            <div>
+                <Button type="back-space" text="backspace"
+                        disabled={filter === ''}
+                        onClick={handleBackspace}/>
+            </div>
         </ModalDialog>);
 };
 
 EditorDialog.propTypes = {
-    wordViewId: PropTypes.number,
     toggleEditor: PropTypes.func,
-    handlerFilter: PropTypes.func,
+    handleFilter: PropTypes.func,
+    handleCountWords: PropTypes.func,
+    filter: PropTypes.string,
+    handleBackspace: PropTypes.func,
     wordView: PropTypes.element
 };
 

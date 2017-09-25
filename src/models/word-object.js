@@ -13,29 +13,24 @@ class Word {
         this._wordViewId = wordViewId + 1;
 
         this.editorOpened = false;
-        this.toggleEditor = () => this.editorOpened = !this.editorOpened;
+        this.toggleEditor = () => {
+            this.editorOpened = !this.editorOpened;
+        };
 
         this.filter = '';
         this._index = this.getRandomIndex();
-        this.handlerClick = (e) => {
+
+        this.handleClick = (e) => {
             const handler = {
                 "prev2": () => this.resetWord(this.prev2index),
                 "prev1": () => this.resetWord(this.prev1index),
+                "filter": () => this.toggleEditor(),
+                "current": () => this.toggleEditor(),
                 "next1": () => this.resetWord(this.next1index),
                 "next2": () => this.resetWord(this.next2index),
-                // "minus": () => this.minusWord(),
-                "minus": () => {
-                    console.log(this.filter);
-                    this.filter = this.filter.slice(0, -1);
-                    console.log(this.filter);
-                },
-                "editor": () => this.toggleEditor(),
-                "plus": () => {
-                    console.log(this.filter);
-                    this.filter += 'a';
-                    console.log(this.filter);
-                },
-                // "plus": () => this.plusWord(),
+                "minus": () => this.minusWord(),
+                "reset-word": () => this.resetWord(),
+                "plus": () => this.plusWord(),
                 "code": () => this.resetWord()
             };
             for (let prop in handler) {
@@ -45,12 +40,34 @@ class Word {
                 }
             }
         };
-        this.handlerWheel = (e) => {
+
+        this.handleWheel = (e) => {
             e.preventDefault();
             if (!e.target.className.includes("wv__word")) return;
             e.deltaY > 0 ? this.plusWord() : this.minusWord();
         };
-        this.handlerFilter = (letter) => this.filter += letter;
+
+        this.handleFilter = (letter) => {
+            this.filter += letter;
+        };
+
+        this.handleCountWords = (char) => {
+            return this.countWords(this.filter + char);
+        };
+
+        this.handleBackspace = () => {
+            this.filter = this.filter.slice(0, -1);
+        };
+    }
+
+    countWords(startsWith) {
+        if (startsWith === '') return wordList.length;
+
+        let counter = 0;
+        wordList.forEach((word) => {
+            if (word.startsWith(startsWith)) counter++;
+        });
+        return counter;
     }
 
     get isFiltered() {
@@ -59,13 +76,11 @@ class Word {
 
     @computed
     get filter() {
-        console.log('filter get: ' + this._filter);
         return this._filter;
     }
 
     set filter(value) {
         this._filter = value;
-        console.log('filter set: ' + this._filter);
         this.setWordListFiltered();
     }
 
@@ -77,6 +92,7 @@ class Word {
                 }
             );
             if (this._indexFiltered.length === 0) this._indexFiltered[0] = 0;
+            this.index = this._indexFiltered[0];
         } else this._indexFiltered.splice(0);
     }
 
@@ -84,6 +100,7 @@ class Word {
         return this._wordViewId;
     }
 
+    @computed
     get index() {
         return this._index;
     }
@@ -94,16 +111,21 @@ class Word {
             : 0;
     };
 
+    @computed
     get code() {
         return Word.indexToCode(this.index);
     }
 
+    // @computed
     get prev2word() {
-        return this.getWord(this.getPrevIndex(this.getPrevIndex(this.index)));
+        const prevWord = this.getWord(this.getPrevIndex(this.getPrevIndex(this.index)));
+        return this.word === prevWord ? '' : prevWord;
     }
 
+    // @computed
     get prev1word() {
-        return this.getWord(this.getPrevIndex(this.index));
+        const prevWord = this.getWord(this.getPrevIndex(this.index));
+        return this.word === prevWord ? '' : prevWord;
     }
 
     get prev2index() {
@@ -114,6 +136,7 @@ class Word {
         return this.getPrevIndex(this.index);
     }
 
+    @computed
     get word() {
         return this.getWord(this.index);
     }
@@ -126,12 +149,16 @@ class Word {
         return this.getNextIndex(this.getNextIndex(this.index));
     }
 
+    // @computed
     get next1word() {
-        return this.getWord(this.getNextIndex(this.index));
+        const nextWord = this.getWord(this.getNextIndex(this.index));
+        return this.word === nextWord ? '' : nextWord;
     }
 
+    // @computed
     get next2word() {
-        return this.getWord(this.getNextIndex(this.getNextIndex(this.index)));
+        const nextWord = this.getWord(this.getNextIndex(this.getNextIndex(this.index)));
+        return this.word === nextWord ? '' : nextWord;
     }
 
     @action('Previous word was selected')

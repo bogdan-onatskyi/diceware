@@ -17,11 +17,13 @@ const ModalDialog = ({title, isOpen, handlerClose, children}) => {
 
             <div className="modal__title">
                 <span className="modal__title--content">{title}</span>
+                <span className="modal__title--close-button"
+                      onClick={handlerClose}>&nbsp;&times;&nbsp;</span>
             </div>
             <div className="modal__content">
                 <div className="modal__content--children">
                     {children}
-                    <Button type="dialog-close" text="Закрыть" onClick={handlerClose}/>
+
                 </div>
             </div>
         </ReactModal>

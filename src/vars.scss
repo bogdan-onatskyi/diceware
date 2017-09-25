@@ -28,11 +28,11 @@ $height__pass-input: $height__px;
 
 $width__word-view: 125px;
 $width__box: $width__word-view + $border * 2 + $padding * 2;
-$width__editor-button: 75px;
+$width__reset-word-button: 75px;
 $width__reset-all-words-button: 100px;
 $width__pass-text-button: 25px;
 $width__pass-box-button: 50px;
-$width__dialog-close-button: 75px;
+$width__back-space-button: 75px;
 
 $min-width__app: 320px;
 $min-width__popup: $min-width__app * 0.8 + 15px;

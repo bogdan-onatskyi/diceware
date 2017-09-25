@@ -7,15 +7,17 @@
     overflow: hidden;
     height: $size__button;
     width: $size__button;
+    user-select: none;
+
     &--selected {
         opacity: 0.3;
     }
     &--disabled {
         opacity: 0.1;
     }
-    &--editor {
+    &--reset-word {
         margin: 0 1px;
-        width: $width__editor-button;
+        width: $width__reset-word-button;
     }
     &--count {
         margin: $margin 1px;
@@ -52,11 +54,17 @@
         margin: 5px;
         width: 75px;
     }
-    &--letter {
+    &--char {
         margin: 1px;
     }
-    &--dialog-close {
+    &--back-space {
         margin: 5px;
-        width: $width__dialog-close-button;
+        width: $width__back-space-button;
+    }
+    &--dialog-close {
+        text-align: right;
+        i {
+            @include fa($fa-clipboard, $bg-color, $height__pass-box-button - 10px);
+        }
     }
 }

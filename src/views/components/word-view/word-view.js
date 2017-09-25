@@ -8,20 +8,19 @@ import './word-view.scss';
 const WordView = ({
                       handleClick, handleWheel,
                       prev2word, prev1word, word, next1word, next2word,
-                      code, filter,
-                      id: wordViewId
+                      code, filter, wordViewId
                   }) => {
     let key = 1;
 
     return (
         <div className="wv" onClick={handleClick}>
             <div className="wv__word" onWheel={handleWheel}>
-                {filter !== '' && <div>Фильтр: {filter}*</div>}
-                {filter === '' && <div className="wv__word wv__word--prev2">{prev2word}</div>}
-                <div className="wv__word wv__word--prev1">{prev1word}</div>
-                <div className="wv__word wv__word--current">{word}</div>
-                <div className="wv__word wv__word--next1">{next1word}</div>
-                <div className="wv__word wv__word--next2">{next2word}</div>
+                {filter !== '' && <div>Фильтр: <span className="wv__word--filter">{filter}*</span></div>}
+                {filter === '' && <div className="wv__word wv__word--prev2">&nbsp;{prev2word}&nbsp;</div>}
+                <div className="wv__word wv__word--prev1">&nbsp;{prev1word}&nbsp;</div>
+                <div className="wv__word wv__word--current">&nbsp;{word}&nbsp;</div>
+                <div className="wv__word wv__word--next1">&nbsp;{next1word}&nbsp;</div>
+                <div className="wv__word wv__word--next2">&nbsp;{next2word}&nbsp;</div>
             </div>
             <div className="wv__code">
                 {code.split('').map((i) =>
@@ -31,7 +30,7 @@ const WordView = ({
             </div>
             <div>
                 <Button type="minus" text="-"/>
-                <Button type="editor" text="Редактор"/>
+                <Button type="reset-word" text="Изменить"/>
                 <Button type="plus" text="+"/>
             </div>
         </div>
