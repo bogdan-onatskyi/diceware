@@ -14,8 +14,8 @@ const IndexController = observer(({passwordObject}) => {
             <div className="words-view">
                 {passwordObject.wordArray.map((wordObject, i) =>
                     <WordController wordObject={wordObject} key={"WordController_" + i + 1}/>)}
-                <CountButtonsController passwordObject={passwordObject}/>
             </div>
+            <CountButtonsController passwordObject={passwordObject}/>
             <PasswordController passwordObject={passwordObject}/>
         </div>
     );

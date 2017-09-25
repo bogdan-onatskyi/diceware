@@ -2,5 +2,8 @@
 
 .words-view {
     padding: 10px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 

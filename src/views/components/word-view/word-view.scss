@@ -6,6 +6,8 @@
     width: $width__word-view;
     margin: $margin;
     padding: $padding;
+    text-align: center;
+    user-select: none;
 
     &__word {
         display: block;
@@ -15,6 +17,9 @@
         &:hover {
             opacity: 1;
             cursor: pointer;
+        }
+        &--filter {
+            color: white;
         }
         &--prev2, &--next2 {
             opacity: 0.1;
@@ -35,7 +40,6 @@
     &__code {
         display: block;
         background: url("sprite25.png"), no-repeat;
-        //margin: auto;
 
         &--common {
             display: inline-block;

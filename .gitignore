@@ -1,0 +1,7 @@
+/.git
+/.idea
+/dist
+/node_modules
+/src_tutor
+package-lock.json
+test.js

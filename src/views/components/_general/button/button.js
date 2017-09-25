@@ -4,13 +4,14 @@ import cn from 'classnames';
 
 import './button.scss';
 
-const Button = ({className, type, selected = false, disabled = false, text, ...elemProps}) => {
+const Button = ({className, type, selected = false, disabled = false, text, onClick, ...elemProps}) => {
     const classNames = cn(className, "button",
         {"button--selected": selected},
         {"button--disabled": disabled},
         {["button--" + type]: type !== undefined});
+    if (disabled) onClick = () => false;
     return (
-        <button className={classNames} {...elemProps}>
+        <button className={classNames} onClick={onClick} {...elemProps}>
             {text ? text : <i/>}
         </button>
     );
@@ -21,7 +22,8 @@ Button.propTypes = {
     type: PropTypes.string,
     selected: PropTypes.bool,
     disabled: PropTypes.bool,
-    text: PropTypes.string
+    text: PropTypes.string,
+    onClick: PropTypes.func
 };
 
 export default Button;
