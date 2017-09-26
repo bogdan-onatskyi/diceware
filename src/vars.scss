@@ -1,5 +1,4 @@
 @import "../node_modules/fontawesome-scss/fontAwesome";
-// @include fa($имя-иконки, цвет, размер)
 
 $border: 2px;
 
@@ -10,15 +9,18 @@ $padding: 10px;
 
 $color: #62b1d8;
 $bg-color: #2B3A42;
+$footer: $bg-color - 10;
 
 $color__text: $color;
 $color__link: lightgray;
 $color__menu: $bg-color;
+$color__tooltip: $color__link;
 
 $bg-color__menu: $color__text;
 $bg-color__footer: $bg-color - 10;
 $bg-color__contacts: $bg-color__footer;
 $bg-color__dialog: $bg-color__footer;
+$bg-color__tooltip: $footer;
 
 $height__px: 25px;
 $height__menu: 30px;

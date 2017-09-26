@@ -12,7 +12,6 @@ const Contacts = props => (
         <Menu/>
         <div className="app__content app__content--contacts">
             <div className="app__content app__content--contacts-box">
-                <h2>Hello</h2>
                 <span className="row">
                     <span className="col1">Телефон: </span>
                     <span className="col2">+38&nbsp;(097)&nbsp;499&#8209;73&#8209;82</span>

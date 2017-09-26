@@ -3,7 +3,7 @@
 .button {
     border: 0;
     border-radius: $radius__button;
-    font: 10pt/10pt arial;
+    font: 12px/12px arial;
     overflow: hidden;
     height: $size__button;
     width: $size__button;
@@ -62,9 +62,6 @@
         width: $width__back-space-button;
     }
     &--dialog-close {
-        text-align: right;
-        i {
-            @include fa($fa-clipboard, $bg-color, $height__pass-box-button - 10px);
-        }
+        width: 70px;
     }
 }

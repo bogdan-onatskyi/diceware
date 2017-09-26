@@ -22,16 +22,16 @@ class Word {
 
         this.handleClick = (e) => {
             const handler = {
+                "filter": () => this.toggleEditor(),
                 "prev2": () => this.resetWord(this.prev2index),
                 "prev1": () => this.resetWord(this.prev1index),
-                "filter": () => this.toggleEditor(),
                 "current": () => this.toggleEditor(),
                 "next1": () => this.resetWord(this.next1index),
                 "next2": () => this.resetWord(this.next2index),
+                "code": () => this.resetWord(),
                 "minus": () => this.minusWord(),
                 "reset-word": () => this.resetWord(),
-                "plus": () => this.plusWord(),
-                "code": () => this.resetWord()
+                "plus": () => this.plusWord()
             };
             for (let prop in handler) {
                 if (e.target.className.includes(prop)) {

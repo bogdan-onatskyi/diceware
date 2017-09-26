@@ -7,7 +7,7 @@ html {
     flex-direction: column;
     min-height: 100%;
 
-    font-family: serif;
+    font: 16px/20px serif;
 }
 
 body {
@@ -27,13 +27,8 @@ body {
     flex-direction: column;
 }
 
-h1 {
-    margin: 10px;
-}
-
 h2 {
     color: whitesmoke;
-    margin: 10px;
 }
 
 p {
@@ -65,13 +60,13 @@ a {
         background: $bg-color;
         &--info {
             padding: 10px 0;
-            font: 11pt/11pt Arial;
+            font: 1rem Arial;
             p {
-                text-align: justify;
+                text-align: left;
             }
         }
         &--contacts, &--oops {
-            font: 11pt/11pt Arial;
+            font: 1rem Arial;
             display: flex;
             justify-content: center;
             &-box {
@@ -83,7 +78,7 @@ a {
                 .row {
                     display: flex;
                     flex-wrap: wrap;
-                    margin: 10px;
+                    margin: 10px 0;
                     text-align: left;
                     .col1 {
                         flex: 0 0 30%;
@@ -94,6 +89,18 @@ a {
                     }
                 }
             }
+        }
+    }
+}
+
+.tooltip {
+    color: $color__tooltip !important;
+    background-color: $bg-color__tooltip !important;
+    font: 0.8rem Arial !important;
+    opacity: 0.9 !important;
+    &.place-bottom {
+        &:after {
+            border-bottom: 6px solid $bg-color__tooltip !important;
         }
     }
 }
