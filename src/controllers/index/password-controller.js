@@ -13,8 +13,7 @@ const PasswordController = observer(({passwordObject}) => {
                       separators={passwordObject.separators}
                       toggleCAPS={passwordObject.toggleCAPS}
                       isCAPS={passwordObject.isCAPS}
-                      caps={passwordObject.caps}
-        />
+                      caps={passwordObject.caps}/>
     );
 });
 

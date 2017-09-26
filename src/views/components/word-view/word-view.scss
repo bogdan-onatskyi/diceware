@@ -12,14 +12,16 @@
     &__word {
         display: block;
         margin: $margin auto;
-        font: 13pt/13pt serif;
+        font: 16px/18px serif;
         color: $color__text;
         &:hover {
             opacity: 1;
             cursor: pointer;
         }
         &--filter {
-            color: white;
+            &-text {
+                color: white;
+            }
         }
         &--prev2, &--next2 {
             opacity: 0.1;
@@ -31,9 +33,6 @@
             opacity: 1;
             color: white;
             font-weight: bold;
-            &:hover {
-                cursor: text;
-            }
         }
     }
 

@@ -8,8 +8,8 @@
     position: absolute;
     top: 20%;
     left: 20%;
-    right: 20%;
-    bottom: 20%;
+    //right: 20%;
+    //bottom: 20%;
 
     width: 265px;
     //min-width: 265px;
@@ -23,7 +23,7 @@
         width: 100%;
         background: $color;
 
-        font: 10pt/10pt arial;
+        font: 12px/12px arial;
         overflow: hidden;
         line-height: 25px;
 
