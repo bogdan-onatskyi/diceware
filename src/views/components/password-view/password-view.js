@@ -1,5 +1,5 @@
 import React from 'react';
-import {findDOMNode} from 'react-dom'
+import {findDOMNode} from 'react-dom';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Clipboard from 'clipboard';
@@ -16,18 +16,8 @@ clipboard.on('success', (e) => {
     console.info('Action:', e.action);
     console.info('Text:', e.text);
     console.info('Trigger:', e.trigger);
-
-// Не работает !!!
-//     ReactTooltip.show(document.getElementById(e.trigger.id));
-
     e.clearSelection();
 });
-
-/*
-<p ref='foo' data-tip='tooltip'></p>
-<button onClick={() => { ReactTooltip.show(findDOMNode(this.refs.foo)) }}></button>
-<ReactTooltip />
- */
 
 const PasswordView = ({
                           password,
@@ -44,17 +34,20 @@ const PasswordView = ({
             <div className="password__dropbox">
                 {separators.map((separator, i) =>
                     <div className="password__dropbox--elem" key={"pass_" + i}>
-                        <Button onClick={toggleCAPS.bind(this, i)}
-                                data-tip="Переключение регистра"
-                                type="caps" text={isCAPS(i) ? "текст" : "ТЕКСТ"}/>
+                        <Button type="caps" onClick={toggleCAPS.bind(this, i)}
+                                data-tip="Переключение регистра">
+                            {isCAPS(i) ? "текст" : "ТЕКСТ"}
+                        </Button>
 
                         <input id={"pass_input_" + i} type="text" readOnly={true}
                                data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
                                value={separatedPassword(separator, i)}/>
 
-                        <Button className="clipboard" data-clipboard-target={"#pass_input_" + i}
-                                data-tip="Пароль скопирован в буфер обмена"
-                                type="copy"/>
+                        <Button className="clipboard" type="copy"
+                                data-clipboard-target={"#pass_input_" + i}
+                                data-tip="Пароль скопирован в буфер обмена">
+                            <img src="./clippy.svg" width={20 + 'px'} alt=""/>
+                        </Button>
                     </div>
                 )}
                 <ToolTip/>

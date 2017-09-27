@@ -23,6 +23,7 @@ const WordView = ({
             <div className="wv__word wv__word--prev2"
                  data-tip="Выбрать это слово">&nbsp;{prev2word}&nbsp;
             </div>);
+
     return (
         <div className="wv" onClick={handleClick}>
             <div className="wv__word" onWheel={handleWheel}>
@@ -39,9 +40,9 @@ const WordView = ({
                 )}
             </div>
             <div>
-                <Button type="minus" text="-" data-tip="Предыдующее слово"/>
-                <Button type="reset-word" text="Изменить" data-tip="Новое слово"/>
-                <Button type="plus" text="+" data-tip="Следующее слово"/>
+                <Button type="minus" data-tip="Предыдующее слово">-</Button>
+                <Button type="reset-word" data-tip="Новое слово">Изменить</Button>
+                <Button type="plus" data-tip="Следующее слово">+</Button>
             </div>
             <ToolTip/>
         </div>

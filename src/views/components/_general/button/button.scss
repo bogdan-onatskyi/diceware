@@ -46,9 +46,6 @@
 
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
-        i {
-            @include fa($fa-clipboard, $bg-color, $height__pass-box-button - 10px);
-        }
     }
     &--editor {
         margin: 5px;
