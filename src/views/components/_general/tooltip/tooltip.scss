@@ -1,0 +1,13 @@
+@import "../../../../vars";
+
+.tooltip {
+    color: $color__tooltip !important;
+    background-color: $bg-color__tooltip !important;
+    font: 0.8rem Arial !important;
+    opacity: 0.9 !important;
+    &.place-bottom {
+        &:after {
+            border-bottom: 6px solid $bg-color__tooltip !important;
+        }
+    }
+}

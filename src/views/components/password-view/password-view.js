@@ -1,9 +1,7 @@
 import React from 'react';
-import {findDOMNode} from 'react-dom';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Clipboard from 'clipboard';
-import ReactTooltip from 'react-tooltip';
 
 import Button from '../_general/button/button';
 import ToolTip from '../_general/tooltip/tooltip';
@@ -13,10 +11,7 @@ import './password-view.scss';
 const clipboard = new Clipboard('.clipboard');
 
 clipboard.on('success', (e) => {
-    console.info('Action:', e.action);
-    console.info('Text:', e.text);
-    console.info('Trigger:', e.trigger);
-    e.clearSelection();
+    setTimeout(() => e.clearSelection(), 2000);
 });
 
 const PasswordView = ({
@@ -31,9 +26,9 @@ const PasswordView = ({
 
     const PassVariants = () => {
         return (
-            <div className="password__dropbox">
+            <div className="password__variants">
                 {separators.map((separator, i) =>
-                    <div className="password__dropbox--elem" key={"pass_" + i}>
+                    <div className="password__variants--elem" key={"pass_" + i}>
                         <Button type="caps" onClick={toggleCAPS.bind(this, i)}
                                 data-tip="Переключение регистра">
                             {isCAPS(i) ? "текст" : "ТЕКСТ"}
@@ -45,6 +40,9 @@ const PasswordView = ({
 
                         <Button className="clipboard" type="copy"
                                 data-clipboard-target={"#pass_input_" + i}
+                                data-event="click"
+                                data-delay-hide={500}
+                                data-iscapture={true}
                                 data-tip="Пароль скопирован в буфер обмена">
                             <img src="./clippy.svg" width={20 + 'px'} alt=""/>
                         </Button>
@@ -57,23 +55,24 @@ const PasswordView = ({
 
     return (
         <div className="password-view">
-            <i className={cn("password__before-text",
+            <span className={cn("password__before-text",
                 {"password__before-text--opened": isPassboxOpened})}
-               data-tip="Варианты пароля с разделителями"
-               onClick={toggleIsPassboxOpened.bind(this)}/>
+                  data-tip="Варианты пароля с разделителями"
+                  onClick={toggleIsPassboxOpened.bind(this)}/>
 
             <span id="pass" className="password__text"
                   data-tip="Нажмите на иконку справа для копирования пароля в буфер обмена">
                 {password}
             </span>
 
-            <i id="pass_copy" className="clipboard password__after-text"
-               data-event="click"
-               data-delay-show={0}
-               data-delay-hide={1000}
-               data-iscapture={true}
-               data-tip="Пароль скопирован в буфер обмена"
-               data-clipboard-target={"#pass"}/>
+            <img src="./clippy.svg" width={20 + 'px'} alt=""
+                 className="clipboard"
+                 data-clipboard-target={"#pass"}
+
+                 data-event="click"
+                 data-delay-hide={500}
+                 data-iscapture={true}
+                 data-tip="Пароль скопирован в буфер обмена"/>
 
             {isPassboxOpened && <PassVariants/>}
 

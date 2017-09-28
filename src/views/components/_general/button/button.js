@@ -14,12 +14,13 @@ const Button = ({
         {"button--selected": selected},
         {"button--disabled": disabled},
         {["button--" + type]: type !== undefined});
+
     const dataTip = elemProps['data-tip'];
 
-    if (disabled) onClick = '';
+    if (disabled) onClick = null;
 
     return (
-        <button className={classNames} onClick={onClick} data-tip={dataTip}>
+        <button className={classNames} onClick={onClick} data-tip={dataTip} {...elemProps}>
             {children}
         </button>
     );

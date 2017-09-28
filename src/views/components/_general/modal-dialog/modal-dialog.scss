@@ -5,32 +5,28 @@
     flex-direction: column;
     align-items: center;
 
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    //right: 20%;
-    //bottom: 20%;
+    top: 100px;
 
     width: 265px;
-    //min-width: 265px;
+    margin: auto;
 
     background: $bg-color__dialog;
-    opacity: 0.95;
     border: 2px solid $color;
-    //margin: -2px;
+
+    opacity: 1;
     &__title {
         flex: 0 0 25px;
         width: 100%;
         background: $color;
 
         font: 12px/12px arial;
-        overflow: hidden;
         line-height: 25px;
 
         display: flex;
         &--content {
             flex: 1 0 70%;
             padding-left: 4px;
+            overflow: hidden;
             user-select: none;
         }
         &--close-button {
@@ -58,42 +54,9 @@
     left: 0;
     right: 0;
     bottom: 0;
+    opacity: 0.99;
+    background-color: $bg-color;
+    :focus {
+        outline: none;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//.modal-dialog {
-//    position: absolute;
-//    &__overlay {
-//        top: 0;
-//        left: 0;
-//        width: 100%;
-//        height: 100%;
-//        //border: dotted 1px red;
-//    }
-//    &__content {
-//        width: $min-width__popup;
-//        min-width: $min-width__popup;
-//        top: 100px;
-//        //top: 10%;
-//        left: 10%;
-//        background: $bg-color__pass-editor;
-//        opacity: 0.95;
-//        border: 2px solid $color;
-//        margin: -2px;
-//        padding: 15px;
-//        text-align: center;
-//    }
-//}

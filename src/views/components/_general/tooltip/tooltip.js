@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 
-const toolTipArray = [];
+import "./tooltip.scss";
 
 const ToolTip = () => {
     return (
         <ReactTooltip className="tooltip" place="bottom"
-                      delayShow={500} border={true}
-                      globalEventOff="click"/>
+                      delayShow={500} border={true}/>
     );
 };
 
-export {toolTipArray};
 export default ToolTip;
