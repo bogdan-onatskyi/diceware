@@ -25,8 +25,7 @@ const ModalDialog = ({title, isOpen, handlerClose, children}) => {
             <div className="modal__content">
                 <div className="modal__content--children">
                     {children}
-                    <Button type="dialog-close" text="Закрыть"
-                            onClick={handlerClose}/>
+                    <Button type="dialog-close" onClick={handlerClose}>Закрыть</Button>
                 </div>
             </div>
             <ToolTip/>

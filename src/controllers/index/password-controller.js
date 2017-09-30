@@ -2,18 +2,36 @@ import React from 'react';
 import {observer} from 'mobx-react';
 import PropTypes from 'prop-types';
 
-import PasswordView from '../../views/components/password-view/password-view';
+import Password from '../../views/components/password-view/password';
+import Variants from '../../views/components/password-view/variants';
+
+import Clipboard from 'clipboard';
+
+const clipboard = new Clipboard('.clipboard');
+
+clipboard.on('success', (e) => {
+    setTimeout(() => e.clearSelection(), 2000);
+});
 
 const PasswordController = observer(({passwordObject}) => {
+
+    const password = <Password password={passwordObject.password}
+                               isVariantsOpened={passwordObject.isVariantsOpened}
+                               toggleVariantsOpened={passwordObject.toggleVariantsOpened}/>;
+
+    const variants = passwordObject.isVariantsOpened
+        ? <Variants separators={passwordObject.separators}
+                    toggleCAPS={passwordObject.toggleCAPS}
+                    isCAPS={passwordObject.isCAPS}
+                    separatedPassword={passwordObject.separatedPassword}
+                    caps={passwordObject.caps}/>
+        : "";
+
     return (
-        <PasswordView password={passwordObject.password}
-                      isPassboxOpened={passwordObject.isPassboxOpened}
-                      toggleIsPassboxOpened={passwordObject.toggleIsPassboxOpened}
-                      separatedPassword={passwordObject.separatedPassword}
-                      separators={passwordObject.separators}
-                      toggleCAPS={passwordObject.toggleCAPS}
-                      isCAPS={passwordObject.isCAPS}
-                      caps={passwordObject.caps}/>
+        <div className="password-view">
+            {password}
+            {variants}
+        </div>
     );
 });
 

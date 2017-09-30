@@ -5,12 +5,10 @@ import PropTypes from 'prop-types';
 import CountButtonsView from '../../views/components/count-buttons-view/count-buttons-view';
 
 const CountButtonsController = observer(({passwordObject}) => {
-    return (
-        <CountButtonsView usedWords={passwordObject.usedWords}
-                          maxWords={passwordObject.maxWords}
-                          handleUsedWords={passwordObject.handleUsedWords}
-                          handleResetAllWords={passwordObject.handleResetAllWords}/>
-    );
+    return <CountButtonsView usedWords={passwordObject.usedWords}
+                             maxWords={passwordObject.maxWords}
+                             handleUsedWords={passwordObject.handleUsedWords}
+                             handleResetAllWords={passwordObject.handleResetAllWords}/>;
 });
 
 CountButtonsController.propTypes = {

@@ -1,4 +1,4 @@
-import {observable, computed, action, reaction} from 'mobx';
+import {observable, computed} from 'mobx';
 
 import Word from './word-object';
 
@@ -8,7 +8,7 @@ class Password {
 
     @observable wordArray = [];
 
-    @observable isPassboxOpened = false;
+    @observable isVariantsOpened = false;
     @observable caps = 0;
 
     constructor() {
@@ -33,8 +33,8 @@ class Password {
             this.caps = this.caps ^ Math.pow(2, i);
         };
 
-        this.toggleIsPassboxOpened = () => {
-            this.isPassboxOpened = !this.isPassboxOpened;
+        this.toggleVariantsOpened = () => {
+            this.isVariantsOpened = !this.isVariantsOpened;
         };
 
         this.handleUsedWords = [];

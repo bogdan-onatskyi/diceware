@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 
+import "./tooltip.scss";
+
 const ToolTip = () => {
     return (
         <ReactTooltip className="tooltip" place="bottom"
-                      delayShow={1000} border={true}
-                      globalEventOff="click"/>
+                      delayShow={500} border={true}/>
     );
 };
 

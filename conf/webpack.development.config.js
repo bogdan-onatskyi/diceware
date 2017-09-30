@@ -15,7 +15,7 @@ export default new Config().extend('conf/webpack.base.config.js').merge({
         filename: 'bundle.js'
     },
 
-    devtool: 'inline-source-map',
+    devtool: 'eval',
 
     module: {
         rules: [
