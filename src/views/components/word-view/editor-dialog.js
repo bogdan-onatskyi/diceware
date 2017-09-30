@@ -22,8 +22,6 @@ const EditorDialog = ({toggleEditor, handleFilter, handleCountWords, filter, han
                 return (
                     <Button type="char" disabled={countWords === 0}
                             onClick={handleFilter.bind(this, char)}
-                            data-event-hide="click"
-                            data-iscapture={true}
                             data-tip={dataTip}
                             key={'char_' + key++}>
                         {char}

@@ -36,7 +36,7 @@ const WordView = ({
             <div className="wv__code" data-tip="Новое слово">
                 {code.split('').map((i) =>
                     <div className={"wv__code wv__code--common wv__code--" + i}
-                         key={"code_" + wordViewId + key++}/>
+                         key={"code_" + wordViewId + "_" + key++}/>
                 )}
             </div>
             <div>
