@@ -7,21 +7,22 @@ import ToolTip from '../_general/tooltip/tooltip';
 import './password-view.scss';
 import clippy from './clippy.svg';
 
-const Password = ({password, isPassboxOpened, toggleIsPassboxOpened}) => {
+const Password = ({password, isVariantsOpened, toggleVariantsOpened}) => {
+
     return (
         <div className="password">
             <span className={cn("password__before-text",
-                {"password__before-text--opened": isPassboxOpened})}
+                {"password__before-text--opened": isVariantsOpened})}
                   data-tip="Варианты пароля с разделителями"
-                  onClick={toggleIsPassboxOpened.bind(this)}/>
+                  onClick={toggleVariantsOpened.bind(this)}/>
 
             <div id="pass" className="password__text"
                  data-tip="Нажмите на иконку справа для копирования пароля в буфер обмена">
                 {password}
             </div>
 
-            <img src={clippy} alt=""
-                 className="clipboard password__after-text"
+            <img className="clipboard password__after-text"
+                 src={clippy} alt=""
                  data-clipboard-target={"#pass"}
 
                  data-event="click"
@@ -36,8 +37,8 @@ const Password = ({password, isPassboxOpened, toggleIsPassboxOpened}) => {
 
 Password.propTypes = {
     password: PropTypes.string,
-    isPassboxOpened: PropTypes.bool,
-    toggleIsPassboxOpened: PropTypes.func
+    isVariantsOpened: PropTypes.bool,
+    toggleVariantsOpened: PropTypes.func
 };
 
 export default Password;

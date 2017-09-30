@@ -16,19 +16,21 @@ clipboard.on('success', (e) => {
 const PasswordController = observer(({passwordObject}) => {
 
     const password = <Password password={passwordObject.password}
-                               isPassboxOpened={passwordObject.isPassboxOpened}
-                               toggleIsPassboxOpened={passwordObject.toggleIsPassboxOpened}/>;
+                               isVariantsOpened={passwordObject.isVariantsOpened}
+                               toggleVariantsOpened={passwordObject.toggleVariantsOpened}/>;
 
-    const variants = <Variants separators={passwordObject.separators}
-                               toggleCAPS={passwordObject.toggleCAPS}
-                               isCAPS={passwordObject.isCAPS}
-                               separatedPassword={passwordObject.separatedPassword}
-                               caps={passwordObject.caps}/>;
+    const variants = passwordObject.isVariantsOpened
+        ? <Variants separators={passwordObject.separators}
+                    toggleCAPS={passwordObject.toggleCAPS}
+                    isCAPS={passwordObject.isCAPS}
+                    separatedPassword={passwordObject.separatedPassword}
+                    caps={passwordObject.caps}/>
+        : "";
 
     return (
         <div className="password-view">
             {password}
-            {passwordObject.isPassboxOpened && variants}
+            {variants}
         </div>
     );
 });
