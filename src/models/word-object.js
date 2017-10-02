@@ -167,8 +167,8 @@ class Word {
     }
 
     @action('New random word was generated')
-    resetWord(index = 0) {
-        this.index = (index !== 0) ? index : this.getRandomIndex();
+    resetWord(index = -1) {
+        this.index = (index !== -1) ? index : this.getRandomIndex();
     };
 
     @action('Next word was selected')
