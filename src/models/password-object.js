@@ -3,8 +3,8 @@ import {observable, computed} from 'mobx';
 import Word from './word-object';
 
 class Password {
-    @observable usedWords = 5;
-    @observable maxWords = 8;
+    @observable _usedWords = 5;
+    @observable _maxWords = 8;
 
     @observable wordArray = [];
 
@@ -12,15 +12,11 @@ class Password {
     @observable caps = 0;
 
     constructor() {
-        this.handleResetAllWords = () => {
-            for (let i = 0; i < this.usedWords; i++)
-                this.wordArray[i] = new Word(i);
-        };
-
         this.init = (usedWords = 5, maxWords = 8) => {
-            this.usedWords = usedWords;
-            this.maxWords = maxWords;
-            this.handleResetAllWords();
+            this._maxWords = maxWords;
+            this._usedWords = usedWords;
+            this.wordArray.splice(0);
+            for (let i = 0; i < this._usedWords; i++) this.wordArray[i] = new Word(i);
         };
 
         this.separators = ['-', '_', ':', '.', '', ' '];
@@ -37,14 +33,13 @@ class Password {
             this.isVariantsOpened = !this.isVariantsOpened;
         };
 
-        this.handleUsedWords = [];
-        for (let id = 1; id <= this.maxWords; id++)
-            this.handleUsedWords [id - 1] = () => {
-                this.wordArray.splice(id);
-                for (let i = this.usedWords; i < id; i++)
-                    this.wordArray.push(new Word(i));
-                this.usedWords = id;
-            };
+        this.handleUsedWords = (value) => {
+            this.usedWords = value;
+        };
+
+        this.handleResetAllWords = () => {
+            for (let i = 0; i < this._usedWords; i++) this.wordArray[i].resetWord();
+        };
 
         this.separatedPassword = (separator, i = -1) => {
             const passArray = [];
@@ -59,6 +54,27 @@ class Password {
     @computed
     get password() {
         return this.separatedPassword(' ');
+    }
+
+    get usedWords() {
+        return this._usedWords;
+    }
+
+    set usedWords(value) {
+        if (value < 0 || value > this._maxWords || value === this._usedWords) return;
+
+        this.wordArray.splice(value);
+        for (let i = this._usedWords; i < value; i++) this.wordArray.push(new Word(i));
+        this._usedWords = value;
+    }
+
+    get maxWords() {
+        return this._maxWords;
+    }
+
+    set maxWords(value) {
+        if (value < 0 || value === this._maxWords) return;
+        this._maxWords = value;
     }
 }
 

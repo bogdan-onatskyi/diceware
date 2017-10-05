@@ -13,7 +13,7 @@ const CountButtonsView = ({usedWords, maxWords, handleUsedWords, handleResetAllW
     for (let i = 1; i <= maxWords; i++) {
         dataTip = (i === usedWords) ? "" : "Выбрать количество слов в пароле: " + i;
         countButtons[i] =
-            <Button type="count" disabled={i === usedWords} onClick={handleUsedWords[i - 1]}
+            <Button type="count" disabled={i === usedWords} onClick={handleUsedWords.bind(this, i)}
                     data-tip={dataTip} key={"count-button_" + i}>
                 {i.toString()}
             </Button>;
@@ -36,7 +36,7 @@ const CountButtonsView = ({usedWords, maxWords, handleUsedWords, handleResetAllW
 CountButtonsView.propTypes = {
     usedWords: PropTypes.number,
     maxWords: PropTypes.number,
-    handleUsedWords: PropTypes.array,
+    handleUsedWords: PropTypes.func,
     handleResetAllWords: PropTypes.func
 };
 
