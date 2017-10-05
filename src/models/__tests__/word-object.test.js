@@ -103,6 +103,15 @@ describe("class Word", () => {
         });
 
         describe("Word.handleClick(e)", () => {
+            it("should do nothing if className contains 'disabled'", () => {
+                spyOn(wordObject, 'resetWord').and.callThrough();
+                for (let i = 0; i <= 4; i++) {
+                    e.target.className = classNameFunc(i, 'prev1--disabled');
+                    wordObject.handleClick(e);
+                }
+                expect(wordObject.resetWord.calls.count()).toEqual(0);
+            });
+
             it("should toggle Word.editorOpened if className contains 'filter' or 'current'", () => {
                 spyOn(wordObject, 'toggleEditor').and.callThrough();
                 ['filter', 'current'].forEach((name) => {
@@ -214,6 +223,15 @@ describe("class Word", () => {
         });
 
         describe("Word.handleWheel(e)", () => {
+            it("should do nothing if className contains 'disabled'", () => {
+                spyOn(wordObject, 'resetWord').and.callThrough();
+                for (let i = 0; i <= 4; i++) {
+                    e.target.className = classNameFunc(i, 'next1--disabled');
+                    wordObject.handleClick(e);
+                }
+                expect(wordObject.resetWord.calls.count()).toEqual(0);
+            });
+
             it("should change Word.index depending on e.deltaY if className contains 'wv__word'", () => {
                 spyOn(wordObject, 'resetWord').and.callThrough();
 
@@ -719,4 +737,3 @@ describe("class Word", () => {
         });
     });
 });
-

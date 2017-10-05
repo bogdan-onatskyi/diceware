@@ -1,10 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 
+import Word from './word';
+import Code from './code';
 import Button from '../_general/button/button';
 import ToolTip from '../_general/tooltip/tooltip';
 
 import './word-view.scss';
+
+const tip = (prop, text) => {
+    return (prop !== '') ? text : "";
+};
 
 const WordView = ({
                       handleClick, handleWheel,
@@ -13,36 +20,33 @@ const WordView = ({
                   }) => {
     let key = 1;
 
-    const filtered = (filter !== '')
-        ? (
-            <div className="wv__word--filter"
-                 data-tip="Фильтр для этого слова">Фильтр:&nbsp;
-                <span className="wv__word--filter-text">{filter}*</span>
-            </div>)
-        : (
-            <div className="wv__word wv__word--prev2"
-                 data-tip="Выбрать это слово">&nbsp;{prev2word}&nbsp;
-            </div>);
-
     return (
         <div className="wv" onClick={handleClick}>
-            <div className="wv__word" onWheel={handleWheel}>
-                {filtered}
-                <div className="wv__word wv__word--prev1" data-tip="Выбрать это слово">&nbsp;{prev1word}&nbsp;</div>
-                <div className="wv__word wv__word--current" data-tip="Фильтр для этого слова">&nbsp;{word}&nbsp;</div>
-                <div className="wv__word wv__word--next1" data-tip="Выбрать это слово">&nbsp;{next1word}&nbsp;</div>
-                <div className="wv__word wv__word--next2" data-tip="Выбрать это слово">&nbsp;{next2word}&nbsp;</div>
+            <div onWheel={handleWheel}>
+                {filter === ''
+                    ? <Word modifier="prev2" flag={prev2word} tip="Выбрать это слово"/>
+                    : <Word modifier="filter" flag="Фильтр:" tip="Фильтр для этого слова">
+                        <span className="wv__word--filter-text">{filter}*</span>
+                    </Word>
+                }
+                <Word modifier="prev1" flag={prev1word} tip="Выбрать это слово"/>
+                <Word modifier="current" flag={word} tip="Фильтр для этого слова"/>
+                <Word modifier="next1" flag={next1word} tip="Выбрать это слово"/>
+                <Word modifier="next2" flag={next2word} tip="Выбрать это слово"/>
             </div>
-            <div className="wv__code" data-tip="Новое слово">
+            <div data-tip={tip(prev1word + next1word, "Новое слово")}>
                 {code.split('').map((i) =>
-                    <div className={"wv__code wv__code--common wv__code--" + i}
-                         key={"code_" + wordViewId + "_" + key++}/>
+                    <Code modifier={i} flag={prev1word + next1word}
+                          key={"code_" + wordViewId + "_" + key++}/>
                 )}
             </div>
             <div>
-                <Button type="minus" data-tip="Предыдующее слово">-</Button>
-                <Button type="reset-word" data-tip="Новое слово">Изменить</Button>
-                <Button type="plus" data-tip="Следующее слово">+</Button>
+                <Button type="minus" disabled={prev1word === ''}
+                        data-tip={tip(prev1word, "Предыдующее слово")}>-</Button>
+                <Button type="reset-word" disabled={prev1word + next1word === ''}
+                        data-tip={tip(prev1word + next1word, "Новое слово")}>Изменить</Button>
+                <Button type="plus" disabled={next1word === ''}
+                        data-tip={tip(next1word, "Следующее слово")}>+</Button>
             </div>
             <ToolTip/>
         </div>

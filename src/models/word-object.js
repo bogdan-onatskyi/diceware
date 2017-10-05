@@ -21,6 +21,7 @@ class Word {
         this._index = this.getRandomIndex();
 
         this.handleClick = (e) => {
+            if (e.target.className.includes("disabled")) return;
             const handler = {
                 "filter": () => this.toggleEditor(),
                 "prev2": () => this.resetWord(this.prev2index),
@@ -44,6 +45,7 @@ class Word {
         this.handleWheel = (e) => {
             e.preventDefault();
             if (!e.target.className.includes("wv__word")) return;
+            if (e.target.className.includes("disabled")) return;
             e.deltaY < 0 ? this.resetWord(this.prev1index) : this.resetWord(this.next1index);
         };
 
@@ -167,7 +169,19 @@ class Word {
 
     @action('New random word was generated')
     resetWord(index = -1) {
-        this.index = (index !== -1) ? index : this.getRandomIndex();
+        if (index !== -1) {
+            this.index = index;
+            return;
+        }
+
+        if (this.minIndex === this.maxIndex) return; // leave this.index unchanged
+
+        const currentIndex = this.index;
+        let randomIndex = this.getRandomIndex();
+
+        while (currentIndex === randomIndex) randomIndex = this.getRandomIndex();
+
+        this.index = randomIndex;
     };
 
     static indexToCode(index) {
