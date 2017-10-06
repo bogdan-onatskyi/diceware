@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
 
 import Word from './word';
 import Code from './code';
@@ -24,19 +23,19 @@ const WordView = ({
         <div className="wv" onClick={handleClick}>
             <div onWheel={handleWheel}>
                 {filter === ''
-                    ? <Word modifier="prev2" flag={prev2word} tip="Выбрать это слово"/>
-                    : <Word modifier="filter" flag="Фильтр:" tip="Фильтр для этого слова">
+                    ? <Word mod="prev2" word={prev2word} tip="Выбрать это слово"/>
+                    : <Word mod="filter" word="Фильтр:" tip="Фильтр для этого слова">
                         <span className="wv__word--filter-text">{filter}*</span>
                     </Word>
                 }
-                <Word modifier="prev1" flag={prev1word} tip="Выбрать это слово"/>
-                <Word modifier="current" flag={word} tip="Фильтр для этого слова"/>
-                <Word modifier="next1" flag={next1word} tip="Выбрать это слово"/>
-                <Word modifier="next2" flag={next2word} tip="Выбрать это слово"/>
+                <Word mod="prev1" word={prev1word} tip="Выбрать это слово"/>
+                <Word mod="current" word={word} tip="Фильтр для этого слова"/>
+                <Word mod="next1" word={next1word} tip="Выбрать это слово"/>
+                <Word mod="next2" word={next2word} tip="Выбрать это слово"/>
             </div>
             <div data-tip={tip(prev1word + next1word, "Новое слово")}>
                 {code.split('').map((i) =>
-                    <Code modifier={i} flag={prev1word + next1word}
+                    <Code mod={i} word={prev1word + next1word}
                           key={"code_" + wordViewId + "_" + key++}/>
                 )}
             </div>

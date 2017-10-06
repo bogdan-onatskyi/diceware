@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Code component should render a code disabled 1`] = `
+<div
+  className="wv__code wv__code--1 wv__code--disabled"
+/>
+`;
+
+exports[`Code component should render a code enabled 1`] = `
+<div
+  className="wv__code wv__code--1"
+/>
+`;

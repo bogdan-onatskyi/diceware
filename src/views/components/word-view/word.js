@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-const Word = ({className, modifier, flag, tip, children}) => {
+const Word = ({className, mod, word, tip, children}) => {
     return (
-        <div className={cn(className, "wv__word wv__word--" + modifier,
-            {"wv__word--disabled": flag === ''})}
-             data-tip={flag !== '' ? tip : ""}>
-            &nbsp;{flag}&nbsp;
+        <div className={cn(className, "wv__word wv__word--" + mod,
+            {"wv__word--disabled": word === ''})}
+             data-tip={word !== '' ? tip : ""}>
+            &nbsp;{word}&nbsp;
             {children}
         </div>
     );
@@ -15,8 +15,8 @@ const Word = ({className, modifier, flag, tip, children}) => {
 
 Word.propTypes = {
     className: PropTypes.string,
-    modifier: PropTypes.string,
-    flag: PropTypes.string,
+    mod: PropTypes.string,
+    word: PropTypes.string,
     tip: PropTypes.string,
 };
 

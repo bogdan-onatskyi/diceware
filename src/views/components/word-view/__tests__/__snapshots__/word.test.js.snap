@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Word component should render a word with tooltip 1`] = `
+<div
+  className="wv__word wv__word--prev1"
+  data-tip="Выбрать это слово"
+>
+   
+  word
+   
+</div>
+`;
+
+exports[`Word component should render a word without tooltip 1`] = `
+<div
+  className="wv__word wv__word--prev1 wv__word--disabled"
+  data-tip=""
+>
+   
+   
+</div>
+`;
