@@ -5,7 +5,6 @@ import ModalDialog from '../_general/modal-dialog/modal-dialog';
 import Button from '../_general/button/button';
 
 const EditorDialog = ({toggleEditor, handleFilter, handleCountWords, filter, handleBackspace, wordView}) => {
-    let key = 1;
     let countWords = 0;
 
     const alfabet = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
@@ -19,7 +18,7 @@ const EditorDialog = ({toggleEditor, handleFilter, handleCountWords, filter, han
                             data-tip={countWords
                                 ? "Добавить букву <" + char.toUpperCase() + "> к фильтру"
                                 : ""}
-                            key={'char_' + key++}>
+                            key={'char_' + char}>
                         {char}
                     </Button>
                 );
@@ -34,9 +33,7 @@ const EditorDialog = ({toggleEditor, handleFilter, handleCountWords, filter, han
             <div>
                 <Button type="back-space" disabled={filter === ''}
                         onClick={handleBackspace}
-                        data-tip={filter !== ''
-                            ? "Удалить последнюю букву фильтра"
-                            : ""}>
+                        data-tip={filter ? "Удалить последнюю букву фильтра" : ""}>
                     backspace
                 </Button>
             </div>
