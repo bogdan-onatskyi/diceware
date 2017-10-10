@@ -36,8 +36,7 @@ const ModalDialog = ({title, isOpen, handlerClose, children}) => {
 ModalDialog.propTypes = {
     title: PropTypes.string,
     isOpen: PropTypes.bool,
-    handlerClose: PropTypes.func,
-    children: PropTypes.array
+    handlerClose: PropTypes.func
 };
 
 export default ModalDialog;
