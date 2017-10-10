@@ -31,7 +31,7 @@ Button.propTypes = {
     type: PropTypes.string,
     selected: PropTypes.bool,
     disabled: PropTypes.bool,
-    onClick: PropTypes.func,
+    onClick: PropTypes.func
 };
 
 export default Button;
