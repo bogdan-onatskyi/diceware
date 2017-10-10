@@ -226,7 +226,7 @@ describe("class Word", () => {
             it("should do nothing if className contains 'disabled'", () => {
                 spyOn(wordObject, 'resetWord').and.callThrough();
                 for (let i = 0; i <= 4; i++) {
-                    e.target.className = classNameFunc(i, 'next1--disabled');
+                    e.target.className = classNameFunc(i, 'wv__word--disabled');
                     wordObject.handleClick(e);
                 }
                 expect(wordObject.resetWord.calls.count()).toEqual(0);

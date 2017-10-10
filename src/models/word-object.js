@@ -44,8 +44,8 @@ class Word {
 
         this.handleWheel = (e) => {
             e.preventDefault();
-            if (!e.target.className.includes("wv__word")) return;
             if (e.target.className.includes("disabled")) return;
+            if (!e.target.className.includes("wv__word")) return;
             e.deltaY < 0 ? this.resetWord(this.prev1index) : this.resetWord(this.next1index);
         };
 

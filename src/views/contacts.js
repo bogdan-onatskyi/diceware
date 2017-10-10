@@ -22,7 +22,7 @@ const Contacts = props => (
                 </span>
                 <span className="row">
                     <span className="col1">резюме: </span>
-                    <a className="col2" href="#/oops">ссылка</a>
+                    <a className="col2" href="https://rabota.ua/jobsearch/cvbuilder?resumeId=11349311">ссылка</a>
                 </span>
             </div>
         </div>
