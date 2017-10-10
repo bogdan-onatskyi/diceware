@@ -226,7 +226,7 @@ describe("class Word", () => {
             it("should do nothing if className contains 'disabled'", () => {
                 spyOn(wordObject, 'resetWord').and.callThrough();
                 for (let i = 0; i <= 4; i++) {
-                    e.target.className = classNameFunc(i, 'wv__word--disabled');
+                    e.target.className = classNameFunc(i, 'disabled');
                     wordObject.handleClick(e);
                 }
                 expect(wordObject.resetWord.calls.count()).toEqual(0);
@@ -262,10 +262,22 @@ describe("class Word", () => {
         describe("Word.handleFilter(char)", () => {
             it("should add a char to wordObject.filter", () => {
                 wordObject.filter = '';
-                'abcdefghigklmnopqrstuvwxyz'.split('').forEach((char) => {
+                'abc'.split('').forEach((char) => {
                     wordObject.handleFilter(char);
                 });
-                expect(wordObject.filter).toEqual('abcdefghigklmnopqrstuvwxyz');
+                expect(wordObject.filter).toEqual('ab'); // there is no word starts with 'abc'
+
+                wordObject.filter = '';
+                'aa'.split('').forEach((char) => {
+                    wordObject.handleFilter(char);
+                });
+                expect(wordObject.filter).toEqual('a'); // there is no word starts with 'aa'
+
+                wordObject.filter = '';
+                'zooka'.split('').forEach((char) => {
+                    wordObject.handleFilter(char);
+                });
+                expect(wordObject.filter).toEqual('zook'); // there is the only word (zookeeper) starts with 'zook'
             });
         });
 
@@ -319,7 +331,7 @@ describe("class Word", () => {
     describe("setter Word.filter(value)", () => {
         it("should set Word._filter to the value", () => {
             testInputProp((value) => wordObject.filter = value, ['', 'anyValue', undefined],
-                () => wordObject._filter, ['', 'anyValue', undefined]
+                () => wordObject._filter, ['', 'any', undefined]
             );
         });
     });
@@ -343,7 +355,8 @@ describe("class Word", () => {
             wordObject.filter = 'aa';
             wordObject.setWordListFiltered();
             expect(wordObject.isFiltered).toBe(true);
-            expect(wordObject._indexFiltered.length).toEqual(1);
+            expect(wordObject.filter).toEqual('a');
+            expect(wordObject._indexFiltered.length).toEqual(407);
             expect(wordObject._indexFiltered[0]).toEqual(0);
             expect(wordObject._index).toEqual(0);
         });

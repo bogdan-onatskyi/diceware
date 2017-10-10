@@ -82,7 +82,17 @@ class Word {
     }
 
     set filter(value) {
-        this._filter = value;
+        if (this.countWords(value) === 0) {
+            let str = '';
+            const array = [] = value.split('');
+            for (let i = 0; i < array.length; i++) {
+                if (this.countWords(str + array[i]) === 0) break;
+                str += array[i];
+            }
+            this._filter = str;
+        }
+        else this._filter = value;
+
         this.setWordListFiltered();
     }
 
@@ -90,12 +100,11 @@ class Word {
         if (this.isFiltered) {
             this._indexFiltered.splice(0);
             wordList.forEach((word, i) => {
-                    if (word.startsWith(this.filter)) this._indexFiltered.push(i);
-                }
-            );
-            if (this._indexFiltered.length === 0) this._indexFiltered[0] = 0;
+                if (word.startsWith(this.filter)) this._indexFiltered.push(i);
+            });
             this.index = this._indexFiltered[0];
-        } else this._indexFiltered.splice(0);
+        }
+        else this._indexFiltered.splice(0);
     }
 
     get wordViewId() {

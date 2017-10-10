@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToolTip component should match saved snapshot 1`] = `
+<ReactTooltip
+  border={true}
+  className="tooltip"
+  delayShow={500}
+  insecure={true}
+  place="bottom"
+  resizeHide={true}
+  wrapper="div"
+/>
+`;

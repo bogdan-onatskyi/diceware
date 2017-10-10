@@ -27,7 +27,7 @@ const EditorDialog = ({toggleEditor, handleFilter, handleCountWords, filter, han
     );
 
     return (
-        <ModalDialog title={"Редактор слова"} isOpen={true} handlerClose={toggleEditor}>
+        <ModalDialog title="Редактор слова" isOpen={true} handlerClose={toggleEditor}>
             {wordView}
             {charButtuns}
             <div>

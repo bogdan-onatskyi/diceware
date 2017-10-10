@@ -7,13 +7,14 @@ import WordObject from '../../../../models/word-object';
 describe("EditorDialog component", () => {
     const wordObject = new WordObject(1);
 
-    const setup = ({toggleEditor, handleFilter, handleCountWords, filter, handleBackspace, wordView}) => {
-        toggleEditor = toggleEditor ? toggleEditor : wordObject.toggleEditor;
-        handleFilter = handleFilter ? handleFilter : wordObject.handleFilter;
-        handleCountWords = handleCountWords ? handleCountWords : wordObject.handleCountWords;
-        filter = filter ? filter : wordObject.filter;
-        handleBackspace = handleBackspace ? handleBackspace : wordObject.handleBackspace;
-        wordView = wordView ? wordView : <WordView/>;
+    const setup = ({
+                       toggleEditor = wordObject.toggleEditor,
+                       handleFilter = wordObject.handleFilter,
+                       handleCountWords = wordObject.handleCountWords,
+                       filter = wordObject.filter,
+                       handleBackspace = wordObject.handleBackspace,
+                       wordView = <WordView/>
+                   }) => {
 
         const wrapper = shallow(<EditorDialog toggleEditor={toggleEditor}
                                               handleFilter={handleFilter}
@@ -36,7 +37,7 @@ describe("EditorDialog component", () => {
 
     it("should call handleFilter with a char when a char button is pressed", () => {
         const handleFilter = spyOn(wordObject, 'handleFilter').and.callThrough();
-        const {wrapper} = setup({handleFilter});
+        const {wrapper} = setup({handleFilter: handleFilter});
         const alfabet = [] = 'qwertyuiopasdfghjklzxcvbnm'.split('');
 
         const charButtons = wrapper.find({type: 'char'});
@@ -47,13 +48,13 @@ describe("EditorDialog component", () => {
     });
 
     it("should call handleBackspace when the back-space button is pressed", () => {
-        wordObject.filter = 'aa';
+        wordObject.filter = 'any';
         const handleBackspace = spyOn(wordObject, 'handleBackspace').and.callThrough();
-        const {wrapper} = setup({handleBackspace});
+        const {wrapper} = setup({handleBackspace: handleBackspace});
 
         wrapper.find({type: 'back-space'}).simulate('click');
         expect(handleBackspace).toHaveBeenCalled();
-        expect(wordObject.filter).toEqual('a');
+        expect(wordObject.filter).toEqual('an');
     });
 
     it("should have 6 props", () => {
