@@ -20,7 +20,7 @@
             "<rootDir>/node_modules/enzyme-to-json/serializer"
         ],
         "moduleNameMapper": {
-            "^.+\\.(css|scss)$": "identity-obj-proxy"
+            "^.+\\.(css|scss|png|svg)$": "identity-obj-proxy"
         }
     },
     "author": "Bogdan gentoo.user@ukr.net",
@@ -61,6 +61,7 @@
         "identity-obj-proxy": "^3.0.0",
         "img-loader": "^2.0.0",
         "jest": "^21.2.1",
+        "jsdom": "^11.3.0",
         "mobx-react-devtools": "^4.2.15",
         "node-sass": "^4.5.3",
         "optimize-css-assets-webpack-plugin": "^3.1.1",

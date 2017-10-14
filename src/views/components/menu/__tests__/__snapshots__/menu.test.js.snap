@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu component should match saved snapshot 1`] = `
+<ul
+  className="menu"
+>
+  <li
+    className="menu__item"
+    key="menu_1"
+  >
+    <Link
+      className="fa-home"
+      replace={false}
+      to="/"
+    >
+      diceware пароли
+    </Link>
+  </li>
+  <li
+    className="menu__item"
+    key="menu_2"
+  >
+    <Link
+      className="fa-info-circle"
+      replace={false}
+      to="/info"
+    >
+      Что это
+    </Link>
+  </li>
+  <li
+    className="menu__item"
+    key="menu_3"
+  >
+    <Link
+      className="fa-phone-square"
+      replace={false}
+      to="/contacts"
+    >
+      Контакты
+    </Link>
+  </li>
+</ul>
+`;
