@@ -49,6 +49,8 @@ class Password {
             const isUpperCase = (i === -1) ? true : this.isCAPS(i);
             return isUpperCase ? passStr.toUpperCase() : passStr.toLowerCase();
         };
+
+        this.init();
     }
 
     @computed
