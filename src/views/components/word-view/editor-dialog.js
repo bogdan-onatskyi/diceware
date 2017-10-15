@@ -8,7 +8,7 @@ const EditorDialog = ({toggleEditor, handleFilter, handleCountWords, filter, han
     let countWords = 0;
 
     const alfabet = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
-    const charButtuns = [] = alfabet.map((row, i) =>
+    const charButtuns = alfabet.map((row, i) =>
         <div key={'row_' + i}>
             {row.split('').map((char) => {
                 countWords = handleCountWords(char);

@@ -84,7 +84,7 @@ class Word {
     set filter(value) {
         if (this.countWords(value) === 0) {
             let str = '';
-            const array = [] = value.split('');
+            const array = value.split('');
             for (let i = 0; i < array.length; i++) {
                 if (this.countWords(str + array[i]) === 0) break;
                 str += array[i];
@@ -210,7 +210,7 @@ class Word {
     }
 
     static codeToIndex(code) {
-        const codeArray = [] = code.split('');
+        const codeArray = code.split('');
 
         let index = codeArray[4] - 1;
 

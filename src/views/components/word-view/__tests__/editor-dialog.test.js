@@ -38,7 +38,7 @@ describe("EditorDialog component", () => {
     it("should call handleFilter with a char when a char button is pressed", () => {
         const handleFilter = spyOn(wordObject, 'handleFilter').and.callThrough();
         const {wrapper} = setup({handleFilter: handleFilter});
-        const alfabet = [] = 'qwertyuiopasdfghjklzxcvbnm'.split('');
+        const alfabet = 'qwertyuiopasdfghjklzxcvbnm'.split('');
 
         const charButtons = wrapper.find({type: 'char'});
         charButtons.forEach((button, i) => {
