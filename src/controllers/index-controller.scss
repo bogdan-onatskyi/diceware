@@ -5,6 +5,9 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
+    .w-container {
+        display: flex;
+    }
 }
 
 .buttons-view {

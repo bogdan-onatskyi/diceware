@@ -8,9 +8,7 @@ import ToolTip from '../_general/tooltip/tooltip';
 
 import './word-view.scss';
 
-const tip = (prop, text) => {
-    return (prop !== '') ? text : "";
-};
+const tip = (prop, text) => prop ? text : "";
 
 const WordView = ({
                       handleClick, handleWheel,
@@ -25,7 +23,7 @@ const WordView = ({
                 {filter === ''
                     ? <Word mod="prev2" word={prev2word} tip="Выбрать это слово"/>
                     : <Word mod="filter" word="Фильтр:" tip="Фильтр для этого слова">
-                        <span className="wv__word--filter-text">{filter}*</span>
+                        <span className="wv__word--filter-text">{filter.toUpperCase()}*</span>
                     </Word>
                 }
                 <Word mod="prev1" word={prev1word} tip="Выбрать это слово"/>
