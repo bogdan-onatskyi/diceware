@@ -1,0 +1,425 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Variants component should match saved snapshot (isCAPS(i) !== 0) 1`] = `
+<div
+  className="variants"
+>
+  <div
+    className="variants__row"
+    key="vars_0"
+  >
+    <Button
+      className="variants__row--left-button"
+      data-tip="Переключение регистра"
+      onClick={[Function]}
+      type="caps"
+    >
+      текст
+    </Button>
+    <input
+      className="variants__row--input"
+      data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
+      id="vars_input_0"
+      readOnly={true}
+      type="text"
+      value="ABACUS-ABACUS-ABACUS-ABACUS-ABACUS"
+    />
+    <Button
+      className="clipboard variants__row--right-button"
+      data-clipboard-target="#vars_input_0"
+      data-delay-hide={500}
+      data-event="click"
+      data-iscapture={true}
+      data-tip="Пароль скопирован в буфер обмена"
+      type="copy"
+    >
+      <span
+        className="fa-copy"
+      />
+    </Button>
+  </div>
+  <div
+    className="variants__row"
+    key="vars_1"
+  >
+    <Button
+      className="variants__row--left-button"
+      data-tip="Переключение регистра"
+      onClick={[Function]}
+      type="caps"
+    >
+      текст
+    </Button>
+    <input
+      className="variants__row--input"
+      data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
+      id="vars_input_1"
+      readOnly={true}
+      type="text"
+      value="ABACUS_ABACUS_ABACUS_ABACUS_ABACUS"
+    />
+    <Button
+      className="clipboard variants__row--right-button"
+      data-clipboard-target="#vars_input_1"
+      data-delay-hide={500}
+      data-event="click"
+      data-iscapture={true}
+      data-tip="Пароль скопирован в буфер обмена"
+      type="copy"
+    >
+      <span
+        className="fa-copy"
+      />
+    </Button>
+  </div>
+  <div
+    className="variants__row"
+    key="vars_2"
+  >
+    <Button
+      className="variants__row--left-button"
+      data-tip="Переключение регистра"
+      onClick={[Function]}
+      type="caps"
+    >
+      текст
+    </Button>
+    <input
+      className="variants__row--input"
+      data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
+      id="vars_input_2"
+      readOnly={true}
+      type="text"
+      value="ABACUS:ABACUS:ABACUS:ABACUS:ABACUS"
+    />
+    <Button
+      className="clipboard variants__row--right-button"
+      data-clipboard-target="#vars_input_2"
+      data-delay-hide={500}
+      data-event="click"
+      data-iscapture={true}
+      data-tip="Пароль скопирован в буфер обмена"
+      type="copy"
+    >
+      <span
+        className="fa-copy"
+      />
+    </Button>
+  </div>
+  <div
+    className="variants__row"
+    key="vars_3"
+  >
+    <Button
+      className="variants__row--left-button"
+      data-tip="Переключение регистра"
+      onClick={[Function]}
+      type="caps"
+    >
+      текст
+    </Button>
+    <input
+      className="variants__row--input"
+      data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
+      id="vars_input_3"
+      readOnly={true}
+      type="text"
+      value="ABACUS.ABACUS.ABACUS.ABACUS.ABACUS"
+    />
+    <Button
+      className="clipboard variants__row--right-button"
+      data-clipboard-target="#vars_input_3"
+      data-delay-hide={500}
+      data-event="click"
+      data-iscapture={true}
+      data-tip="Пароль скопирован в буфер обмена"
+      type="copy"
+    >
+      <span
+        className="fa-copy"
+      />
+    </Button>
+  </div>
+  <div
+    className="variants__row"
+    key="vars_4"
+  >
+    <Button
+      className="variants__row--left-button"
+      data-tip="Переключение регистра"
+      onClick={[Function]}
+      type="caps"
+    >
+      текст
+    </Button>
+    <input
+      className="variants__row--input"
+      data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
+      id="vars_input_4"
+      readOnly={true}
+      type="text"
+      value="ABACUSABACUSABACUSABACUSABACUS"
+    />
+    <Button
+      className="clipboard variants__row--right-button"
+      data-clipboard-target="#vars_input_4"
+      data-delay-hide={500}
+      data-event="click"
+      data-iscapture={true}
+      data-tip="Пароль скопирован в буфер обмена"
+      type="copy"
+    >
+      <span
+        className="fa-copy"
+      />
+    </Button>
+  </div>
+  <div
+    className="variants__row"
+    key="vars_5"
+  >
+    <Button
+      className="variants__row--left-button"
+      data-tip="Переключение регистра"
+      onClick={[Function]}
+      type="caps"
+    >
+      текст
+    </Button>
+    <input
+      className="variants__row--input"
+      data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
+      id="vars_input_5"
+      readOnly={true}
+      type="text"
+      value="ABACUS ABACUS ABACUS ABACUS ABACUS"
+    />
+    <Button
+      className="clipboard variants__row--right-button"
+      data-clipboard-target="#vars_input_5"
+      data-delay-hide={500}
+      data-event="click"
+      data-iscapture={true}
+      data-tip="Пароль скопирован в буфер обмена"
+      type="copy"
+    >
+      <span
+        className="fa-copy"
+      />
+    </Button>
+  </div>
+  <ToolTip />
+</div>
+`;
+
+exports[`Variants component should match saved snapshot (isCAPS(i) === 0) 1`] = `
+<div
+  className="variants"
+>
+  <div
+    className="variants__row"
+    key="vars_0"
+  >
+    <Button
+      className="variants__row--left-button"
+      data-tip="Переключение регистра"
+      onClick={[Function]}
+      type="caps"
+    >
+      ТЕКСТ
+    </Button>
+    <input
+      className="variants__row--input"
+      data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
+      id="vars_input_0"
+      readOnly={true}
+      type="text"
+      value="abacus-abacus-abacus-abacus-abacus"
+    />
+    <Button
+      className="clipboard variants__row--right-button"
+      data-clipboard-target="#vars_input_0"
+      data-delay-hide={500}
+      data-event="click"
+      data-iscapture={true}
+      data-tip="Пароль скопирован в буфер обмена"
+      type="copy"
+    >
+      <span
+        className="fa-copy"
+      />
+    </Button>
+  </div>
+  <div
+    className="variants__row"
+    key="vars_1"
+  >
+    <Button
+      className="variants__row--left-button"
+      data-tip="Переключение регистра"
+      onClick={[Function]}
+      type="caps"
+    >
+      ТЕКСТ
+    </Button>
+    <input
+      className="variants__row--input"
+      data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
+      id="vars_input_1"
+      readOnly={true}
+      type="text"
+      value="abacus_abacus_abacus_abacus_abacus"
+    />
+    <Button
+      className="clipboard variants__row--right-button"
+      data-clipboard-target="#vars_input_1"
+      data-delay-hide={500}
+      data-event="click"
+      data-iscapture={true}
+      data-tip="Пароль скопирован в буфер обмена"
+      type="copy"
+    >
+      <span
+        className="fa-copy"
+      />
+    </Button>
+  </div>
+  <div
+    className="variants__row"
+    key="vars_2"
+  >
+    <Button
+      className="variants__row--left-button"
+      data-tip="Переключение регистра"
+      onClick={[Function]}
+      type="caps"
+    >
+      ТЕКСТ
+    </Button>
+    <input
+      className="variants__row--input"
+      data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
+      id="vars_input_2"
+      readOnly={true}
+      type="text"
+      value="abacus:abacus:abacus:abacus:abacus"
+    />
+    <Button
+      className="clipboard variants__row--right-button"
+      data-clipboard-target="#vars_input_2"
+      data-delay-hide={500}
+      data-event="click"
+      data-iscapture={true}
+      data-tip="Пароль скопирован в буфер обмена"
+      type="copy"
+    >
+      <span
+        className="fa-copy"
+      />
+    </Button>
+  </div>
+  <div
+    className="variants__row"
+    key="vars_3"
+  >
+    <Button
+      className="variants__row--left-button"
+      data-tip="Переключение регистра"
+      onClick={[Function]}
+      type="caps"
+    >
+      ТЕКСТ
+    </Button>
+    <input
+      className="variants__row--input"
+      data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
+      id="vars_input_3"
+      readOnly={true}
+      type="text"
+      value="abacus.abacus.abacus.abacus.abacus"
+    />
+    <Button
+      className="clipboard variants__row--right-button"
+      data-clipboard-target="#vars_input_3"
+      data-delay-hide={500}
+      data-event="click"
+      data-iscapture={true}
+      data-tip="Пароль скопирован в буфер обмена"
+      type="copy"
+    >
+      <span
+        className="fa-copy"
+      />
+    </Button>
+  </div>
+  <div
+    className="variants__row"
+    key="vars_4"
+  >
+    <Button
+      className="variants__row--left-button"
+      data-tip="Переключение регистра"
+      onClick={[Function]}
+      type="caps"
+    >
+      ТЕКСТ
+    </Button>
+    <input
+      className="variants__row--input"
+      data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
+      id="vars_input_4"
+      readOnly={true}
+      type="text"
+      value="abacusabacusabacusabacusabacus"
+    />
+    <Button
+      className="clipboard variants__row--right-button"
+      data-clipboard-target="#vars_input_4"
+      data-delay-hide={500}
+      data-event="click"
+      data-iscapture={true}
+      data-tip="Пароль скопирован в буфер обмена"
+      type="copy"
+    >
+      <span
+        className="fa-copy"
+      />
+    </Button>
+  </div>
+  <div
+    className="variants__row"
+    key="vars_5"
+  >
+    <Button
+      className="variants__row--left-button"
+      data-tip="Переключение регистра"
+      onClick={[Function]}
+      type="caps"
+    >
+      ТЕКСТ
+    </Button>
+    <input
+      className="variants__row--input"
+      data-tip="Нажмите на кнопку справа для копирования пароля в буфер обмена"
+      id="vars_input_5"
+      readOnly={true}
+      type="text"
+      value="abacus abacus abacus abacus abacus"
+    />
+    <Button
+      className="clipboard variants__row--right-button"
+      data-clipboard-target="#vars_input_5"
+      data-delay-hide={500}
+      data-event="click"
+      data-iscapture={true}
+      data-tip="Пароль скопирован в буфер обмена"
+      type="copy"
+    >
+      <span
+        className="fa-copy"
+      />
+    </Button>
+  </div>
+  <ToolTip />
+</div>
+`;
