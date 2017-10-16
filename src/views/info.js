@@ -6,7 +6,7 @@ import Footer from './components/footer/footer';
 
 import './index.scss';
 
-const Info = props => (
+const Info = () => (
     <div className="app">
         <Header text="Что это"/>
         <Menu/>

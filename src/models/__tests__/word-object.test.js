@@ -211,7 +211,7 @@ describe("class Word", () => {
                     for (let i = 0; i <= 4; i++) {
                         e.target.className = classNameFunc(i, name);
 
-                        for (let j = 0; j < 100; j++) {
+                        for (let j = 0; j < 10; j++) {
                             wordObject.handleClick(e);
                             expect(wordObject.resetWord.calls.mostRecent().args[0]).toBe(undefined);
                             expect(wordObject.index).toBeGreaterThanOrEqual(0);
@@ -638,7 +638,7 @@ describe("class Word", () => {
 
     describe("static Word.getRandomInt(min, max)", () => {
         it("should generate a random integer value (min <= value <= max)", () => {
-            for (let i = 0; i < 100; i++) {
+            for (let i = 0; i < 10; i++) {
                 let value = Word.getRandomInt(1, 10);
                 expect(value).toBeGreaterThanOrEqual(1);
                 expect(value).toBeLessThanOrEqual(10);
@@ -648,7 +648,7 @@ describe("class Word", () => {
 
     describe("static Word.getRandomCode()", () => {
         it("should generate a random 5-digit string value", () => {
-            for (let i = 0; i < 100; i++) {
+            for (let i = 0; i < 10; i++) {
                 Word.getRandomCode().split('').forEach((char) => {
                     let int = parseInt(char, 10);
                     expect(int).toBeGreaterThanOrEqual(1);
@@ -700,7 +700,7 @@ describe("class Word", () => {
     describe("Word.getRandomIndex()", () => {
         it("should return a random index value (minIndex <= value <= maxIndex)", () => {
             // if it is not filtered
-            for (let i = 0; i < 100; i++) {
+            for (let i = 0; i < 10; i++) {
                 let value = wordObject.getRandomIndex();
                 expect(value).toBeGreaterThanOrEqual(0);
                 expect(value).toBeLessThanOrEqual(7775);
@@ -708,7 +708,7 @@ describe("class Word", () => {
 
             // if it is filtered
             wordObject.filter = 'ze';
-            for (let i = 0; i < 100; i++) {
+            for (let i = 0; i < 10; i++) {
                 let value = wordObject.getRandomIndex();
                 expect(value).toBeGreaterThanOrEqual(7755);
                 expect(value).toBeLessThanOrEqual(7761);

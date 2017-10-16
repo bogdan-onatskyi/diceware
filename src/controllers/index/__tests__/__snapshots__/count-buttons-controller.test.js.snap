@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CountButtonsController component should match saved snapshot 1`] = `
+<CountButtonsView
+  handleResetAllWords={[Function]}
+  handleUsedWords={[Function]}
+  maxWords={8}
+  usedWords={5}
+/>
+`;

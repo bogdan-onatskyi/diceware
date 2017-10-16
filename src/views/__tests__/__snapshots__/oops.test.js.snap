@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Oops component should match saved snapshot 1`] = `
+<div
+  className="app"
+>
+  <Header
+    text="Не реализовано еще..."
+  />
+  <Menu />
+  <div
+    className="app__content app__content--oops"
+  >
+    <div
+      className="app__content app__content--oops-box"
+    >
+      <p>
+        Ой, то что Вы запросили, еще не реализовано, но я над этим работаю...
+      </p>
+    </div>
+  </div>
+  <Footer />
+</div>
+`;

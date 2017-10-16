@@ -6,7 +6,7 @@ import Footer from './components/footer/footer';
 
 import './index.scss';
 
-const Oops = props => (
+const Oops = () => (
     <div className="app">
         <Header text="Не реализовано еще..."/>
         <Menu/>

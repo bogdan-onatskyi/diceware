@@ -51,10 +51,9 @@ describe("Variants component", () => {
             separatedPassword: separatedPassword
         });
 
-        wrapper.find('.variants__row').forEach((row, i) => {
+        wrapper.find({type: "caps"}).forEach((button, i) => {
             let separator = passwordObject.separators[i];
             let isCAPS = passwordObject.isCAPS(i);
-            let button = row.find('.variants__row--left-button');
             let prevPassword = separatedPassword(separator, i);
 
             expect(isCAPS).toEqual(Math.pow(2, i));

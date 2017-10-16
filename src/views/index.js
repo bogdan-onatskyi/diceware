@@ -10,11 +10,11 @@ import passwordObject from '../models/password-object';
 
 import './index.scss';
 
-passwordObject.init(2, 8);
+passwordObject.init(5, 8);
 
 const stores = {passwordObject};
 
-const Index = props => (
+const Index = () => (
     <Provider {...stores}>
         <div className="app">
             <Header text="Генератор diceware паролей"/>

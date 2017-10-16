@@ -6,7 +6,7 @@ import Footer from './components/footer/footer';
 
 import './index.scss';
 
-const Contacts = props => (
+const Contacts = () => (
     <div className="app">
         <Header text="Контакты"/>
         <Menu/>
