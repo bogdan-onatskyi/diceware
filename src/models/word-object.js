@@ -10,7 +10,7 @@ class Word {
     constructor(wordViewId) {
         this._filter = '';
         this._indexFiltered = [];
-        this._wordViewId = wordViewId + 1;
+        this.wordViewId = wordViewId + 1;
 
         this.editorOpened = false;
         this.toggleEditor = () => {
@@ -21,6 +21,7 @@ class Word {
         this._index = this.getRandomIndex();
 
         this.handleClick = (e) => {
+            if (e.target.className.includes("disabled")) return;
             const handler = {
                 "filter": () => this.toggleEditor(),
                 "prev2": () => this.resetWord(this.prev2index),
@@ -29,9 +30,9 @@ class Word {
                 "next1": () => this.resetWord(this.next1index),
                 "next2": () => this.resetWord(this.next2index),
                 "code": () => this.resetWord(),
-                "minus": () => this.minusWord(),
+                "minus": () => this.resetWord(this.prev1index),
                 "reset-word": () => this.resetWord(),
-                "plus": () => this.plusWord()
+                "plus": () => this.resetWord(this.next1index)
             };
             for (let prop in handler) {
                 if (e.target.className.includes(prop)) {
@@ -43,12 +44,13 @@ class Word {
 
         this.handleWheel = (e) => {
             e.preventDefault();
+            if (e.target.className.includes("disabled")) return;
             if (!e.target.className.includes("wv__word")) return;
-            e.deltaY > 0 ? this.plusWord() : this.minusWord();
+            e.deltaY < 0 ? this.resetWord(this.prev1index) : this.resetWord(this.next1index);
         };
 
-        this.handleFilter = (letter) => {
-            this.filter += letter;
+        this.handleFilter = (char) => {
+            this.filter += char;
         };
 
         this.handleCountWords = (char) => {
@@ -71,7 +73,7 @@ class Word {
     }
 
     get isFiltered() {
-        return this._filter !== (undefined || '');
+        return this._filter ? this._filter !== '' : false;
     }
 
     @computed
@@ -80,7 +82,17 @@ class Word {
     }
 
     set filter(value) {
-        this._filter = value;
+        if (this.countWords(value) === 0) {
+            let str = '';
+            const array = value.split('');
+            for (let i = 0; i < array.length; i++) {
+                if (this.countWords(str + array[i]) === 0) break;
+                str += array[i];
+            }
+            this._filter = str;
+        }
+        else this._filter = value;
+
         this.setWordListFiltered();
     }
 
@@ -88,16 +100,19 @@ class Word {
         if (this.isFiltered) {
             this._indexFiltered.splice(0);
             wordList.forEach((word, i) => {
-                    if (word.startsWith(this.filter)) this._indexFiltered.push(i);
-                }
-            );
-            if (this._indexFiltered.length === 0) this._indexFiltered[0] = 0;
+                if (word.startsWith(this.filter)) this._indexFiltered.push(i);
+            });
             this.index = this._indexFiltered[0];
-        } else this._indexFiltered.splice(0);
+        }
+        else this._indexFiltered.splice(0);
     }
 
     get wordViewId() {
         return this._wordViewId;
+    }
+
+    set wordViewId(value) {
+        this._wordViewId = (typeof value === "number" && value > 0) ? value : 1;
     }
 
     @computed
@@ -108,7 +123,7 @@ class Word {
     set index(value) {
         this._index = (value >= this.minIndex && value <= this.maxIndex)
             ? value
-            : 0;
+            : this.minIndex;
     };
 
     @computed
@@ -119,13 +134,13 @@ class Word {
     // @computed
     get prev2word() {
         const prevWord = this.getWord(this.getPrevIndex(this.getPrevIndex(this.index)));
-        return this.word === prevWord ? '' : prevWord;
+        return (this.word === prevWord) ? '' : prevWord;
     }
 
     // @computed
     get prev1word() {
         const prevWord = this.getWord(this.getPrevIndex(this.index));
-        return this.word === prevWord ? '' : prevWord;
+        return (this.word === prevWord) ? '' : prevWord;
     }
 
     get prev2index() {
@@ -152,29 +167,31 @@ class Word {
     // @computed
     get next1word() {
         const nextWord = this.getWord(this.getNextIndex(this.index));
-        return this.word === nextWord ? '' : nextWord;
+        return (this.word === nextWord) ? '' : nextWord;
     }
 
     // @computed
     get next2word() {
         const nextWord = this.getWord(this.getNextIndex(this.getNextIndex(this.index)));
-        return this.word === nextWord ? '' : nextWord;
-    }
-
-    @action('Previous word was selected')
-    minusWord() {
-        this.index = this.getPrevIndex(this.index);
+        return (this.word === nextWord) ? '' : nextWord;
     }
 
     @action('New random word was generated')
-    resetWord(index = 0) {
-        this.index = (index !== 0) ? index : this.getRandomIndex();
-    };
+    resetWord(index = -1) {
+        if (index !== -1) {
+            this.index = index;
+            return;
+        }
 
-    @action('Next word was selected')
-    plusWord() {
-        this.index = this.getNextIndex(this.index);
-    }
+        if (this.minIndex === this.maxIndex) return; // leave this.index unchanged
+
+        const currentIndex = this.index;
+        let randomIndex = this.getRandomIndex();
+
+        while (currentIndex === randomIndex) randomIndex = this.getRandomIndex();
+
+        this.index = randomIndex;
+    };
 
     static indexToCode(index) {
         let localIndex = index;
@@ -193,7 +210,7 @@ class Word {
     }
 
     static codeToIndex(code) {
-        const codeArray = [] = code.split('');
+        const codeArray = code.split('');
 
         let index = codeArray[4] - 1;
 
@@ -227,7 +244,7 @@ class Word {
     }
 
     getPrevIndex(index) {
-        return index > this.minIndex
+        return (index > this.minIndex) && (index <= this.maxIndex)
             ? index - 1
             : this.maxIndex;
     }
@@ -239,7 +256,7 @@ class Word {
     }
 
     getNextIndex(index) {
-        return index < this.maxIndex
+        return (index >= this.minIndex) && (index < this.maxIndex)
             ? index + 1
             : this.minIndex;
     }

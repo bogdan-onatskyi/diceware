@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WordController component should match saved snapshot (wordObject.editorOpened === false) 1`] = `
+<div
+  className="w-container"
+>
+  <WordView
+    code="11111"
+    filter=""
+    handleClick={[Function]}
+    handleWheel={[Function]}
+    next1word="ABDOMEN"
+    next2word="ABDOMINAL"
+    prev1word="ZOOM"
+    prev2word="ZOOLOGY"
+    toggleEditor={[Function]}
+    word="ABACUS"
+    wordViewId={2}
+  />
+</div>
+`;
+
+exports[`WordController component should match saved snapshot (wordObject.editorOpened === true) 1`] = `
+<div
+  className="w-container"
+>
+  <WordView
+    code="11111"
+    filter=""
+    handleClick={[Function]}
+    handleWheel={[Function]}
+    next1word="ABDOMEN"
+    next2word="ABDOMINAL"
+    prev1word="ZOOM"
+    prev2word="ZOOLOGY"
+    toggleEditor={[Function]}
+    word="ABACUS"
+    wordViewId={2}
+  />
+  <EditorDialog
+    filter=""
+    handleBackspace={[Function]}
+    handleCountWords={[Function]}
+    handleFilter={[Function]}
+    toggleEditor={[Function]}
+    wordView={
+      <WordView
+        code="11111"
+        filter=""
+        handleClick={[Function]}
+        handleDoubleClick={undefined}
+        handleWheel={[Function]}
+        next1word="ABDOMEN"
+        next2word="ABDOMINAL"
+        prev1word="ZOOM"
+        prev2word="ZOOLOGY"
+        toggleEditor={[Function]}
+        word="ABACUS"
+        wordViewId={2}
+      />
+    }
+  />
+</div>
+`;

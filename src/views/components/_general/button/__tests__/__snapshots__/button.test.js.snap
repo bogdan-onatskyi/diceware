@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component should match saved snapshot (data-tip === '') 1`] = `
+<button
+  className="button button--sometype"
+  data-tip=""
+>
+  Button text
+</button>
+`;
+
+exports[`Button component should match saved snapshot (disabled === true) 1`] = `
+<button
+  className="button button--disabled button--sometype"
+  data-tip="Tooltip"
+  onClick={null}
+>
+  Button text
+</button>
+`;
+
+exports[`Button component should match saved snapshot (selected === true) 1`] = `
+<button
+  className="button button--selected button--sometype"
+  data-tip="Tooltip"
+>
+  Button text
+</button>
+`;
+
+exports[`Button component should match saved snapshot (type === 'sometype') 1`] = `
+<button
+  className="button button--sometype"
+  data-tip="Tooltip"
+  onClick={[Function]}
+>
+  Button text
+</button>
+`;

@@ -1,19 +1,18 @@
 @import "../vars";
 
 .words-view {
-    flex: 0 1 90%;
-    padding: 10px;
-
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 10px;
+    .w-container {
+        display: flex;
+    }
 }
 
 .buttons-view {
-    flex: 0 1 90%;
 }
 
 .password-view {
-    flex: 0 1 90%;
-    margin: $margin auto;
+    padding-bottom: 10px;
 }

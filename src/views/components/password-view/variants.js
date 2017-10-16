@@ -5,7 +5,6 @@ import Button from '../_general/button/button';
 import ToolTip from '../_general/tooltip/tooltip';
 
 import './password-view.scss';
-import clippy from './clippy.svg';
 
 const Variants = ({separators, toggleCAPS, isCAPS, separatedPassword}) => {
     return (
@@ -29,7 +28,7 @@ const Variants = ({separators, toggleCAPS, isCAPS, separatedPassword}) => {
                             data-delay-hide={500}
                             data-iscapture={true}
                             data-tip="Пароль скопирован в буфер обмена">
-                        <img src={clippy} width={15 + 'px'} alt=""/>
+                        <span className="fa-copy"/>
                     </Button>
                 </div>
             )}

@@ -1,0 +1,286 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexController component should match saved snapshot 1`] = `
+<div
+  className="app__content"
+>
+  <div
+    className="words-view"
+  >
+    <_class
+      key="WordController_1"
+      wordObject={
+        Word {
+          "_filter": "",
+          "_index": 0,
+          "_indexFiltered": Array [],
+          "_wordViewId": 1,
+          "editorOpened": false,
+          "handleBackspace": [Function],
+          "handleClick": [Function],
+          "handleCountWords": [Function],
+          "handleFilter": [Function],
+          "handleWheel": [Function],
+          "toggleEditor": [Function],
+        }
+      }
+    />
+    <_class
+      key="WordController_2"
+      wordObject={
+        Word {
+          "_filter": "",
+          "_index": 0,
+          "_indexFiltered": Array [],
+          "_wordViewId": 2,
+          "editorOpened": false,
+          "handleBackspace": [Function],
+          "handleClick": [Function],
+          "handleCountWords": [Function],
+          "handleFilter": [Function],
+          "handleWheel": [Function],
+          "toggleEditor": [Function],
+        }
+      }
+    />
+    <_class
+      key="WordController_3"
+      wordObject={
+        Word {
+          "_filter": "",
+          "_index": 0,
+          "_indexFiltered": Array [],
+          "_wordViewId": 3,
+          "editorOpened": false,
+          "handleBackspace": [Function],
+          "handleClick": [Function],
+          "handleCountWords": [Function],
+          "handleFilter": [Function],
+          "handleWheel": [Function],
+          "toggleEditor": [Function],
+        }
+      }
+    />
+    <_class
+      key="WordController_4"
+      wordObject={
+        Word {
+          "_filter": "",
+          "_index": 0,
+          "_indexFiltered": Array [],
+          "_wordViewId": 4,
+          "editorOpened": false,
+          "handleBackspace": [Function],
+          "handleClick": [Function],
+          "handleCountWords": [Function],
+          "handleFilter": [Function],
+          "handleWheel": [Function],
+          "toggleEditor": [Function],
+        }
+      }
+    />
+    <_class
+      key="WordController_5"
+      wordObject={
+        Word {
+          "_filter": "",
+          "_index": 0,
+          "_indexFiltered": Array [],
+          "_wordViewId": 5,
+          "editorOpened": false,
+          "handleBackspace": [Function],
+          "handleClick": [Function],
+          "handleCountWords": [Function],
+          "handleFilter": [Function],
+          "handleWheel": [Function],
+          "toggleEditor": [Function],
+        }
+      }
+    />
+  </div>
+  <_class
+    passwordObject={
+      Password {
+        "_maxWords": 8,
+        "_usedWords": 5,
+        "caps": 63,
+        "handleResetAllWords": [Function],
+        "handleUsedWords": [Function],
+        "init": [Function],
+        "isCAPS": [Function],
+        "isVariantsOpened": false,
+        "separatedPassword": [Function],
+        "separators": Array [
+          "-",
+          "_",
+          ":",
+          ".",
+          "",
+          " ",
+        ],
+        "toggleCAPS": [Function],
+        "toggleVariantsOpened": [Function],
+        "wordArray": Array [
+          Word {
+            "_filter": "",
+            "_index": 0,
+            "_indexFiltered": Array [],
+            "_wordViewId": 1,
+            "editorOpened": false,
+            "handleBackspace": [Function],
+            "handleClick": [Function],
+            "handleCountWords": [Function],
+            "handleFilter": [Function],
+            "handleWheel": [Function],
+            "toggleEditor": [Function],
+          },
+          Word {
+            "_filter": "",
+            "_index": 0,
+            "_indexFiltered": Array [],
+            "_wordViewId": 2,
+            "editorOpened": false,
+            "handleBackspace": [Function],
+            "handleClick": [Function],
+            "handleCountWords": [Function],
+            "handleFilter": [Function],
+            "handleWheel": [Function],
+            "toggleEditor": [Function],
+          },
+          Word {
+            "_filter": "",
+            "_index": 0,
+            "_indexFiltered": Array [],
+            "_wordViewId": 3,
+            "editorOpened": false,
+            "handleBackspace": [Function],
+            "handleClick": [Function],
+            "handleCountWords": [Function],
+            "handleFilter": [Function],
+            "handleWheel": [Function],
+            "toggleEditor": [Function],
+          },
+          Word {
+            "_filter": "",
+            "_index": 0,
+            "_indexFiltered": Array [],
+            "_wordViewId": 4,
+            "editorOpened": false,
+            "handleBackspace": [Function],
+            "handleClick": [Function],
+            "handleCountWords": [Function],
+            "handleFilter": [Function],
+            "handleWheel": [Function],
+            "toggleEditor": [Function],
+          },
+          Word {
+            "_filter": "",
+            "_index": 0,
+            "_indexFiltered": Array [],
+            "_wordViewId": 5,
+            "editorOpened": false,
+            "handleBackspace": [Function],
+            "handleClick": [Function],
+            "handleCountWords": [Function],
+            "handleFilter": [Function],
+            "handleWheel": [Function],
+            "toggleEditor": [Function],
+          },
+        ],
+      }
+    }
+  />
+  <_class
+    passwordObject={
+      Password {
+        "_maxWords": 8,
+        "_usedWords": 5,
+        "caps": 63,
+        "handleResetAllWords": [Function],
+        "handleUsedWords": [Function],
+        "init": [Function],
+        "isCAPS": [Function],
+        "isVariantsOpened": false,
+        "separatedPassword": [Function],
+        "separators": Array [
+          "-",
+          "_",
+          ":",
+          ".",
+          "",
+          " ",
+        ],
+        "toggleCAPS": [Function],
+        "toggleVariantsOpened": [Function],
+        "wordArray": Array [
+          Word {
+            "_filter": "",
+            "_index": 0,
+            "_indexFiltered": Array [],
+            "_wordViewId": 1,
+            "editorOpened": false,
+            "handleBackspace": [Function],
+            "handleClick": [Function],
+            "handleCountWords": [Function],
+            "handleFilter": [Function],
+            "handleWheel": [Function],
+            "toggleEditor": [Function],
+          },
+          Word {
+            "_filter": "",
+            "_index": 0,
+            "_indexFiltered": Array [],
+            "_wordViewId": 2,
+            "editorOpened": false,
+            "handleBackspace": [Function],
+            "handleClick": [Function],
+            "handleCountWords": [Function],
+            "handleFilter": [Function],
+            "handleWheel": [Function],
+            "toggleEditor": [Function],
+          },
+          Word {
+            "_filter": "",
+            "_index": 0,
+            "_indexFiltered": Array [],
+            "_wordViewId": 3,
+            "editorOpened": false,
+            "handleBackspace": [Function],
+            "handleClick": [Function],
+            "handleCountWords": [Function],
+            "handleFilter": [Function],
+            "handleWheel": [Function],
+            "toggleEditor": [Function],
+          },
+          Word {
+            "_filter": "",
+            "_index": 0,
+            "_indexFiltered": Array [],
+            "_wordViewId": 4,
+            "editorOpened": false,
+            "handleBackspace": [Function],
+            "handleClick": [Function],
+            "handleCountWords": [Function],
+            "handleFilter": [Function],
+            "handleWheel": [Function],
+            "toggleEditor": [Function],
+          },
+          Word {
+            "_filter": "",
+            "_index": 0,
+            "_indexFiltered": Array [],
+            "_wordViewId": 5,
+            "editorOpened": false,
+            "handleBackspace": [Function],
+            "handleClick": [Function],
+            "handleCountWords": [Function],
+            "handleFilter": [Function],
+            "handleWheel": [Function],
+            "toggleEditor": [Function],
+          },
+        ],
+      }
+    }
+  />
+</div>
+`;

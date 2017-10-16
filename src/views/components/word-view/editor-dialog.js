@@ -5,25 +5,20 @@ import ModalDialog from '../_general/modal-dialog/modal-dialog';
 import Button from '../_general/button/button';
 
 const EditorDialog = ({toggleEditor, handleFilter, handleCountWords, filter, handleBackspace, wordView}) => {
-    let key = 1;
     let countWords = 0;
-    let dataTip = null;
 
     const alfabet = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
-    const charButtuns = [] = alfabet.map((row, i) =>
+    const charButtuns = alfabet.map((row, i) =>
         <div key={'row_' + i}>
             {row.split('').map((char) => {
                 countWords = handleCountWords(char);
-
-                dataTip = countWords
-                    ? "Добавить букву <" + char.toUpperCase() + "> к фильтру"
-                    : "";
-
                 return (
                     <Button type="char" disabled={countWords === 0}
                             onClick={handleFilter.bind(this, char)}
-                            data-tip={dataTip}
-                            key={'char_' + key++}>
+                            data-tip={countWords
+                                ? "Добавить букву <" + char.toUpperCase() + "> к фильтру"
+                                : ""}
+                            key={'char_' + char}>
                         {char}
                     </Button>
                 );
@@ -31,22 +26,19 @@ const EditorDialog = ({toggleEditor, handleFilter, handleCountWords, filter, han
         </div>
     );
 
-    dataTip = (filter !== '')
-        ? "Удалить последнюю букву фильтра"
-        : "";
-
     return (
-        <ModalDialog title={"Редактор слова"} isOpen={true} handlerClose={toggleEditor}>
+        <ModalDialog title="Редактор слова" isOpen={true} handlerClose={toggleEditor}>
             {wordView}
             {charButtuns}
             <div>
                 <Button type="back-space" disabled={filter === ''}
                         onClick={handleBackspace}
-                        data-tip={dataTip}>
+                        data-tip={filter ? "Удалить последнюю букву фильтра" : ""}>
                     backspace
                 </Button>
             </div>
-        </ModalDialog>);
+        </ModalDialog>
+    );
 };
 
 EditorDialog.propTypes = {

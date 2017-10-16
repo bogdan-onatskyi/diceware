@@ -30,7 +30,7 @@ const WordController = observer(({wordObject}) => {
         : "";
 
     return (
-        <div>
+        <div className="w-container">
             {word}
             {editor}
         </div>

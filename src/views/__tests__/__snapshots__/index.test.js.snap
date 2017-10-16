@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index component should match saved snapshot 1`] = `
+<Provider
+  passwordObject={
+    Password {
+      "_maxWords": 8,
+      "_usedWords": 5,
+      "caps": 63,
+      "handleResetAllWords": [Function],
+      "handleUsedWords": [Function],
+      "init": [Function],
+      "isCAPS": [Function],
+      "isVariantsOpened": false,
+      "separatedPassword": [Function],
+      "separators": Array [
+        "-",
+        "_",
+        ":",
+        ".",
+        "",
+        " ",
+      ],
+      "toggleCAPS": [Function],
+      "toggleVariantsOpened": [Function],
+      "wordArray": Array [
+        Word {
+          "_filter": "",
+          "_index": 0,
+          "_indexFiltered": Array [],
+          "_wordViewId": 1,
+          "editorOpened": false,
+          "handleBackspace": [Function],
+          "handleClick": [Function],
+          "handleCountWords": [Function],
+          "handleFilter": [Function],
+          "handleWheel": [Function],
+          "toggleEditor": [Function],
+        },
+        Word {
+          "_filter": "",
+          "_index": 0,
+          "_indexFiltered": Array [],
+          "_wordViewId": 2,
+          "editorOpened": false,
+          "handleBackspace": [Function],
+          "handleClick": [Function],
+          "handleCountWords": [Function],
+          "handleFilter": [Function],
+          "handleWheel": [Function],
+          "toggleEditor": [Function],
+        },
+        Word {
+          "_filter": "",
+          "_index": 0,
+          "_indexFiltered": Array [],
+          "_wordViewId": 3,
+          "editorOpened": false,
+          "handleBackspace": [Function],
+          "handleClick": [Function],
+          "handleCountWords": [Function],
+          "handleFilter": [Function],
+          "handleWheel": [Function],
+          "toggleEditor": [Function],
+        },
+        Word {
+          "_filter": "",
+          "_index": 0,
+          "_indexFiltered": Array [],
+          "_wordViewId": 4,
+          "editorOpened": false,
+          "handleBackspace": [Function],
+          "handleClick": [Function],
+          "handleCountWords": [Function],
+          "handleFilter": [Function],
+          "handleWheel": [Function],
+          "toggleEditor": [Function],
+        },
+        Word {
+          "_filter": "",
+          "_index": 0,
+          "_indexFiltered": Array [],
+          "_wordViewId": 5,
+          "editorOpened": false,
+          "handleBackspace": [Function],
+          "handleClick": [Function],
+          "handleCountWords": [Function],
+          "handleFilter": [Function],
+          "handleWheel": [Function],
+          "toggleEditor": [Function],
+        },
+      ],
+    }
+  }
+>
+  <div
+    className="app"
+  >
+    <Header
+      text="Генератор diceware паролей"
+    />
+    <Menu />
+    <_class
+      passwordObject={
+        Password {
+          "_maxWords": 8,
+          "_usedWords": 5,
+          "caps": 63,
+          "handleResetAllWords": [Function],
+          "handleUsedWords": [Function],
+          "init": [Function],
+          "isCAPS": [Function],
+          "isVariantsOpened": false,
+          "separatedPassword": [Function],
+          "separators": Array [
+            "-",
+            "_",
+            ":",
+            ".",
+            "",
+            " ",
+          ],
+          "toggleCAPS": [Function],
+          "toggleVariantsOpened": [Function],
+          "wordArray": Array [
+            Word {
+              "_filter": "",
+              "_index": 0,
+              "_indexFiltered": Array [],
+              "_wordViewId": 1,
+              "editorOpened": false,
+              "handleBackspace": [Function],
+              "handleClick": [Function],
+              "handleCountWords": [Function],
+              "handleFilter": [Function],
+              "handleWheel": [Function],
+              "toggleEditor": [Function],
+            },
+            Word {
+              "_filter": "",
+              "_index": 0,
+              "_indexFiltered": Array [],
+              "_wordViewId": 2,
+              "editorOpened": false,
+              "handleBackspace": [Function],
+              "handleClick": [Function],
+              "handleCountWords": [Function],
+              "handleFilter": [Function],
+              "handleWheel": [Function],
+              "toggleEditor": [Function],
+            },
+            Word {
+              "_filter": "",
+              "_index": 0,
+              "_indexFiltered": Array [],
+              "_wordViewId": 3,
+              "editorOpened": false,
+              "handleBackspace": [Function],
+              "handleClick": [Function],
+              "handleCountWords": [Function],
+              "handleFilter": [Function],
+              "handleWheel": [Function],
+              "toggleEditor": [Function],
+            },
+            Word {
+              "_filter": "",
+              "_index": 0,
+              "_indexFiltered": Array [],
+              "_wordViewId": 4,
+              "editorOpened": false,
+              "handleBackspace": [Function],
+              "handleClick": [Function],
+              "handleCountWords": [Function],
+              "handleFilter": [Function],
+              "handleWheel": [Function],
+              "toggleEditor": [Function],
+            },
+            Word {
+              "_filter": "",
+              "_index": 0,
+              "_indexFiltered": Array [],
+              "_wordViewId": 5,
+              "editorOpened": false,
+              "handleBackspace": [Function],
+              "handleClick": [Function],
+              "handleCountWords": [Function],
+              "handleFilter": [Function],
+              "handleWheel": [Function],
+              "toggleEditor": [Function],
+            },
+          ],
+        }
+      }
+    />
+    <Footer />
+  </div>
+</Provider>
+`;

@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CountButtonsView component should match saved snapshot 1`] = `
+<div
+  className="buttons-view"
+>
+  <Button
+    data-tip="Выбрать количество слов в пароле: 1"
+    disabled={false}
+    key="count-button_1"
+    onClick={[Function]}
+    type="count"
+  >
+    1
+  </Button>
+  <Button
+    data-tip="Выбрать количество слов в пароле: 2"
+    disabled={false}
+    key="count-button_2"
+    onClick={[Function]}
+    type="count"
+  >
+    2
+  </Button>
+  <Button
+    data-tip="Выбрать количество слов в пароле: 3"
+    disabled={false}
+    key="count-button_3"
+    onClick={[Function]}
+    type="count"
+  >
+    3
+  </Button>
+  <Button
+    data-tip="Выбрать количество слов в пароле: 4"
+    disabled={false}
+    key="count-button_4"
+    onClick={[Function]}
+    type="count"
+  >
+    4
+  </Button>
+  <Button
+    data-tip=""
+    disabled={true}
+    key="count-button_5"
+    onClick={[Function]}
+    type="count"
+  >
+    5
+  </Button>
+  <Button
+    data-tip="Выбрать количество слов в пароле: 6"
+    disabled={false}
+    key="count-button_6"
+    onClick={[Function]}
+    type="count"
+  >
+    6
+  </Button>
+  <Button
+    data-tip="Выбрать количество слов в пароле: 7"
+    disabled={false}
+    key="count-button_7"
+    onClick={[Function]}
+    type="count"
+  >
+    7
+  </Button>
+  <Button
+    data-tip="Выбрать количество слов в пароле: 8"
+    disabled={false}
+    key="count-button_8"
+    onClick={[Function]}
+    type="count"
+  >
+    8
+  </Button>
+  <div>
+    <Button
+      data-tip="Изменить все слова в пароле"
+      onClick={[Function]}
+      type="reset-all-words"
+    >
+      Изменить все
+    </Button>
+  </div>
+  <ToolTip />
+</div>
+`;

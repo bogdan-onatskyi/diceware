@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component should match saved snapshot 1`] = `
+<footer
+  className="footer"
+>
+  <span
+    className="footer--icon"
+  />
+  +38 (097) 499-73-82 e‑mail: 
+  <a
+    href="mailto: gentoo.user@ukr.net"
+  >
+    Богдан Онацкий
+  </a>
+</footer>
+`;

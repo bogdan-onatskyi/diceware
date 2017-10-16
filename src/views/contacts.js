@@ -6,7 +6,7 @@ import Footer from './components/footer/footer';
 
 import './index.scss';
 
-const Contacts = props => (
+const Contacts = () => (
     <div className="app">
         <Header text="Контакты"/>
         <Menu/>
@@ -22,7 +22,14 @@ const Contacts = props => (
                 </span>
                 <span className="row">
                     <span className="col1">резюме: </span>
-                    <a className="col2" href="#/oops">ссылка</a>
+                        <a className="col2"
+                           href="https://www.work.ua/jobseeker/my/resumes/view/?id=4308769">
+                            www.work.ua
+                        </a>
+                    <span className="col1"/>
+                        <a className="col2"
+                           href="https://rabota.ua/jobsearch/cvbuilder?resumeId=11349311">
+                            rabota.ua</a>
                 </span>
             </div>
         </div>

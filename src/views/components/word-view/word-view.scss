@@ -11,12 +11,15 @@
 
     &__word {
         display: block;
-        margin: $margin auto;
+        padding: 3px 0;
         font: 16px/18px serif;
         color: $color__text;
         &:hover {
             opacity: 1;
             cursor: pointer;
+        }
+        &--disabled:hover {
+            cursor: default;
         }
         &--filter {
             &-text {
@@ -38,16 +41,14 @@
     }
 
     &__code {
-        display: block;
+        display: inline-block;
+        height: 25px;
+        width: 25px;
+        vertical-align: middle;
         background: url("sprite25.png"), no-repeat;
-
-        &--common {
-            display: inline-block;
-            height: 25px;
-            width: 25px;
-            vertical-align: middle;
+        &--disabled {
+            opacity: 0.1;
         }
-
         @for $i from 1 through 6 {
             &--#{$i} {
                 background-position: (-1)*($i+(-1))*$size__sprite 0;

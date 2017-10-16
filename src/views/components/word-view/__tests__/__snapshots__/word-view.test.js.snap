@@ -1,0 +1,285 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Word-view component should match saved snapshot (wordObject.filter === '') 1`] = `
+<div
+  className="wv"
+  onClick={[Function]}
+>
+  <div
+    onWheel={[Function]}
+  >
+    <Word
+      mod="prev2"
+      tip="Выбрать это слово"
+      word="prev2word"
+    />
+    <Word
+      mod="prev1"
+      tip="Выбрать это слово"
+      word="prev1word"
+    />
+    <Word
+      mod="current"
+      tip="Фильтр для этого слова"
+      word="word"
+    />
+    <Word
+      mod="next1"
+      tip="Выбрать это слово"
+      word="next1word"
+    />
+    <Word
+      mod="next2"
+      tip="Выбрать это слово"
+      word="next2word"
+    />
+  </div>
+  <div
+    data-tip="Новое слово"
+  >
+    <Code
+      key="code_2_1"
+      mod="1"
+      word="prev1wordnext1word"
+    />
+    <Code
+      key="code_2_2"
+      mod="2"
+      word="prev1wordnext1word"
+    />
+    <Code
+      key="code_2_3"
+      mod="3"
+      word="prev1wordnext1word"
+    />
+    <Code
+      key="code_2_4"
+      mod="4"
+      word="prev1wordnext1word"
+    />
+    <Code
+      key="code_2_5"
+      mod="5"
+      word="prev1wordnext1word"
+    />
+  </div>
+  <div>
+    <Button
+      data-tip="Предыдующее слово"
+      disabled={false}
+      type="minus"
+    >
+      -
+    </Button>
+    <Button
+      data-tip="Новое слово"
+      disabled={false}
+      type="reset-word"
+    >
+      Изменить
+    </Button>
+    <Button
+      data-tip="Следующее слово"
+      disabled={false}
+      type="plus"
+    >
+      +
+    </Button>
+  </div>
+  <ToolTip />
+</div>
+`;
+
+exports[`Word-view component should match saved snapshot (wordObject.filter === 'a') 1`] = `
+<div
+  className="wv"
+  onClick={[Function]}
+>
+  <div
+    onWheel={[Function]}
+  >
+    <Word
+      mod="filter"
+      tip="Фильтр для этого слова"
+      word="Фильтр:"
+    >
+      <span
+        className="wv__word--filter-text"
+      >
+        A
+        *
+      </span>
+    </Word>
+    <Word
+      mod="prev1"
+      tip="Выбрать это слово"
+      word="AXIS"
+    />
+    <Word
+      mod="current"
+      tip="Фильтр для этого слова"
+      word="ABACUS"
+    />
+    <Word
+      mod="next1"
+      tip="Выбрать это слово"
+      word="ABDOMEN"
+    />
+    <Word
+      mod="next2"
+      tip="Выбрать это слово"
+      word="ABDOMINAL"
+    />
+  </div>
+  <div
+    data-tip="Новое слово"
+  >
+    <Code
+      key="code_2_1"
+      mod="1"
+      word="AXISABDOMEN"
+    />
+    <Code
+      key="code_2_2"
+      mod="1"
+      word="AXISABDOMEN"
+    />
+    <Code
+      key="code_2_3"
+      mod="1"
+      word="AXISABDOMEN"
+    />
+    <Code
+      key="code_2_4"
+      mod="1"
+      word="AXISABDOMEN"
+    />
+    <Code
+      key="code_2_5"
+      mod="1"
+      word="AXISABDOMEN"
+    />
+  </div>
+  <div>
+    <Button
+      data-tip="Предыдующее слово"
+      disabled={false}
+      type="minus"
+    >
+      -
+    </Button>
+    <Button
+      data-tip="Новое слово"
+      disabled={false}
+      type="reset-word"
+    >
+      Изменить
+    </Button>
+    <Button
+      data-tip="Следующее слово"
+      disabled={false}
+      type="plus"
+    >
+      +
+    </Button>
+  </div>
+  <ToolTip />
+</div>
+`;
+
+exports[`Word-view component should match saved snapshot (wordObject.filter === 'zom') 1`] = `
+<div
+  className="wv"
+  onClick={[Function]}
+>
+  <div
+    onWheel={[Function]}
+  >
+    <Word
+      mod="filter"
+      tip="Фильтр для этого слова"
+      word="Фильтр:"
+    >
+      <span
+        className="wv__word--filter-text"
+      >
+        ZOM
+        *
+      </span>
+    </Word>
+    <Word
+      mod="prev1"
+      tip="Выбрать это слово"
+      word=""
+    />
+    <Word
+      mod="current"
+      tip="Фильтр для этого слова"
+      word="ZOMBIE"
+    />
+    <Word
+      mod="next1"
+      tip="Выбрать это слово"
+      word=""
+    />
+    <Word
+      mod="next2"
+      tip="Выбрать это слово"
+      word=""
+    />
+  </div>
+  <div
+    data-tip=""
+  >
+    <Code
+      key="code_2_1"
+      mod="6"
+      word=""
+    />
+    <Code
+      key="code_2_2"
+      mod="6"
+      word=""
+    />
+    <Code
+      key="code_2_3"
+      mod="6"
+      word=""
+    />
+    <Code
+      key="code_2_4"
+      mod="5"
+      word=""
+    />
+    <Code
+      key="code_2_5"
+      mod="6"
+      word=""
+    />
+  </div>
+  <div>
+    <Button
+      data-tip=""
+      disabled={true}
+      type="minus"
+    >
+      -
+    </Button>
+    <Button
+      data-tip=""
+      disabled={true}
+      type="reset-word"
+    >
+      Изменить
+    </Button>
+    <Button
+      data-tip=""
+      disabled={true}
+      type="plus"
+    >
+      +
+    </Button>
+  </div>
+  <ToolTip />
+</div>
+`;

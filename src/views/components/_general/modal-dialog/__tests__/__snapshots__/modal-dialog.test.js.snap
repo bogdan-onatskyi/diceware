@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalDialog component should match saved snapshot (type === 'sometype') 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="modal"
+  closeTimeoutMS={0}
+  contentLabel="onRequestClose Example"
+  isOpen={true}
+  onRequestClose={[Function]}
+  overlayClassName="overlay"
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  shouldCloseOnOverlayClick={false}
+  shouldFocusAfterRender={true}
+>
+  <div
+    className="modal__title"
+  >
+    <span
+      className="modal__title--content"
+    >
+      Title
+    </span>
+    <span
+      className="modal__title--close-button"
+      data-tip="Закрыть"
+      onClick={[Function]}
+    >
+       × 
+    </span>
+  </div>
+  <div
+    className="modal__content"
+  >
+    <div
+      className="modal__content--children"
+    >
+      <span>
+        text
+      </span>
+      <Button
+        onClick={[Function]}
+        type="dialog-close"
+      >
+        Закрыть
+      </Button>
+    </div>
+  </div>
+  <ToolTip />
+</Modal>
+`;

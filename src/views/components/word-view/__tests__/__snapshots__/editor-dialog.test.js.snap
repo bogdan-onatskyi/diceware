@@ -1,0 +1,267 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditorDialog component should match saved snapshot 1`] = `
+<ModalDialog
+  handlerClose={[Function]}
+  isOpen={true}
+  title="Редактор слова"
+>
+  <WordView />
+  <div
+    key="row_0"
+  >
+    <Button
+      data-tip="Добавить букву <Q> к фильтру"
+      disabled={false}
+      key="char_q"
+      onClick={[Function]}
+      type="char"
+    >
+      q
+    </Button>
+    <Button
+      data-tip="Добавить букву <W> к фильтру"
+      disabled={false}
+      key="char_w"
+      onClick={[Function]}
+      type="char"
+    >
+      w
+    </Button>
+    <Button
+      data-tip="Добавить букву <E> к фильтру"
+      disabled={false}
+      key="char_e"
+      onClick={[Function]}
+      type="char"
+    >
+      e
+    </Button>
+    <Button
+      data-tip="Добавить букву <R> к фильтру"
+      disabled={false}
+      key="char_r"
+      onClick={[Function]}
+      type="char"
+    >
+      r
+    </Button>
+    <Button
+      data-tip="Добавить букву <T> к фильтру"
+      disabled={false}
+      key="char_t"
+      onClick={[Function]}
+      type="char"
+    >
+      t
+    </Button>
+    <Button
+      data-tip="Добавить букву <Y> к фильтру"
+      disabled={false}
+      key="char_y"
+      onClick={[Function]}
+      type="char"
+    >
+      y
+    </Button>
+    <Button
+      data-tip="Добавить букву <U> к фильтру"
+      disabled={false}
+      key="char_u"
+      onClick={[Function]}
+      type="char"
+    >
+      u
+    </Button>
+    <Button
+      data-tip="Добавить букву <I> к фильтру"
+      disabled={false}
+      key="char_i"
+      onClick={[Function]}
+      type="char"
+    >
+      i
+    </Button>
+    <Button
+      data-tip="Добавить букву <O> к фильтру"
+      disabled={false}
+      key="char_o"
+      onClick={[Function]}
+      type="char"
+    >
+      o
+    </Button>
+    <Button
+      data-tip="Добавить букву <P> к фильтру"
+      disabled={false}
+      key="char_p"
+      onClick={[Function]}
+      type="char"
+    >
+      p
+    </Button>
+  </div>
+  <div
+    key="row_1"
+  >
+    <Button
+      data-tip="Добавить букву <A> к фильтру"
+      disabled={false}
+      key="char_a"
+      onClick={[Function]}
+      type="char"
+    >
+      a
+    </Button>
+    <Button
+      data-tip="Добавить букву <S> к фильтру"
+      disabled={false}
+      key="char_s"
+      onClick={[Function]}
+      type="char"
+    >
+      s
+    </Button>
+    <Button
+      data-tip="Добавить букву <D> к фильтру"
+      disabled={false}
+      key="char_d"
+      onClick={[Function]}
+      type="char"
+    >
+      d
+    </Button>
+    <Button
+      data-tip="Добавить букву <F> к фильтру"
+      disabled={false}
+      key="char_f"
+      onClick={[Function]}
+      type="char"
+    >
+      f
+    </Button>
+    <Button
+      data-tip="Добавить букву <G> к фильтру"
+      disabled={false}
+      key="char_g"
+      onClick={[Function]}
+      type="char"
+    >
+      g
+    </Button>
+    <Button
+      data-tip="Добавить букву <H> к фильтру"
+      disabled={false}
+      key="char_h"
+      onClick={[Function]}
+      type="char"
+    >
+      h
+    </Button>
+    <Button
+      data-tip="Добавить букву <J> к фильтру"
+      disabled={false}
+      key="char_j"
+      onClick={[Function]}
+      type="char"
+    >
+      j
+    </Button>
+    <Button
+      data-tip="Добавить букву <K> к фильтру"
+      disabled={false}
+      key="char_k"
+      onClick={[Function]}
+      type="char"
+    >
+      k
+    </Button>
+    <Button
+      data-tip="Добавить букву <L> к фильтру"
+      disabled={false}
+      key="char_l"
+      onClick={[Function]}
+      type="char"
+    >
+      l
+    </Button>
+  </div>
+  <div
+    key="row_2"
+  >
+    <Button
+      data-tip="Добавить букву <Z> к фильтру"
+      disabled={false}
+      key="char_z"
+      onClick={[Function]}
+      type="char"
+    >
+      z
+    </Button>
+    <Button
+      data-tip="Добавить букву <X> к фильтру"
+      disabled={false}
+      key="char_x"
+      onClick={[Function]}
+      type="char"
+    >
+      x
+    </Button>
+    <Button
+      data-tip="Добавить букву <C> к фильтру"
+      disabled={false}
+      key="char_c"
+      onClick={[Function]}
+      type="char"
+    >
+      c
+    </Button>
+    <Button
+      data-tip="Добавить букву <V> к фильтру"
+      disabled={false}
+      key="char_v"
+      onClick={[Function]}
+      type="char"
+    >
+      v
+    </Button>
+    <Button
+      data-tip="Добавить букву <B> к фильтру"
+      disabled={false}
+      key="char_b"
+      onClick={[Function]}
+      type="char"
+    >
+      b
+    </Button>
+    <Button
+      data-tip="Добавить букву <N> к фильтру"
+      disabled={false}
+      key="char_n"
+      onClick={[Function]}
+      type="char"
+    >
+      n
+    </Button>
+    <Button
+      data-tip="Добавить букву <M> к фильтру"
+      disabled={false}
+      key="char_m"
+      onClick={[Function]}
+      type="char"
+    >
+      m
+    </Button>
+  </div>
+  <div>
+    <Button
+      data-tip=""
+      disabled={true}
+      onClick={[Function]}
+      type="back-space"
+    >
+      backspace
+    </Button>
+  </div>
+</ModalDialog>
+`;

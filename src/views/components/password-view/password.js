@@ -5,7 +5,6 @@ import cn from 'classnames';
 import ToolTip from '../_general/tooltip/tooltip';
 
 import './password-view.scss';
-import clippy from './clippy.svg';
 
 const Password = ({password, isVariantsOpened, toggleVariantsOpened}) => {
 
@@ -21,8 +20,7 @@ const Password = ({password, isVariantsOpened, toggleVariantsOpened}) => {
                 {password}
             </div>
 
-            <img className="clipboard password__after-text"
-                 src={clippy} alt=""
+            <span className="clipboard password__after-text"
                  data-clipboard-target={"#pass"}
 
                  data-event="click"
