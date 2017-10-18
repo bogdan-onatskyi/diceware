@@ -24,17 +24,3 @@
         }
     }
 }
-
-$height-decrement: 10px;
-.fa-home::before {
-    @include fa($fa-home, $color__menu - 15, $height__menu - $height-decrement);
-    margin-right: 5px;
-}
-.fa-info-circle::before {
-    @include fa($fa-info-circle, $color__menu - 15, $height__menu - $height-decrement);
-    margin-right: 5px;
-}
-.fa-phone-square::before {
-    @include fa($fa-phone-square, $color__menu - 15, $height__menu - $height-decrement);
-    margin-right: 5px;
-}

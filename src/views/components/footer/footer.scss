@@ -5,8 +5,13 @@
     width: 100%;
     background: $bg-color__footer;
     padding: $padding/2 0;
-    &--icon {
-        @include fa($fa-phone-square, $color, 17px);
-        vertical-align: text-top;
+    color: $color__text;
+    &--phone {
+        color: $color__link;
+    }
+    &--e-mail {
+        a {
+            color: $color__link;
+        }
     }
 }

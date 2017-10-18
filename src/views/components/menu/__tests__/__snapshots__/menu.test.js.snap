@@ -9,7 +9,7 @@ exports[`Menu component should match saved snapshot 1`] = `
     key="menu_1"
   >
     <Link
-      className="fa-home"
+      className="icon-home"
       replace={false}
       to="/"
     >
@@ -21,7 +21,7 @@ exports[`Menu component should match saved snapshot 1`] = `
     key="menu_2"
   >
     <Link
-      className="fa-info-circle"
+      className="icon-info"
       replace={false}
       to="/info"
     >
@@ -33,7 +33,7 @@ exports[`Menu component should match saved snapshot 1`] = `
     key="menu_3"
   >
     <Link
-      className="fa-phone-square"
+      className="icon-phone"
       replace={false}
       to="/contacts"
     >

@@ -8,8 +8,12 @@ const Footer = ({className}) => {
     const classNames = cn(className, "footer");
     return (
         <footer className={classNames}>
-            <span className="footer--icon"/>+38 (097) 499-73-82 e&#8209;mail:&nbsp;
-            <a href="mailto: gentoo.user@ukr.net">Богдан&nbsp;Онацкий</a>
+            <span className="icon-phone"/>
+            <span className="footer--phone">+38 (097) 499-73-82 </span>
+            <span className="footer--e-mail">
+                e&#8209;mail:&nbsp;
+                <a href="mailto: gentoo.user@ukr.net">gentoo.user@ukr.net</a>
+            </span>
         </footer>
     );
 };
