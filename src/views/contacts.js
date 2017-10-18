@@ -23,7 +23,7 @@ const Contacts = () => (
                 <span className="row">
                     <span className="col1">резюме: </span>
                         <a className="col2"
-                           href="https://www.work.ua/jobseeker/my/resumes/view/?id=4308769">
+                           href="https://www.work.ua/resumes/4308769/">
                             www.work.ua
                         </a>
                     <span className="col1"/>

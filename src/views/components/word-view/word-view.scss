@@ -46,8 +46,10 @@
         width: 25px;
         vertical-align: middle;
         background: url("sprite25.png"), no-repeat;
+        cursor: pointer;
         &--disabled {
             opacity: 0.1;
+            cursor: default;
         }
         @for $i from 1 through 6 {
             &--#{$i} {

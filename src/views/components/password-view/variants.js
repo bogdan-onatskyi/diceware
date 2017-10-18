@@ -28,7 +28,7 @@ const Variants = ({separators, toggleCAPS, isCAPS, separatedPassword}) => {
                             data-delay-hide={500}
                             data-iscapture={true}
                             data-tip="Пароль скопирован в буфер обмена">
-                        <span className="fa-copy"/>
+                        <span className="icon-copy"/>
                     </Button>
                 </div>
             )}

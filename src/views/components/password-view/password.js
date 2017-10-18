@@ -11,7 +11,8 @@ const Password = ({password, isVariantsOpened, toggleVariantsOpened}) => {
     return (
         <div className="password">
             <span className={cn("password__before-text",
-                {"password__before-text--opened": isVariantsOpened})}
+                {"icon-right-open": !isVariantsOpened},
+                {"icon-down-open": isVariantsOpened})}
                   data-tip="Варианты пароля с разделителями"
                   onClick={toggleVariantsOpened.bind(this)}/>
 
@@ -20,7 +21,7 @@ const Password = ({password, isVariantsOpened, toggleVariantsOpened}) => {
                 {password}
             </div>
 
-            <span className="clipboard password__after-text"
+            <span className="clipboard password__after-text icon-copy"
                  data-clipboard-target={"#pass"}
 
                  data-event="click"

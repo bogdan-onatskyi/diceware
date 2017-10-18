@@ -34,7 +34,7 @@ exports[`Variants component should match saved snapshot (isCAPS(i) !== 0) 1`] = 
       type="copy"
     >
       <span
-        className="fa-copy"
+        className="icon-copy"
       />
     </Button>
   </div>
@@ -68,7 +68,7 @@ exports[`Variants component should match saved snapshot (isCAPS(i) !== 0) 1`] = 
       type="copy"
     >
       <span
-        className="fa-copy"
+        className="icon-copy"
       />
     </Button>
   </div>
@@ -102,7 +102,7 @@ exports[`Variants component should match saved snapshot (isCAPS(i) !== 0) 1`] = 
       type="copy"
     >
       <span
-        className="fa-copy"
+        className="icon-copy"
       />
     </Button>
   </div>
@@ -136,7 +136,7 @@ exports[`Variants component should match saved snapshot (isCAPS(i) !== 0) 1`] = 
       type="copy"
     >
       <span
-        className="fa-copy"
+        className="icon-copy"
       />
     </Button>
   </div>
@@ -170,7 +170,7 @@ exports[`Variants component should match saved snapshot (isCAPS(i) !== 0) 1`] = 
       type="copy"
     >
       <span
-        className="fa-copy"
+        className="icon-copy"
       />
     </Button>
   </div>
@@ -204,7 +204,7 @@ exports[`Variants component should match saved snapshot (isCAPS(i) !== 0) 1`] = 
       type="copy"
     >
       <span
-        className="fa-copy"
+        className="icon-copy"
       />
     </Button>
   </div>
@@ -246,7 +246,7 @@ exports[`Variants component should match saved snapshot (isCAPS(i) === 0) 1`] = 
       type="copy"
     >
       <span
-        className="fa-copy"
+        className="icon-copy"
       />
     </Button>
   </div>
@@ -280,7 +280,7 @@ exports[`Variants component should match saved snapshot (isCAPS(i) === 0) 1`] = 
       type="copy"
     >
       <span
-        className="fa-copy"
+        className="icon-copy"
       />
     </Button>
   </div>
@@ -314,7 +314,7 @@ exports[`Variants component should match saved snapshot (isCAPS(i) === 0) 1`] = 
       type="copy"
     >
       <span
-        className="fa-copy"
+        className="icon-copy"
       />
     </Button>
   </div>
@@ -348,7 +348,7 @@ exports[`Variants component should match saved snapshot (isCAPS(i) === 0) 1`] = 
       type="copy"
     >
       <span
-        className="fa-copy"
+        className="icon-copy"
       />
     </Button>
   </div>
@@ -382,7 +382,7 @@ exports[`Variants component should match saved snapshot (isCAPS(i) === 0) 1`] = 
       type="copy"
     >
       <span
-        className="fa-copy"
+        className="icon-copy"
       />
     </Button>
   </div>
@@ -416,7 +416,7 @@ exports[`Variants component should match saved snapshot (isCAPS(i) === 0) 1`] = 
       type="copy"
     >
       <span
-        className="fa-copy"
+        className="icon-copy"
       />
     </Button>
   </div>

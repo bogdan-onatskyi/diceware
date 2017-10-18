@@ -53,7 +53,7 @@ exports[`Contacts component should match saved snapshot 1`] = `
         </span>
         <a
           className="col2"
-          href="https://www.work.ua/jobseeker/my/resumes/view/?id=4308769"
+          href="https://www.work.ua/resumes/4308769/"
         >
           www.work.ua
         </a>
